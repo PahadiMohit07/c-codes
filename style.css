@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #abdbe3;
+}
+
+.title {
+  text-align: center;
+  margin-top: 7vh;
+  font-size: 10vh;
+  text-shadow: 4px 4px 9px #000;
+}
+
+.container {
+  border: 2px solid white;
+  background-color: white;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5),
+    0px 10px 10px rgba(0, 0, 0, 0.2), 0px -10px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 5px;
+  width: 175vh;
+  height: auto;
+  margin-left: 20vh;
+  margin-right: 50vh;
+  margin-top: 5vh;
+  gap: 4vh;
+}
+
+.card {
+  margin-left: 2vh;
+  margin-right: 2vh;
+  margin-top: 3vh;
+  margin-bottom: 5vh;
+}
+
+.footer{
+  margin-top: 10vh;
+  margin-left: 5vh;
+  border: 2px solid black;
+  width: 50vh;
+  padding: 3vh;
+}
