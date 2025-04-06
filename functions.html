@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Functions</title>
+    <link rel="stylesheet" href="codes.css" />
+  </head>
+  <body>
+    <h1>Functions</h1>
+    <div class="wrapper">
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head" />
+        <label for="collapsible-head"
+          >1. Write a C++ method to find the smallest number among three numbers.</label
+        >
+        <div class="collapsible-text">
+          <h2>Functions 1:</h2>
+          <p>
+              #include iostream.h
+              <br>
+              #include dos.h
+            <br>
+              #include conio.h
+            <br>
+              void main(){
+              <br>
+              int a,b,c;
+            <br>
+              a=5,b=7,c=2;
+            <br>
+              if(a <= b && b <= c)
+            <br>
+              cout a "smallest";
+            <br>
+              else if(b<=a && b<=c)
+            <br>
+              cout b "smallest";
+            <br>
+              else
+            <br>
+              cout c "smallest";
+            <br>
+              delay(1000);}
+              <h2>Input:</h2>
+              <p>20,10,11</p>
+              <h2>Output:</h2>
+              <p>11 smallest</p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head1" />
+        <label for="collapsible-head1"
+          >2. Write a C++ method to compute the average of three numbers.</label
+        >
+        <div class="collapsible-text">
+          <h2>Functions 2:</h2>
+          <p>
+            #include iostream.h
+            <br>
+              #include dos.h
+              <br>
+              #include conio.h
+              <br>
+              void main(){
+                <br>
+              int num1,num2,num3;
+              <br>
+              float average;
+              <br>
+              clrscr();
+              <br>
+              cout "enter num1:";
+              <br>
+              cin>>num1;
+              <br>
+              cout "enter num2:";
+              <br>
+              cin>>num2;
+              <br>
+              cout "enter num3:";
+              <br>
+              cin>>num3;
+              <br>
+              average=(num1+num2+num3)/3;
+              <br>
+              cout "average:" average;
+              <br>
+              delay(1000);
+              }
+              <h2>Input:</h2>
+              <p>20,18,13</p>
+              <h2>Output:</h2>
+              <p>Average: 17</p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head2" />
+        <label for="collapsible-head2"
+          >3. Write a C++ method to display the middle character of a string.</label
+        >
+        <div class="collapsible-text">
+          <h2>Functions 3:</h2>
+          <p>
+            #include iostream.h
+            <br>
+              #include dos.h
+              <br>
+              #include conio.h
+              <br>
+              #include string.h
+              <br>
+              void display_character(char* str);
+              <br>
+              int main(){
+                <br>
+              char input[100];
+              <br>
+              cout "enter string:";
+              <br>
+              cin>> input;
+              <br>
+              display_character(input);
+              <br>
+              delay(1000);
+              <br>
+              return 0;
+              }
+              <br>
+              void dispaly_character(char* str){
+                <br>
+              int length=strlen(str);
+              <br>
+              int middle=length/2;
+              <br>
+              if(length % 2==0){
+                <br>
+              cout "middle character:" str[middle-1] str[middle];
+              }
+              <br>
+              else{
+                <br>
+              cout middle character:str[middle];}
+              }
+              <h2>Input:</h2>
+              <p>Mohit</p>
+              <h2>Output:</h2>
+              <p>middle character: 'h'</p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head3" />
+        <label for="collapsible-head3"
+          >4. Write a C++ method to find all twin prime numbers less than 100.</label
+        >
+        <div class="collapsible-text">
+          <h2>Functions 4:</h2>
+          <p>
+            #include iostream.h
+            <br>
+              #include dos.h
+              <br>
+              #include conio.h
+              <br>
+              void main(){
+                <br>
+              clrscr();
+              <br>
+              int j,i;
+              <br>
+              cout "Twin Prime Numbers";
+              <br>
+              for(i=1;i < 100;i++){
+                <br>
+              if((i)&&(i+2)){
+                <br>
+              cout "(" i "," i+2 ")";
+              <br>
+              }
+              <br>
+              delay(1000);}
+              }
+              <h2>Output:</h2>
+              <p>Twin Prime Numbers: (2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,
+                89,97) </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head4" />
+        <label for="collapsible-head4"
+          >5. Write a C++ method to count the number of digits in an integer with the value 2. The integer may be assumed to be non-negative.</label
+        >
+        <div class="collapsible-text">
+          <h2>Functions 5:</h2>
+          <p>
+            #include iostream.h
+            <br>
+              #include dos.h
+              <br>
+              #include conio.h
+              <br>
+              int countdigits(int num){
+                <br>
+              int count=0;
+              <br>
+              if(num==0){
+                <br>
+              return 1;
+              }
+              <br>
+              
+              else {
+                <br>
+              while(num!=
+              0){
+                <br>
+              num=num/10;
+              <br>
+              count++;
+              <br>
+              }
+              return count;
+              }
+              }
+              <br>
+              int main(){
+                <br>
+              clrscr();
+              <br>
+              int number;
+              <br>
+              cout "enter number:";
+              <br>
+              cin>>number;
+              <br>
+              int digitcount=countdigits(number);
+              <br>
+              cout "number of digits:" digitcount;
+              <br>
+              delay(1000);
+              <br>
+              return 0;
+              }
+              <h2>Input:</h2>
+              <p>122</p>
+              <h2>Output:</h2>
+              <p>number of digits: 3</p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head5" />
+        <label for="collapsible-head5"
+          >6. Write a C++ method that accepts three integers and checks whether they are consecutive or not. Returns true or false.</label
+        >
+        <div class="collapsible-text">
+          <h2>Functions 6:</h2>
+          <p>
+            #include iostream.h
+            <br>
+              #include dos.h
+              <br>
+              #include conio.h
+              <br>
+              void main(){
+                <br>
+              clrscr();
+              <br>
+              int a,b,c;
+              <br>
+              cout "enter three integers";
+              <br>
+              cin>>a>>b>>c;
+              <br>
+              if((a==b+1&&b==c+1)||(a==b-1&&b==c-1))
+              <br>
+              cout "true";
+              <br>
+              else
+              <br>
+              cout "false";
+              <br>
+              delay(1000);
+              }
+              <h2>Input:</h2>
+              <p>134</p>
+              <h2>Output:</h2>
+              <p>false</p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head6" />
+        <label for="collapsible-head6"
+          >7. Write a C++ method that checks whether all the characters in a given string are vowels (a,e,i,o,u) or not. Return true if each character in the string is a vowel, otherwise return false.</label
+        >
+        <div class="collapsible-text">
+          <h2>Functions 7:</h2>
+          <p>
+            #include iostream.h
+            <br>
+              #include dos.h
+              <br>
+              #include conio.h
+              <br>
+              void main(){
+                <br>
+              char c;
+              <br>
+              char lowercase,uppercase;
+              <br>
+              cout "enter an alphabet:";
+              <br>
+              cin>>c;
+              <br>
+              lowercase=(c=='a'||c=='e'||c=='i'||c=='o'||c=='u');
+              <br>
+              uppercase=(c=='A'||c=='E'||c=='I'||c=='O'||c=='U');
+              <br>
+              if(lowercase||uppercase)
+              <br>
+              cout "true";
+              <br>
+              else
+              <br>
+              cout "false";
+              <br>
+              delay(1000);
+              }
+              <h2>Input:</h2>
+              <p>r</p>
+              <h2>Output:</h2>
+              <p>false</p>
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
