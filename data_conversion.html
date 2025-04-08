@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Conversion</title>
+    <link rel="stylesheet" href="codes.css" />
+  </head>
+  <body>
+    <h1>Data Conversion</h1>
+    <div class="wrapper">
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head" />
+        <label for="collapsible-head"
+          >1. C++ Program to convert String to int</label
+        >
+        <div class="collapsible-text">
+          <h2>Data Conversion 1:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include conio.h
+  #include dos.h
+  void main() {
+  char str[20];
+  clrscr();
+  cout << "Enter a character as a string: ";
+  cin >> str;
+  int num = (int)str;
+  cout << "The integer value is: " << num << endl;
+  delay(5000);
+  }
+            </code></pre>
+            <h2>Input:</h2>
+            <p>a</p>
+            <h2>Output:</h2>
+            <p>97</p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head1" />
+        <label for="collapsible-head1"
+          >2. C++ Program to convert int to String</label
+        >
+        <div class="collapsible-text">
+          <h2>Data Conversion 2:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include conio.h
+  #include dos.h
+  void main() {
+  int num;
+  char str[20];
+  clrscr();
+  cout << "Enter a number ";
+  cin >> num;
+  str = (char)num;
+  cout << "The string value is: " << str << endl;
+  delay(5000);
+  }
+            </code></pre>
+            <h2>Input:</h2>
+            <p>97</p>
+            <h2>Output:</h2>
+            <p>a</p>
+          </p>
+        </div>
+      </div><div class="collapsible">
+        <input type="checkbox" id="collapsible-head2" />
+        <label for="collapsible-head2"
+          >3. C++ Program to convert String to long</label
+        >
+        <div class="collapsible-text">
+          <h2>Data Conversion 3:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include conio.h
+  #include dos.h
+  void main() {
+  char str[50];
+  clrscr();
+  cout << "Enter a number as a string: ";
+  cin >> str;
+  long num = (long)(str); 
+  cout << "The long integer value is: " << num << endl;
+  delay(5000);
+  }
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Enter a number as a string: 9876543210</p>
+            <h2>Output:</h2>
+            <p>The long integer value is: 9876543210</p>
+          </p>
+        </div>
+      </div><div class="collapsible">
+        <input type="checkbox" id="collapsible-head3" />
+        <label for="collapsible-head3"
+          >4. C++ Program to convert long to String</label
+        >
+        <div class="collapsible-text">
+          <h2>Data Conversion 4:</h2>
+          <p>
+           <pre><code>
+  #include iostream.h
+  #include dos.h
+  #include conio.h 
+  void main() {
+  long num;
+  char str[50];
+  clrscr();
+  cout << "Enter a long integer: ";
+  cin >> num;
+  str=(char)num;
+  cout << "The string representation is: " << str << endl;
+  delay(5000);
+  }
+           </code></pre>
+           <h2>Input:</h2>
+           <p>9876543210</p>
+           <h2>Output:</h2>
+           <p>9876543210</p>
+          </p>
+        </div>
+      </div><div class="collapsible">
+        <input type="checkbox" id="collapsible-head4" />
+        <label for="collapsible-head4"
+          >5. C++ Program to convert String to float</label
+        >
+        <div class="collapsible-text">
+          <h2>Data Conversion 5:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include dos.h
+  #include conio.h
+  void main() {
+  char str[50];
+  clrscr()
+  cout << "Enter a floating-point number as a string: ";
+  cin >> str;
+  float num = (float)str;
+  cout << "The float value is: " << num << endl;
+  delay(5000);
+  }
+            </code></pre>
+            <h2>Input:</h2>
+            <p>123.456</p>
+            <h2>Output</h2>
+            <p>123.456</p>
+          </p>
+        </div>
+      </div><div class="collapsible">
+        <input type="checkbox" id="collapsible-head5" />
+        <label for="collapsible-head5"
+          >6. C++ Program to convert float to String</label
+        >
+        <div class="collapsible-text">
+          <h2>Data Conversion 6:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include dos.h
+  #include conio.h
+  void main() {
+  float num;
+  char str[50]; 
+  clrscr();
+  cout << "Enter a floating-point number: ";
+  cin >> num;
+  str=(char)num;
+  cout << "The string representation is: " << str << endl;
+  delay(5000);
+  }
+            </code></pre>
+            <h2>Input:</h2>
+            <p>123.456</p>
+            <h2>Output:</h2>
+            <p>123.456000</p>
+          </p>
+        </div>
+      </div><div class="collapsible">
+        <input type="checkbox" id="collapsible-head6" />
+        <label for="collapsible-head6"
+          >7. C++ Program to convert String to double</label
+        >
+        <div class="collapsible-text">
+          <h2>Data Conversion 7:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include dos.h
+  #include conio.h
+  void main() {
+  char str[50];
+  clrscr();
+  cout << "Enter a double value as a string: ";
+  cin >> str;
+  double num = (double)(str); 
+  cout << "The double value is: " << num << endl;
+  delay(5000);
+  }
+            </code></pre>
+            <h2>Input:</h2>
+            <p>12345.6789</p>
+            <h2>Output:</h2>
+            <p>12345.6789</p>
+          </p>
+        </div>
+      </div><div class="collapsible">
+        <input type="checkbox" id="collapsible-head7" />
+        <label for="collapsible-head7"
+          >8. C++ Program to convert double to String</label
+        >
+        <div class="collapsible-text">
+          <h2>Data Conversion 8:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include conio.h
+  #include dos.h
+  void main() {
+  double num;
+  char str[50];
+  clrscr();
+  cout << "Enter a double value: ";
+  cin >> num;
+  str=(char)(num);
+  cout << "The string representation is: " << str << endl;
+  delay(5000);
+  }
+            </code></pre>
+            <h2>Input:</h2>
+            <p>123456.789012345</p>
+            <h2>Output:</h2>
+            <p>123456.789012345</p>
+          </p>
+        </div>
+      </div><div class="collapsible">
+        <input type="checkbox" id="collapsible-head8" />
+        <label for="collapsible-head8"
+          >9. C++ Program to convert char to int</label
+        >
+        <div class="collapsible-text">
+          <h2>Data Conversion 9:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include dos.h
+  #include conio.h
+  void main() {
+  char ch;
+  clrscr();
+  cout << "Enter a character: ";
+  cin >> ch;
+  int num = (int)ch; 
+  cout << "The integer value of '" << ch << "' is: " << num << endl;
+  delay(5000);
+  }
+            </code></pre>
+            <h2>Input:</h2>
+            <p>5</p>
+            <h2>Output:</h2>
+            <p>53</p>
+          </p>
+        </div>
+      </div><div class="collapsible">
+        <input type="checkbox" id="collapsible-head9" />
+        <label for="collapsible-head9"
+          >10. C++ Program to convert int to char</label
+        >
+        <div class="collapsible-text">
+          <h2>Data Conversion 10:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include conio.h
+  #include dos.h
+  void main() {
+  int num;
+  clrscr();
+  cout << "Enter an integer (0-255): ";
+  cin >> num;
+  char ch = (char)num; 
+  cout << "The character corresponding to " << num << " is: " << ch << endl;
+  delay(5000);
+  } 
+            </code></pre>
+            <h2>Input:</h2>
+            <p>50</p>
+            <h2>Output:</h2>
+            <p>2</p>
+          </p>
+        </div>
+      </div><div class="collapsible">
+        <input type="checkbox" id="collapsible-head10" />
+        <label for="collapsible-head10"
+          >11. C++ Program to convert Binary to Decimal</label
+        >
+        <div class="collapsible-text">
+          <h2>Data Conversion 11:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include string.h
+  #include conio.h
+  #include dos.h
+  void main() {
+  char binary[33];
+  clrscr();
+  cout << "Enter a binary number: ";
+  cin >> binary;
+  int decimal = 0;
+  int length = strlen(binary);
+  for (int i = 0; i < length; i++) {
+  if (binary[i] == '1') {
+  decimal += (1 << (length - 1 - i));
+  } else if (binary[i] != '0') {
+  cout << "Invalid binary number!" << endl;
+  return 1;
+  }
+  }
+  cout << "The decimal value is: " << decimal << endl;
+  delay(5000);
+  } 
+            </code></pre>
+            <h2>Input:</h2>
+            <p>1101</p>
+            <h2>Output:</h2>
+            <p>13</p>
+          </p>
+        </div>
+      </div><div class="collapsible">
+        <input type="checkbox" id="collapsible-head11" />
+        <label for="collapsible-head11"
+          >12. C++ Program to convert Decimal to Binary</label
+        >
+        <div class="collapsible-text">
+          <h2>Data Conversion 12:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include cstdlib.h
+  #include conio.h
+  #include dos.h
+  void main() {
+  int decimal;
+  clrscr();
+  cout << "Enter a decimal number: ";
+  cin >> decimal;
+  if (decimal < 0) {
+  cout << "Please enter a non-negative integer." << endl;
+  exit(1);
+  }
+  int binary[32];
+  int index = 0;
+  if (decimal == 0) {
+  cout << "The binary value is: 0" << endl;
+  return 0;
+  }
+  while (decimal > 0) {
+  binary[index] = decimal % 2; 
+  decimal = decimal / 2;       
+  index++;
+  }
+  cout << "The binary value is: ";
+  for (int i = index - 1; i >= 0; i--) {
+  cout << binary[i];
+  }
+  cout << endl;
+  delay(5000);
+  } 
+            </code></pre>
+            <h2>Input:</h2>
+            <p>13</p>
+            <h2>Output:</h2>
+            <p>1101</p>
+          </p>
+        </div>
+      </div><div class="collapsible">
+        <input type="checkbox" id="collapsible-head12" />
+        <label for="collapsible-head12"
+          >13. C++ Program to convert Hex to Decimal</label
+        >
+        <div class="collapsible-text">
+          <h2>Data Conversion 13:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include cstdlib.h
+  #include conio.h
+  #include dos.h
+  void main() {
+  char hex[20]; 
+  clrscr();
+  cout << "Enter a hexadecimal number: ";
+  cin >> hex;
+  long decimal = strtol(hex, NULL, 16); 
+  cout << "The decimal value is: " << decimal << endl;
+  delay(5000);
+  }  
+            </code></pre>
+            <h2>Input:</h2>
+            <p>1A3F</p>
+            <h2>Output:</h2>
+            <p>6719</p>
+          </p>
+        </div>
+      </div><div class="collapsible">
+        <input type="checkbox" id="collapsible-head13" />
+        <label for="collapsible-head13"
+          >14. C++ Program to convert Decimal to Hex</label
+        >
+        <div class="collapsible-text">
+          <h2>Data Conversion 14:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include cstdio.h
+  #include conio.h
+  #include dos.h
+  void main() {
+  int decimal;
+  char hex[20]; 
+  clrscr();
+  cout << "Enter a decimal number: ";
+  cin >> decimal;
+  sprintf(hex, "%X", decimal);
+  cout << "The hexadecimal value is: " << hex << endl;
+  delay(5000);
+  }   
+            </code></pre>
+            <h2>Input:</h2>
+            <p>4096</p>
+            <h2>Output:</h2>
+            <p>1000</p>
+          </p>
+        </div>
+      </div><div class="collapsible">
+        <input type="checkbox" id="collapsible-head14" />
+        <label for="collapsible-head14"
+          >15. C++ Program to convert Octal to Decimal</label
+        >
+        <div class="collapsible-text">
+          <h2>Data Conversion 15:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include cstdlib.h
+  #include conio.h
+  #include dos.h
+  void main() {
+  char octal[20]; 
+  clrscr();
+  cout << "Enter an octal number: ";
+  cin >> octal;
+  long decimal = strtol(octal, NULL, 8); 
+  cout << "The decimal value is: " << decimal << endl;
+  delay();
+  }
+            </code></pre>
+            <h2>Input:</h2>
+            <p>157</p>
+            <h2>Output:</h2>
+            <p>111</p>
+          </p>
+        </div>
+      </div><div class="collapsible">
+        <input type="checkbox" id="collapsible-head15" />
+        <label for="collapsible-head15"
+          >16. C++ Program to convert Decimal to Octal</label
+        >
+        <div class="collapsible-text">
+          <h2>Data Conversion 16:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include cstdio.h
+  #include conio.h
+  #include dos.h
+  void main() {
+  int decimal;
+  char octal[20];
+  clrscr();
+  cout << "Enter a decimal number: ";
+  cin >> decimal;
+  sprintf(octal, "%o", decimal);
+  cout << "The octal value is: " << octal << endl;
+  delay(5000);
+  }   
+            </code></pre>
+            <h2>Input:</h2>
+            <p>83</p>
+            <h2>Output:</h2>
+            <p>123</p>
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
