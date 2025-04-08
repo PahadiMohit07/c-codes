@@ -11,7 +11,16 @@ body {
   text-align: center;
   margin-top: 7vh;
   font-size: 10vh;
-  text-shadow: 4px 4px 9px #000;
+  border: 2px solid black;
+  width: 80vh;
+  height: 30vh;
+  padding-top: 40px;
+  margin-right: 70vh;
+  margin-left: 70vh;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
 }
 
 .container {
@@ -26,7 +35,7 @@ body {
   height: auto;
   margin-left: 20vh;
   margin-right: 50vh;
-  margin-top: 5vh;
+  margin-top: 10vh;
   gap: 4vh;
 }
 
@@ -37,10 +46,11 @@ body {
   margin-bottom: 5vh;
 }
 
-.footer{
-  margin-top: 10vh;
-  margin-left: 5vh;
-  border: 2px solid black;
-  width: 50vh;
-  padding: 3vh;
+.from{
+  border: 2px solid white;
+  margin-left: 180vh;
+  margin-top: -35vh;
+  margin-right: 5vh;
+  font-size: 15px;
+  background-color: white;
 }
