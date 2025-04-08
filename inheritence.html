@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inheritence</title>
+    <link rel="stylesheet" href="codes.css" />
+  </head>
+  <body>
+    <h1>Inheritence</h1>
+    <div class="wrapper">
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head" />
+        <label for="collapsible-head"
+          >1. Write a C++ program to create a class called Animal with a method called makeSound(). Create a derived class called Cat that overrides the makeSound() method to bark.</label
+        >
+        <div class="collapsible-text">
+          <h2>Inheritence 1:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include conio.h
+  #include dos.h
+  class Animal {
+  public:
+  void makeSound() {
+  cout << "Animal makes a sound" << endl;
+  }
+  };
+  class Cat : public Animal {
+  public:
+  void makeSound() {
+  cout << "Cat barks" << endl;
+  }
+  };
+  void main() {
+  clrscr(); 
+  Cat myCat;
+  myCat.makeSound(); 
+  delay();
+  }
+            </code></pre>
+            <h2>Output:</h2>
+            <p>Cat baks</p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head1" />
+        <label for="collapsible-head1"
+          >2. Write a C++ program to create a class called Vehicle with a method called drive(). Create a derived class called Car that overrides the drive() method to print "Repairing a car".</label
+        >
+        <div class="collapsible-text">
+          <h2>Inheritence 2:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include conio.h
+  #include dos.h
+  class Vehicle {
+  public:
+  void drive() {
+  cout << "Driving a vehicle" << endl;
+  }
+  };
+  class Car : public Vehicle {
+  public:
+  void drive() {
+  cout << "Repairing a car" << endl;
+  }
+  };
+  void main() {
+  clrscr();
+  Car myCar;
+  myCar.drive();
+  delay(5000);
+  }
+            </code></pre>
+            <h2>Output:</h2>
+            <p>Repairing a car</p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head2" />
+        <label for="collapsible-head2"
+          >3. Write a C++ program to create a class called Shape with a method called getArea(). Create a derived class called Rectangle that overrides the getArea() method to calculate the area of a rectangle.</label
+        >
+        <div class="collapsible-text">
+          <h2>Inheritence 3:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include conio.h
+  #include dos.h
+  class Shape {
+  public:
+  virtual float getArea() { 
+  return 0;
+  }
+  };
+  class Rectangle : public Shape {
+  private:
+  float length, width;
+  public:
+  Rectangle(float l, float w) {
+  length = l;
+  width = w;
+  }
+  float getArea() {
+  return length * width;
+  }
+  };
+  void main() {
+  clrscr();
+  Rectangle rect(5, 3);
+  cout<< "Area of the rectangle: "<< rect.getArea()<< endl;
+  delay(5000); 
+  }
+            </code></pre>
+            <h2>Input:</h2>
+            <p>length - 5, width - 3</p>
+            <h2>Output:</h2>
+            <p>Area of the rectangle: 15</p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head3" />
+        <label for="collapsible-head3"
+          >4. Write a C++ program to create a class called Employee with methods called work() and getSalary(). Create a derived class called HRManager that overrides the work() method and adds a new method called addEmployee().</label
+        >
+        <div class="collapsible-text">
+          <h2>Inheritence 4:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include conio.h
+  #include dos.h
+  class Employee {
+  public:
+  void work() {
+  cout << "Employee is working." << endl;
+  }
+  int getSalary() {
+  return 50000; 
+  }
+  };
+  class HRManager : public Employee {
+  public:
+  void work() {
+  cout << "HR Manager is managing HR tasks." << endl;
+  }
+  void addEmployee() {
+  cout << "Adding a new employee to the company." << endl;
+  }
+  };
+  void main() {
+  clrscr();
+  HRManager hr;
+  hr.work();
+  hr.addEmployee();
+  cout<< "Salary of HR Manager: "<< hr.getSalary()<< endl;
+  delay(5000)
+  }
+            </code></pre>
+            <h2>Output:</h2>
+            <p>HR Manager is managing HR tasks., 
+              Adding a new employee to the company.,
+              Salary of HR Manager: 50000</p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head4" />
+        <label for="collapsible-head4"
+          >5. Write a C++ program to create a class known as "BankAccount" with methods called deposit() and withdraw(). Create a derived class called SavingsAccount that overrides the withdraw() method to prevent withdrawals if the account balance falls below one hundred.</label
+        >
+        <div class="collapsible-text">
+          <h2>Inheritence 5:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include conio.h
+  #include dos.h
+  class BankAccount {
+  protected:
+  float balance;              
+  public:
+  BankAccount(float initialBalance) {
+  balance = initialBalance;
+  }
+  void deposit(float amount) {
+  if (amount > 0) {
+  balance += amount;
+  cout << "Deposited: " << amount << endl;
+  } else {
+  cout << "Invalid deposit amount." << endl;
+  }
+  }
+  virtual void withdraw(float amount) {
+  if (amount > 0 && amount <= balance) {
+  balance -= amount;
+  cout << "Withdrawn: " << amount << endl;
+  } else {
+  cout << "Invalid withdrawal amount or insufficient 
+  balance."<< endl;
+  }
+  }
+  void displayBalance() {
+  cout << "Current Balance: " << balance << endl;
+  }
+  };
+  class SavingsAccount : public BankAccount {
+  public:
+  SavingsAccount(float initialBalance):
+  BankAccount(initialBalance){}
+  void withdraw(float amount) override {
+  if (amount > 0 && (balance - amount) >= 100) {
+  balance -= amount;
+  cout << "Withdrawn: " << amount << endl;
+  } else if ((balance - amount) < 100) {
+  cout << "Withdrawal denied. Balance cannot 
+  fall below 100."<< endl;
+  } else {
+  cout << "Invalid withdrawal amount." << endl;
+  }
+  }
+  };
+  void main() {
+  clrscr();
+  SavingsAccount myAccount(500);
+  myAccount.displayBalance();
+  myAccount.deposit(200);
+  myAccount.withdraw(300); 
+  myAccount.withdraw(400);
+  myAccount.displayBalance();
+  delay(5000);
+  }
+            </code></pre>
+            <h2>Output:</h2>
+            <p>Current Balance: 500,
+              Deposited: 200,
+              Withdrawn: 300,
+              Withdrawal denied. Balance cannot fall below 100.,
+              Current Balance: 400</p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head5" />
+        <label for="collapsible-head5"
+          >6. Write a C++ program to create a class called Animal with a method named move(). Create a derived class called Cheetah that overrides the move() method to run.</label
+        >
+        <div class="collapsible-text">
+          <h2>Inheritence 6:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include conio.h
+  #include dos.h
+  class Animal {
+  public:
+  void move() {
+  cout << "Animal moves" << endl;
+  }
+  };
+  class Cheetah : public Animal {
+  public:
+  void move() {
+  cout << "Cheetah runs" << endl;
+  }
+  };
+  void main() {
+  clrscr(); 
+  Cheetah myCheetah; 
+  myCheetah.move(); 
+  delay(5000);
+  }
+            </code></pre>
+            <h2>Output:</h2>
+            <p>Cheetah runs</p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head6" />
+        <label for="collapsible-head6"
+          >7. Write a C++ program to create a class known as Person with methods called getFirstName() and getLastName(). Create a derived class called Employee that adds a new method named getEmployeeId() and overrides the getLastName() method to include the employee's job title</label
+        >
+        <div class="collapsible-text">
+          <h2>Inheritence 7:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include conio.h
+  #include string.h
+  #include dos.h
+  class Person {
+  protected:
+  char firstName[50];
+  char lastName[50];
+  public:
+  Person(const char* fName, const char* lName) {
+  strcpy(firstName, fName);
+  strcpy(lastName, lName);
+  }
+  void getFirstName() {
+  cout << "First Name: " << firstName << endl;
+  }
+  virtual void getLastName() {
+  cout << "Last Name: " << lastName << endl;
+  }
+  };
+  class Employee : public Person {
+  private:
+  int employeeId;
+  char jobTitle[50];
+  public:
+  Employee(const char* fName, const char* lName, 
+  int id, const char* title)
+  : Person(fName, lName) {
+  employeeId = id;
+  strcpy(jobTitle, title);
+  }
+  void getLastName() override {
+  cout<< "Last Name: "<< lastName<< "("<< jobTitle<< ")"
+  << endl;
+  }
+  void getEmployeeId() {
+  cout << "Employee ID: " << employeeId << endl;
+  }
+  };
+  void main() {
+  clrscr();
+  Employee emp("John", "Doe", 12345, "Software Engineer");
+  emp.getFirstName();
+  emp.getLastName();   
+  emp.getEmployeeId();
+  delay(5000);
+  }
+            </code></pre>
+            <h2>Output:</h2>
+            <p>First Name: John,
+              Last Name: Doe (Software Engineer),
+              Employee ID: 12345</p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head7" />
+        <label for="collapsible-head7"
+          >8. Write a C++ program to create a class called Shape with methods called getPerimeter() and getArea(). Create a derived class called Circle that overrides the getPerimeter() and getArea() methods to calculate the area and perimeter of a circle.</label
+        >
+        <div class="collapsible-text">
+          <h2>Inheritence 8:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include conio.h
+  #include math.h 
+  #include dos.h
+  class Shape {
+  public:
+  virtual float getPerimeter() {
+  return 0;
+  }
+  virtual float getArea() {
+  return 0;
+  }
+  };
+  class Circle : public Shape {
+  private:
+  float radius;
+  public:
+  Circle(float r) {
+  radius = r;
+  }
+  float getPerimeter() override {
+  return 2 * 3.14159 * radius;
+  }
+  float getArea() override {
+  return 3.14159 * radius * radius;
+  }
+  };
+  void main() {
+  clrscr();
+  Circle myCircle(5);
+  cout<< "Perimeter (Circumference) of the circle: "
+  << myCircle.getPerimeter()<< endl;
+  cout<< "Area of the circle: "<< myCircle.getArea()<< endl;
+  delay(5000);
+  }</code></pre>
+  <h2>Input:</h2>
+  <p>5</p>
+  <h2>Output:</h2>
+  <p>Perimeter (Circumference) of the circle: 31.4159,
+    Area of the circle: 78.5398</p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head8" />
+        <label for="collapsible-head8"
+          >9. Write a C++ program to create a vehicle class hierarchy. The base class should be Vehicle, with derived classes Truck, Car and Motorcycle. Each derived class should have properties such as make, model, year, and fuel type. Implement methods for calculating fuel efficiency, distance traveled, and maximum speed.</label
+        >
+        <div class="collapsible-text">
+          <h2>Inheritence 9:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include conio.h
+  #include string.h
+  #include dos.h
+  class Vehicle {
+  protected:
+  char make[20];
+  char model[20];
+  int year;
+  char fuelType[20];
+  float fuelEfficiency;
+  public:
+  Vehicle(const char*mk,const char*md,int yr,const char*
+  fuel,float eff) {
+  strcpy(make, mk);
+  strcpy(model, md);
+  year = yr;
+  strcpy(fuelType, fuel);
+  fuelEfficiency = eff;
+  }
+  virtual void displayInfo() {
+  cout << "Make: " << make << ", Model: " << model
+  << ", Year: " << year << ", Fuel Type: " << fuelType
+  << ",Fuel Efficiency: "<< fuelEfficiency<< " km/l"<< endl;
+  }
+  virtual float calculateDistance(float fuel) {
+  return fuel * fuelEfficiency;
+  }
+  virtual float maxSpeed() {
+  return 0; 
+  }
+  };
+  class Truck : public Vehicle {
+  private:
+  float loadCapacity; 
+  public:
+  Truck(const char* mk, const char* md, int yr, const char* 
+  fuel, float eff, float load)
+  : Vehicle(mk, md, yr, fuel, eff), loadCapacity(load) {}
+  void displayInfo() override {
+  Vehicle::displayInfo();
+  cout<< "Load Capacity: "<< loadCapacity<< " tons"<< endl;
+  }
+  float maxSpeed() override {
+  return 80; 
+  }
+  };
+  class Car : public Vehicle {
+  private:
+  int numDoors;
+  public:
+  Car(const char* mk, const char* md, int yr, const 
+  char* fuel, float eff, int doors)
+  : Vehicle(mk, md, yr, fuel, eff), numDoors(doors) {}
+  void displayInfo() override {
+  Vehicle::displayInfo();
+  cout << "Number of Doors: " << numDoors << endl;
+  }
+  float maxSpeed() override {
+  return 180;
+  }
+  };
+  class Motorcycle : public Vehicle {
+  private:
+  bool hasSidecar;
+  public:
+  Motorcycle(const char* mk, const char* md, int yr, 
+  const char* fuel, float eff, bool sidecar)
+  : Vehicle(mk, md, yr, fuel, eff), hasSidecar(sidecar) {}
+  void displayInfo() override {
+  Vehicle::displayInfo();
+  cout<< "Has Sidecar: "<< (hasSidecar?"Yes" :"No") << endl;
+  }
+  float maxSpeed() override {
+  return 120; 
+  }
+  };
+  void main() {
+  clrscr();
+  Truck truck("Ford", "F-150", 2020, "Diesel", 8.0, 5.0);
+  Car car("Toyota", "Corolla", 2022, "Petrol", 15.0, 4);
+  Motorcycle bike("Harley", "Davidson", 2021, "Petrol", 
+  20.0, false);
+  cout << "Vehicle Information:\n\n";
+  truck.displayInfo();
+  cout << "Max Speed: " << truck.maxSpeed() << " km/h\n\n";
+  car.displayInfo();
+  cout << "Max Speed: " << car.maxSpeed() << " km/h\n\n";
+  bike.displayInfo();
+  cout << "Max Speed: " << bike.maxSpeed() << " km/h\n\n";
+  delay(5000);
+  }
+            </code></pre>
+            <h2>Output:</h2>
+            <p>Vehicle Information:
+              Make: Ford, Model: F-150, Year: 2020, Fuel Type: Diesel, Fuel Efficiency: 8 km/l
+              Load Capacity: 5 tons
+              Max Speed: 80 km/h
+              <br>
+              <br>
+              Make: Toyota, Model: Corolla, Year: 2022, Fuel Type: Petrol, Fuel Efficiency: 15 km/l
+              Number of Doors: 4
+              Max Speed: 180 km/h
+              <br>
+              <br>
+              Make: Harley, Model: Davidson, Year: 2021, Fuel Type: Petrol, Fuel Efficiency: 20 km/l
+              Has Sidecar: No
+              Max Speed: 120 km/h</p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head9" />
+        <label for="collapsible-head9"
+          >10. Write a C++ program that creates a class hierarchy for employees of a company. The base class should be Employee, with derived classes Manager, Developer, and Programmer. Each derived class should have properties such as name, address, salary, and job title. Implement methods for calculating bonuses, generating performance reports, and managing projects.</label
+        >
+        <div class="collapsible-text">
+          <h2>Inheritence 10:</h2>
+          <p>
+           <pre><code>
+  #include iostream.h
+  #include conio.h 
+  #include string.h
+  #include dos.h
+  class Employee {
+  protected:
+  char name[50];
+  char address[100];
+  float salary;
+  char jobTitle[30];
+  public:
+  Employee(const char* nm, const char* addr, 
+  float sal, const char* title) {
+  strcpy(name, nm);
+  strcpy(address, addr);
+  salary = sal;
+  strcpy(jobTitle, title);
+  }
+  virtual void displayInfo() {
+  cout << "Name: " << name << ", Address: " << address
+  << ", Job Title: "<< jobTitle<< ", Salary: $"<< salary<< endl;
+  }
+  virtual float calculateBonus() {
+  return salary * 0.10; 
+  }
+  virtual void performanceReport() {
+  cout<< "Performance Report for "<< name<< ": 
+  Satisfactory"<< endl;
+  }
+  };
+  class Manager : public Employee {
+  private:
+  int numOfProjects;
+  public:
+  Manager(const char* nm, const char* addr, float sal, 
+  const char* title, int projects)
+  : Employee(nm, addr, sal, title), numOfProjects(projects) {}
+  void displayInfo() override {
+  Employee::displayInfo();
+  cout<< "Number of Projects Managed: "<< numOfProjects<< endl;
+  }
+  float calculateBonus() override {
+  return salary * 0.20; 
+  }
+  void performanceReport() override {
+  cout<< "Performance Report for Manager "<< name<< ": 
+  Excellent"<< endl;
+  }
+  void manageProjects() {
+  cout<< name<< " is managing "<< numOfProjects<< " 
+  projects."<< endl;
+  }
+  };
+  class Developer : public Employee {
+  private:
+  char programmingLanguage[30];
+  public:
+  Developer(const char* nm, const char* addr, float sal, c
+  onst char* title, const char* lang)
+  : Employee(nm, addr, sal, title) {
+  strcpy(programmingLanguage, lang);
+  }
+  void displayInfo() override {
+  Employee::displayInfo();
+  cout << "Programming Language: " << programmingLanguage << endl;
+  }
+  float calculateBonus() override {
+  return salary * 0.15; 
+  }
+  void performanceReport() override {
+  cout<< "Performance Report for Developer "<< name<< ": 
+  Good"<< endl;
+  }
+  void developSoftware() {
+  cout<< name<< " is developing software using "<< 
+  programmingLanguage<< "."<< endl;
+  }
+  };
+  class Programmer : public Developer {
+  private:
+  int linesOfCode;
+  public:
+  Programmer(const char* nm, const char* addr, float sal, 
+  const char* title, const char* lang, int loc)
+  : Developer(nm, addr, sal, title, lang), linesOfCode(loc) {}
+  void displayInfo() override {
+  Developer::displayInfo();
+  cout << "Lines of Code Written: " << linesOfCode << endl;
+  }
+  float calculateBonus() override {
+  return salary * 0.18; 
+  }
+  void performanceReport() override {
+  cout << "Performance Report for Programmer " << name << ": 
+  Outstanding" << endl;
+  }
+  void writeCode() {
+  cout << name << " has written " << linesOfCode << " 
+  lines of code." << endl;
+  }
+  };
+  void main() {
+  clrscr();
+  Manager mgr("Alice Johnson", "123 Main St", 90000, 
+  "Project Manager", 5);
+  Developer dev("Bob Smith", "456 Oak Ave", 75000, 
+  "Software Developer", "C++");
+  Programmer prog("Charlie Davis", "789 Pine Rd", 70000, 
+  "Junior Programmer", "Python", 12000);
+  cout << "Employee Information:\n\n";
+  mgr.displayInfo();
+  cout << "Bonus: $" << mgr.calculateBonus() << endl;
+  mgr.performanceReport();
+  mgr.manageProjects();
+  cout << "\n";
+  dev.displayInfo();
+  cout << "Bonus: $" << dev.calculateBonus() << endl;
+  dev.performanceReport();
+  dev.developSoftware();
+  cout << "\n";
+  prog.displayInfo();
+  cout << "Bonus: $" << prog.calculateBonus() << endl;
+  prog.performanceReport();
+  prog.writeCode();
+  cout << "\n";
+  delay(5000);
+  }
+           </code></pre>
+           <h2>Output:</h2>
+           <p>Employee Information:
+            <br>
+            Name: Alice Johnson, Address: 123 Main St, Job Title: Project Manager, Salary: $90000
+            Number of Projects Managed: 5
+            Bonus: $18000
+            Performance Report for Manager Alice Johnson: Excellent
+            Alice Johnson is managing 5 projects.
+            <br>
+            <br>
+            Name: Bob Smith, Address: 456 Oak Ave, Job Title: Software Developer, Salary: $75000
+            Programming Language: C++
+            Bonus: $11250
+            Performance Report for Developer Bob Smith: Good
+            Bob Smith is developing software using C++.
+            <br>
+            <br>
+            Name: Charlie Davis, Address: 789 Pine Rd, Job Title: Junior Programmer, Salary: $70000
+            Programming Language: Python
+            Lines of Code Written: 12000
+            Bonus: $12600
+            Performance Report for Programmer Charlie Davis: Outstanding
+            Charlie Davis has written 12000 lines of code.
+            </p>
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
