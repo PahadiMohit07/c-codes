@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2d Arrays</title>
+    <link rel="stylesheet" href="codes.css" />
+  </head>
+  <body>
+    <h1>2d Arrays</h1>
+    <div class="wrapper">
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head" />
+        <label for="collapsible-head"
+          >1. Enter the Matrix of rows and columns entered by the user and print
+          in matrix format</label
+        >
+        <div class="collapsible-text">
+          <h2>2d Arrays 1:</h2>
+          <p>
+            <pre>
+              <code>
+  #include iostream.h
+  #include dos.h
+  #include conio.h
+  void main(){
+  clrscr();
+  int rows,columns;
+  cout<<"rows:";
+  cin>>"rows";
+  cout<<"columns:";
+  cin>>"columns";
+  int matrix[5][5];
+  cout<<"enter elements:";
+  for(int i=0;i< rows;i++)
+  {
+  for(int j=0;j< columns;j++){
+  cout<<"elements at position("<< i+1<< ","<< j+1<<"):";
+  cin>>matrix[i][j];
+  }
+  }
+  cout<<"entered matrix is:";
+  for(i=0;i< rows;i++){
+  for(int j=0;j< columns;j++){
+  cout<< matrix[i][j];
+  }
+  cout<<"\n";
+  }
+  delay(1000);
+  }
+              </code>
+            </pre>
+            <h2>Input:</h2>
+            <p>Enter number of rows: 2,
+              <br>
+              Enter number of columns: 3,
+              <br>
+              Enter elements of the matrix:
+              <br>
+              Element at position (1,1): 5
+              <br>
+              Element at position (1,2): 8
+              <br>
+              Element at position (1,3): 2
+              <br>
+              Element at position (2,1): 4
+              <br>
+              Element at position (2,2): 7
+              <br>
+              Element at position (2,3): 3</p>
+              <h2>Output:</h2>
+              <p>Entered matrix is:
+                <br>
+                5 8 2
+                <br>
+                4 7 3</p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head1" />
+        <label for="collapsible-head1">2. Program to Add Two Matrices</label>
+        <div class="collapsible-text">
+          <h2>2d Arrays 2:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include conio.h
+  #include dos.h
+  void main(){
+  clrscr();
+  int A[100][100],B[100][100],C[100][100];
+  int m,n;
+  cout<<"enter number of rows and columns:";
+  cin>>m>>n;
+  cout<<"enter elements of first matrix:";
+  for(int i=0;i< m;i++){
+  for(int j=0;j< n;j++){
+  cin>>A[i][j];
+  }
+  }
+  cout<<"enetr elements of second matrix:";
+  for(i=0;i< m;i++){
+  for(int j=0;j< n;j++){
+  cin>>B[i][j];
+  }
+  }
+  for(i=0;i< m;i++){
+  for(int j=0 ; j < n;j++){
+  C[i][j]=A[i][j]+ B[i][j];
+  }
+  delay(1000);
+  }
+  }            
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Enter number of rows and columns: 2 3
+              <br>
+              Enter elements of first matrix:
+              <br>
+              1 2 3
+              <br>
+              4 5 6
+              <br>
+              Enter elements of second matrix:
+              <br>
+              7 8 9
+              <br>
+              10 11 12</p>
+              <h2>Output:</h2>
+              <p>Resultant Matrix (A + B):
+                <br>
+                8 10 12
+                <br>
+                14 16 18</p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head2" />
+        <label for="collapsible-head2"
+          >3. Program to Multiply Two Matrices</label
+        >
+        <div class="collapsible-text">
+          <h2>2d Arrays 3:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include dos.h
+  #include conio.h
+  void main(){
+  clrscr();
+  int m,n,p;
+  int A[100][100],B[100][100],C[100][100];
+  cout<<"enter no of rows and columns of matrix:";
+  cin>>m>>n;
+  cout<<"enter no of second matrix:";
+  cin>>p;
+  cout<<"enter elements of first:";
+  for(int i=0;i< m;i++){
+  for(int j=0;j< n;j++){
+  cin>>A[i][j];
+  }
+  }
+  cout<<"enter elements of second:";
+  for(i=0;i< n;i++){
+  for(int j=0;j< p;j++){
+  cin>>B[i][j];
+  }
+  }
+  for(i=0;i< m;i++){
+  for(int j=0;j< p;j++){
+  C[i][j]=0;
+  }
+  }
+  for(i=0;i< m;i++){
+  for(int j=0;j< p;j++){
+  for(int k=0;k< n;k++){
+  C[i][j]+= A[i][k]*B[k][j];
+  }
+  }
+  }
+  cout<<"product:";
+  for(i=0;i< m;i++){
+  for(int j=0;j< p;j++){
+  cout<< C[i][j];
+  }
+  cout<< endl;
+  }
+  delay(1000);
+  }</code></pre>
+  <h2>Input:</h2>
+  <p>Enter number of rows and columns of first matrix (m n): 2 3
+    <br>
+    Enter number of columns of second matrix (p): 2
+    <br>
+    Enter elements of first matrix (2x3):
+    <br>
+    1 2 3
+    <br>
+    4 5 6
+    <br>
+    Enter elements of second matrix (3x2):
+    <br>
+    7 8
+    <br>
+    9 10
+    <br>
+    11 12
+    </p>
+    <h2>Output:</h2>
+    <p>Product of the matrices is:
+      <br>
+      58 64
+      <br>
+      139 154</p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head3" />
+        <label for="collapsible-head3"
+          >4. Program to subtract the two matrices</label
+        >
+        <div class="collapsible-text">
+          <h2>2d Arrays 4:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include dos.h
+  #include conio.h
+  void main(){
+  clrscr();
+  int m,n;
+  cout<<"enter number of rows and columns:";
+  cin>>m>>n;
+  int A[100][100], B[100][100], C[100][100];
+  cout<<"enter elements of first matrix:";
+  for(int i=0;i< m;i++){
+  for(int j=0;j< n;j++){
+  cin>> A[i][j];}
+  }
+  cout<<"enter elements of second matrix:";
+  for(i=0;i< m;i++){
+  for(int j=0;j< n;j++){
+  cin>> B[i][j];}
+  }
+  for(i=0;i< m;i++){
+  for(int j=0;j< n;j++){
+  C[i][j] = A[i][j] - B[i][j];}}
+  delay(1000);
+  }
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Enter number of rows and columns: 2 3
+              <br>
+              Enter elements of first matrix:
+              <br>
+              5 8 3
+              <br>
+              4 7 9
+              <br>
+              Enter elements of second matrix:
+              <br>
+              1 2 3
+              <br>
+              4 5 6</p>
+              <h2>Output:</h2>
+              <p>Resultant Matrix (A - B):
+                <br>
+                4 6 0
+                <br>
+                0 2 3</p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head4" />
+        <label for="collapsible-head4"
+          >5. Program to determine whether two matrices are equal</label
+        >
+        <div class="collapsible-text">
+          <h2>2d Arrays 5:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include dos.h 
+  #include conio.h 
+  void main(){
+  clrscr();
+  int m,n;
+  cout<<"enter number of rows and columns:";
+  cin>>m>>n;
+  int A[100][100], B[100][100];
+  int isequal= 0;
+  cout<<"enter elements of first matrix:";
+  for(int i=0;i< m;i++){
+  for(int j=0;j< n;j++){
+  cin>> A[i][j];}
+  }
+  cout<<"enter elements of second matrix:";
+  for(i=0;i< m;i++){
+  for(int j=0;j< n;j++){
+  cin>> B[i][j];}
+  }
+  for(i=0;i< m && isequal;i++){
+  for(int j=0;j< n;j++){
+  if(A[i][j] != B[i][j]){
+  isequal = 0;
+  break;
+  }
+  }
+  }
+  if(isequal){
+  cout<<"matrices are equal.";
+  }else{cout<<"matrices are not equal.";
+  }
+  delay(1000);
+  }
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Enter number of rows and columns: 2 3
+              <br>
+              Enter elements of first matrix:
+              <br>
+              1 2 3
+              <br>
+              4 5 6
+              <br>
+              Enter elements of second matrix:
+              <br>
+              1 2 3
+              <br>
+              4 5 6</p>
+              <h2>Output:</h2>
+              <p>Matrices are equal.</p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head5" />
+        <label for="collapsible-head5"
+          >6. Program to display the lower triangular matrix</label>
+        <div class="collapsible-text">
+          <h2>2d Arrays 6:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include dos.h 
+  #include conio.h
+  void main(){
+  clrscr();
+  int m,n,A[100][100];
+  cout<<"enter number of matrix:";
+  cin>>m>>n;
+  cout<<"enter elements:";
+  for(int i=0;i< m;i++){
+  for(int j=0;j< n;j++){
+  cin>> A[i][j];}}
+  cout<<"lower triangularmatrix:";
+  for(i=0;i< m;i++){
+  for(int j=0;j< n;j++){
+  if(j>i){
+  cout<<"0";
+  }else{
+  cout<< A[i][j];
+  }
+  cout<< endl;
+  }
+  delay(1000);
+  }
+  }
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Enter number of rows and columns of the matrix: 3 3
+              <br>
+              Enter elements of the matrix:
+              <br>
+              1 2 3
+              <br>
+              4 5 6
+              <br>
+              7 8 9
+              </p>
+              <h2>Output:</h2>
+              <p>Lower Triangular Matrix:
+                <br>
+                1 0 0 
+                <br>
+                4 5 0 
+                <br>
+                7 8 9 </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head6" />
+        <label for="collapsible-head6"
+          >7. Program to display the upper triangular matrix</label
+        >
+        <div class="collapsible-text">
+          <h2>2d Arrays 7:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include dos.h
+  #include conio.h
+  void main(){
+  int A[100][100];
+  int m,n;
+  cout<<"enter number of rows and columns:";
+  cin>> m>>n;
+  cout<<"enter elements of matrix:";
+  for (int i=0;i< m;i++){
+  for (int j=0;j< n;j++){
+  cin>>A[i][j];
+  }
+  }
+  cout<<"upper triangular matrix:";
+  for(i=0;i< m;i++){
+  for(int j=0;j< n;j++){
+  if(i>j){
+  cout<<"0";
+  }else{
+  cout<< A[i][j];
+  }
+  }
+  cout<< endl;
+  }delay(1000);
+  }
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Enter number of rows and columns: 3 3
+              <br>
+              Enter elements of the matrix:
+              <br>
+              1 2 3
+              <br>
+              4 5 6
+              <br>
+              7 8 9</p>
+              <h2>Output:</h2>
+              <p>Upper Triangular Matrix:
+                <br>
+                1 2 3 
+                <br>
+                0 5 6 
+                <br>
+                0 0 9 </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head7" />
+        <label for="collapsible-head7"
+          >8. Program to find the frequency of odd & even numbers in the given matrix</label
+        >
+        <div class="collapsible-text">
+          <h2>2d Arrays 8:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include dos.h 
+  #include conio.h
+  void main(){
+  clrscr();
+  int rows,cols,i,j,evencount=0,oddcount=0;
+  cout<<"enter number of rows and columns:";
+  cin>>rows>>cols;
+  int matrix[5][5];
+  cout<<"enter elemenets of matrix:";
+  for(i=0;i< 5;i++){
+  for(j=0;j< 5;j++){
+  cin>> matrix[i][j];
+  if(matrix[i][j]%2==0)
+  evencount++;
+  else
+  oddcount++;
+  }
+  }
+  cout<<"even number frequency:"<< evencount;
+  cout<<"odd number frequency:"<< oddcount;
+  delay(1000);
+  }
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Enter number of rows and columns: 3 3
+              <br>
+              Enter elements of the matrix:
+              <br>
+              1 2 3
+              <br>
+              4 5 6
+              <br>
+              7 8 9</p>
+              <h2>Output:</h2>
+              <p>Even number frequency: 4
+                <br>
+                Odd number frequency: 5</p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head8" />
+        <label for="collapsible-head8"
+          >9. Program to find the sum of each row and each column of a matrix</label
+        >
+        <div class="collapsible-text">
+          <h2>2d Arrays 9:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include conio.h
+  #include dos.h
+  void main() {
+  int rows, cols;
+  clrscr();
+  cout << "Enter the number of rows and columns: ";
+  cin >> rows >> cols;
+  int matrix[100][100];  
+  int rowSum[100] = {0};  
+  int colSum[100] = {0}; 
+  cout << "Enter matrix elements:\n";
+  for (int i = 0; i < rows; i++) {
+  for (int j = 0; j < cols; j++) {
+  cin >> matrix[i][j];
+  }
+  }
+  for (int i = 0; i < rows; i++) {
+  for (int j = 0; j < cols; j++) {
+  rowSum[i] += matrix[i][j];
+  colSum[j] += matrix[i][j];
+  }
+  }
+  cout << "\nSum of each row:\n";
+  for (int i = 0; i < rows; i++) {
+  cout << "Row " << i + 1 << ": " << rowSum[i] << endl;
+  }
+  cout << "\nSum of each column:\n";
+  for (int j = 0; j < cols; j++) {
+  cout << "Column " << j + 1 << ": " << colSum[j] << endl;
+  }
+  delay(5000);
+  }
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Enter the number of rows and columns: 3 3
+              <br>
+              Enter matrix elements:
+              <br>
+              1 2 3
+              <br>
+              4 5 6
+              <br>
+              7 8 9</p>
+              <h2>Output:</h2>
+              <p>Sum of each row:
+                <br>
+                Row 1: 6
+                <br>
+                Row 2: 15
+                <br>
+                Row 3: 24
+                <br>
+                <br>
+                Sum of each column:
+                <br>
+                Column 1: 12
+                <br>
+                Column 2: 15
+                <br>
+                Column 3: 18</p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head9" />
+        <label for="collapsible-head9"
+          >10. Program to determine whether a given matrix is an identity matrix</label
+        >
+        <div class="collapsible-text">
+          <h2>2d Arrays 10:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include dos.h
+  #include conio.h
+  void main(){
+  clrscr();
+  int n,flag=1;
+  cout<<"enter size of square matrix:";
+  cin>>n;
+  int mat[10][10];
+  cout<<"enter matrix number:";
+  for(int i=0;i< 10;i++){
+  for(int j=0;j< 10;j++){
+  cin>>mat[i][j];
+  if((i==j && mat[i][j] !=1)||(i !=j && mat[i][j] !=0)){
+  flag=0;}
+  }
+  }
+  if(flag)
+  cout<<"identity matrix";
+  else
+  cout<<"not an identity matrix";
+  delay(1000);
+  }
+              </code></pre>
+              <h2>Input:</h2>
+              <p>Enter size of square matrix: 3
+                <br>
+                Enter elements of the matrix:
+                <br>
+                1 0 0
+                <br>
+                0 1 0
+                <br>
+                0 0 1</p>
+                <h2>Output:</h2>
+                <p>Identity matrix</p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head10" />
+        <label for="collapsible-head10"
+          >11. Program to Transpose matrix</label
+        >
+        <div class="collapsible-text">
+          <h2>2d Arrays 11:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include dos.h
+  #include conio.h
+  void main(){
+  clrscr();
+  int mat[3][3],trans[3][3];
+  cout<<"enter matrix element:";
+  for(int i=0;i< 3;i++){
+  for(int j=0;j< 3;j++){
+  cin>>mat[i][j];
+  }
+  }
+  for(i=0;i< 3;i++){
+  for(int j=0;j< 3;j++){
+  trans[j][i]=mat[i][j];
+  }
+  }
+  cout<<"transposed matrix:";
+  for(i=0;i< 3;i++){
+  for(int j=0;j< 3;j++){
+  cout<< trans[i][j];
+  }
+  cout<< endl;
+  }
+  delay(1000);
+  }
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Enter matrix elements (3x3):
+              <br>
+              1 2 3
+              <br>
+              4 5 6
+              <br>
+              7 8 9</p>
+            <h2>Output:</h2>
+            <p>Transposed Matrix:
+              <br>
+              1 4 7
+              <br>
+              2 5 8
+              <br>
+              3 6 9</p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head11" />
+        <label for="collapsible-head11"
+          >12. Program to determine whether a given matrix is a sparse matrix</label
+        >
+        <div class="collapsible-text">
+          <h2>2d Arrays 12:</h2>
+          <p>
+           <pre><code>
+  #include iostream.h
+  #include dos.h
+  #include conio.h
+  void main(){
+  clrscr();
+  int rows,cols,count=0;
+  cout<<"enter number of rows and columns:";
+  cin>>rows>>cols;
+  int mat[5][5];
+  cout<<"enter matrix elements:";
+  for(int i=0;i< 5;i++){
+  for(int j=0;j< 5;j++){
+  cin>>mat[i][j];
+  if(mat[i][j]==0){
+  count++;}
+  }
+  }
+  if(count>(5*5)/2){
+  cout<<"sparse matrix.";
+  }else{
+  cout<<"not sparse matrix.";}
+  delay(1000);
+  }
+           </code></pre>
+           <h2>Input:</h2>
+           <p>Enter number of rows and columns: 3 3
+            <br>
+            Enter matrix elements:
+            <br>
+            0 0 1
+            <br>
+            0 0 0
+            <br>
+            4 0 0</p>
+           <h2>Output:</h2>
+           <p>Sparse matrix.</p>
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
