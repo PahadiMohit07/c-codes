@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Virtual Function</title>
+    <link rel="stylesheet" href="codes.css" />
+  </head>
+  <body>
+    <h1>Virtual Function</h1>
+    <div class="wrapper">
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head" />
+        <label for="collapsible-head"
+          >1. Write a C++ program to create an abstract class Animal with an abstract method called sound(). Create derived classes Lion and Tiger that extend the Animal class and implement the sound() method to make a specific sound for each animal.</label
+        >
+        <div class="collapsible-text">
+          <h2>Virtual Function 1:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include conio.h
+  #include dos.h
+  class Animal {
+  public:
+  virtual void sound() = 0;
+  };
+  class Lion : public Animal {
+  public:
+  void sound() {
+  cout << "The Lion roars!" << endl;
+  }
+  };
+  class Tiger : public Animal {
+  public:
+  void sound() {
+  cout << "The Tiger growls!" << endl;
+  }
+  };
+  void main() {
+  clrscr();
+  Lion lion;
+  Tiger tiger;
+  lion.sound();
+  tiger.sound();
+  delay(5000);
+  }
+                     </code></pre>
+  <h2>Output:</h2>
+  <p>The Lion roars!
+  <br>
+  The Tiger growls!</p>          
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head1" />
+        <label for="collapsible-head1"
+          >2. Write a C++ program to create an abstract class Shape with abstract methods calculateArea() and calculatePerimeter(). Create derived classes Circle and Triangle that extend the Shape class and implement the respective methods to calculate the area and perimeter of each shape.</label
+        >
+        <div class="collapsible-text">
+          <h2>Virtual Function 2:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include conio.h
+  #include math.h
+  #include dos.h
+  class Shape {
+  public:
+  virtual float calculateArea() = 0;          
+  virtual float calculatePerimeter() = 0;     
+  };
+  class Circle : public Shape {
+  private:
+  float radius;
+  public:
+  Circle(float r) : radius(r) {}
+  float calculateArea() {
+  return 3.14 * radius * radius;  
+  }
+  float calculatePerimeter() {
+  return 2 * 3.14 * radius;  
+  }
+  };
+  class Triangle : public Shape {
+  private:
+  float a, b, c;  
+  public:
+  Triangle(float side1, float side2, float side3) : 
+  a(side1), b(side2), c(side3) {}
+  float calculateArea() {
+  float s = (a + b + c) / 2;  
+  return sqrt(s * (s - a) * (s - b) * (s - c));  
+  }
+  float calculatePerimeter() {
+  return a + b + c;  
+  }
+  };
+  void main() {
+  clrscr();
+  Shape* shape1 = new Circle(5);
+  Shape* shape2 = new Triangle(3, 4, 5);
+  cout<<"Circle Area: "<< shape1->calculateArea()<< endl;
+  cout<<"Circle Perimeter: "<< shape1->calculatePerimeter()<< 
+  endl;
+  cout<< "Triangle Area: "<< shape2->calculateArea()<< endl;
+  cout<<"Triangle Perimeter: "<< shape2->calculatePerimeter()<< 
+  endl;
+  delay(5000);
+  }
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Circle(5), Triangle(3, 4, 5)
+            </p>
+            <h2>Output:</h2>
+            <p>Circle Area: 78.5
+              <br>
+              Circle Perimeter: 31.4
+              <br>
+              Triangle Area: 6
+              <br>
+              Triangle Perimeter: 12</p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head2" />
+        <label for="collapsible-head2"
+          >3. Write a C++ program to create an abstract class BankAccount with abstract methods deposit() and withdraw(). Create derived classes: SavingsAccount and CurrentAccount that extend the BankAccount class and implement the respective methods to handle deposits and withdrawals for each account type.</label
+        >
+        <div class="collapsible-text">
+          <h2>Virtual Function 3:</h2>
+          <p>
+            <pre><code>
+  #includeiostream.h
+  #includeconio.h
+  #include dos.h
+  class BankAccount {
+  protected:
+  float balance;  
+  public:
+  BankAccount() : balance(0.0) {}  
+  virtual void deposit(float amount) = 0;
+  virtual void withdraw(float amount) = 0;
+  void displayBalance() {
+  cout << "Current Balance: " << balance << endl;
+  }
+  };
+  class SavingsAccount : public BankAccount {
+  public:
+  SavingsAccount() {
+  balance = 1000.0;  
+  }
+  void deposit(float amount) {
+  if (amount > 0) {
+  balance += amount; 
+  cout<<"Deposited "<< amount<<" into SavingsAccount."<< endl;
+  } else {
+  cout << "Invalid deposit amount!" << endl;
+  }
+  }
+  void withdraw(float amount) {
+  if (amount > 0 && amount <= balance) {
+  balance -= amount;  
+  cout<<"Withdrew "<< amount<<" from SavingsAccount."<< endl;
+  } else {
+  cout<<"Invalid withdrawal amount or insufficient balance!"<< 
+  endl;
+  }
+  }
+  };
+  class CurrentAccount : public BankAccount {
+  public:
+  CurrentAccount() {
+  balance = 2000.0;  
+  }
+  void deposit(float amount) {
+  if (amount > 0) {
+  balance += amount;
+  cout<<"Deposited "<< amount<<" into CurrentAccount."<< endl;
+  } else {
+  cout << "Invalid deposit amount!" << endl;
+  }
+  }
+  void withdraw(float amount) {
+  if (amount > 0 && amount <= balance) {
+  balance -= amount; 
+  cout<<"Withdrew "<< amount <<" from CurrentAccount." << endl;
+  } else {
+  cout<< "Invalid withdrawal amount or insufficient balance!"<< 
+  endl;
+  }
+  }
+  };
+  void main() {
+  clrscr();
+  BankAccount* account1 = new SavingsAccount();
+  account1->deposit(500);
+  account1->withdraw(200);
+  account1->displayBalance();
+  BankAccount* account2 = new CurrentAccount();
+  account2->deposit(1000);
+  account2->withdraw(500);
+  account2->displayBalance();
+  delay(500);
+  }
+            </code></pre>
+            <h2>Output:</h2>
+            <p>Deposited 500 into SavingsAccount.
+              <br>
+              Withdrew 200 from SavingsAccount.
+              <br>
+              Current Balance: 1300
+              <br>
+              Deposited 1000 into CurrentAccount.
+              <br>
+              Withdrew 500 from CurrentAccount.
+              <br>
+              Current Balance: 2500</p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head3" />
+        <label for="collapsible-head3"
+          >4. Write a C++ program to create an abstract class Animal with abstract methods eat() and sleep(). Create derived classes Lion, Tiger, and Deer that extend the Animal class and implement the eat() and sleep() methods differently based on their specific behavior.</label
+        >
+        <div class="collapsible-text">
+          <h2>Virtual Function 4:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include conio.h
+  #include dos.h
+  class Animal {
+  public:
+  virtual void eat() = 0;
+  virtual void sleep() = 0;
+  };
+  class Lion : public Animal {
+  public:
+  void eat() {
+  cout << "Lion eats meat." << endl;
+  }
+  void sleep() {
+  cout<<"Lion sleeps under a tree after hunting."<< endl;
+  }
+  };
+  class Tiger : public Animal {
+  public:
+  void eat() {
+  cout << "Tiger eats fresh prey." << endl;
+  }
+  void sleep() {
+  cout << "Tiger sleeps in the dense forest." << endl;
+  }
+  };
+  class Deer : public Animal {
+  public:
+  void eat() {
+  cout << "Deer eats grass and plants." << endl;
+  }
+  void sleep() {
+  cout<<"Deer sleeps in the forest, staying alert."<< endl;
+  }
+  };
+  void main() {
+  clrscr();
+  Animal* lion = new Lion();
+  Animal* tiger = new Tiger();
+  Animal* deer = new Deer();
+  cout << "Lion: " << endl;
+  lion->eat();
+  lion->sleep();
+  cout << "\nTiger: " << endl;
+  tiger->eat();
+  tiger->sleep();
+  cout << "\nDeer: " << endl;
+  deer->eat();
+  deer->sleep();
+  delay(5000);
+  }
+            </code></pre>
+            <h2>Output:</h2>
+            <p>Lion: 
+              <br>
+              Lion eats meat.
+              <br>
+              Lion sleeps under a tree after hunting.
+              <br>
+              <br>
+              Tiger: 
+              <br>
+              Tiger eats fresh prey.
+              <br>
+              Tiger sleeps in the dense forest.
+              <br>
+              <br>
+              Deer: 
+              <br>
+              Deer eats grass and plants.
+              <br>
+              Deer sleeps in the forest, staying alert.</p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head4" />
+        <label for="collapsible-head4"
+          >5. Write a C++ program to create an abstract class Employee with abstract methods calculateSalary() and displayInfo(). Create derived classes Manager and Programmer that extend the Employee class and implement the respective methods to calculate salary and display information for each role.</label
+        >
+        <div class="collapsible-text">
+          <h2>Virtual Function 5:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include conio.h
+  #include dos.h
+  class Employee {
+  public:
+  virtual void calculateSalary() = 0;  
+  virtual void displayInfo() = 0;     
+  };
+  class Manager : public Employee {
+  private:
+  float baseSalary;
+  float bonus;
+  public:
+  Manager(float base, float bns) : baseSalary(base), bonus(bns) {}
+  void calculateSalary() {
+  float totalSalary = baseSalary + bonus;  
+  cout << "Manager's Salary: " << totalSalary << endl;
+  }
+  void displayInfo() {
+  cout << "Manager Information:" << endl;
+  cout << "Base Salary: " << baseSalary << endl;
+  cout << "Bonus: " << bonus << endl;
+  }
+  };
+  class Programmer : public Employee {
+  private:
+  float hourlyRate;
+  int hoursWorked;
+  public:
+  Programmer(float rate, int hours) : hourlyRate(rate), 
+  hoursWorked(hours) {}
+  void calculateSalary() {
+  float totalSalary = hourlyRate * hoursWorked;  
+  cout << "Programmer's Salary: " << totalSalary << endl;
+  }
+  void displayInfo() {
+  cout << "Programmer Information:" << endl;
+  cout << "Hourly Rate: " << hourlyRate << endl;
+  cout << "Hours Worked: " << hoursWorked << endl;
+  }
+  };
+  void main() {
+  clrscr();
+  Employee* manager = new Manager(50000, 10000);  
+  Employee* programmer = new Programmer(300, 160); 
+  manager->displayInfo();
+  manager->calculateSalary();
+  programmer->displayInfo();
+  programmer->calculateSalary();
+  delay(5000);
+  }
+            </code></pre>
+            <h2>Output:</h2>
+            <p>Manager Information:
+              <br>
+              Base Salary: 50000
+              <br>
+              Bonus: 10000
+              <br>
+              Manager's Salary: 60000
+              <br>
+              <br>
+              Programmer Information:
+              <br>
+              Hourly Rate: 300
+              <br>
+              Hours Worked: 160
+              <br>
+              Programmer's Salary: 48000</p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head5" />
+        <label for="collapsible-head5"
+          >6. Write a C++ program to create an abstract class Shape3D with abstract methods calculateVolume() and calculateSurfaceArea(). Create derived classes Sphere and Cube that extend the Shape3D class and implement the respective methods to calculate the volume and surface area of each shape</label
+        >
+        <div class="collapsible-text">
+          <h2>Virtual Function 6:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include conio.h
+  #include math.h
+  #inlcude dos.h
+  class Shape3D {
+  public:
+  virtual void calculateVolume() = 0;         
+  virtual void calculateSurfaceArea() = 0;    
+  };
+  class Sphere : public Shape3D {
+  private:
+  float radius;  
+  public:
+  Sphere(float r) : radius(r) {}
+  void calculateVolume() {
+  float volume = (4.0 / 3.0) * 3.14 * radius 
+  * radius * radius;  
+  cout << "Sphere Volume: " << volume << endl;
+  }
+  void calculateSurfaceArea() {
+  float surfaceArea = 4 * 3.14 * radius * radius;  
+  cout<< "Sphere Surface Area: " << surfaceArea << endl;
+  }
+  };
+  class Cube : public Shape3D {
+  private:
+  float side;  
+  public:
+  Cube(float s) : side(s) {}
+  void calculateVolume() {
+  float volume = side * side * side;  
+  cout << "Cube Volume: " << volume << endl;
+  }
+  void calculateSurfaceArea() {
+  float surfaceArea = 6 * side * side;  
+  cout << "Cube Surface Area: " << surfaceArea << endl;
+  }
+  };
+  void main() {
+  clrscr();
+  Shape3D* shape1 = new Sphere(5);
+  Shape3D* shape2 = new Cube(4);
+  shape1->calculateVolume();
+  shape1->calculateSurfaceArea();
+  shape2->calculateVolume();
+  shape2->calculateSurfaceArea();
+  delay(5000);
+  }
+            </code></pre>
+            <h2>Output:</h2>
+            <p>Sphere Volume: 523.333
+              <br>
+              Sphere Surface Area: 314
+              <br>
+              Cube Volume: 64
+              <br>
+              Cube Surface Area: 96</p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head6" />
+        <label for="collapsible-head6"
+          >7. Write a C++ program to create an abstract class Vehicle with abstract methods startEngine() and stopEngine(). Create derived classes Car and Motorcycle that extend the Vehicle class and implement the respective methods to start and stop the engines for each vehicle type.</label
+        >
+        <div class="collapsible-text">
+          <h2>Virtual Function 7:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include conio.h
+  #inlcude dos.h
+  class Vehicle {
+  public:
+  virtual void startEngine() = 0; 
+  virtual void stopEngine() = 0;   
+  };
+  class Car : public Vehicle {
+  public:
+  void startEngine() {
+  cout << "Car engine started." << endl;
+  }
+  void stopEngine() {
+  cout << "Car engine stopped." << endl;
+  }
+  };
+  class Motorcycle : public Vehicle {
+  public:
+  void startEngine() {
+  cout << "Motorcycle engine started." << endl;
+  }
+  void stopEngine() {
+  cout << "Motorcycle engine stopped." << endl;
+  }
+  };
+  void main() {
+  clrscr();  
+  Vehicle* v;
+  Car c;
+  Motorcycle m;
+  cout << "Operating Car:" << endl;
+  v = &c;
+  v->startEngine();
+  v->stopEngine();
+  cout << "\nOperating Motorcycle:" << endl;
+  v = &m;
+  v->startEngine();
+  v->stopEngine();
+  delay(5000);
+  }   
+            </code></pre>
+            <h2>Output:</h2>
+            <p>Operating Car:
+              <br>
+              Car engine started.
+              <br>
+              Car engine stopped.
+              <br>
+              <br>
+              Operating Motorcycle:
+              <br>
+              Motorcycle engine started.
+              <br>
+              Motorcycle engine stopped.</p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head7" />
+        <label for="collapsible-head7"
+          >8. Write a C++ program to create an abstract class Person with abstract methods eat() and exercise(). Create derived classes Athlete and LazyPerson that extend the Person class and implement the respective methods to describe how each person eats and exercises.</label
+        >
+        <div class="collapsible-text">
+          <h2>Virtual Function 8:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include conio.h
+  #include dos.h
+  class Person {
+  public:
+  virtual void eat() = 0;       
+  virtual void exercise() = 0;  
+  };
+  class Athlete : public Person {
+  public:
+  void eat() {
+  cout<<"Athlete eats a balanced diet with proteins 
+  and vitamins."<< endl;
+  }
+  void exercise() {
+  cout<<"Athlete exercises daily with intense 
+  workouts and cardio."<< endl;
+  }
+  };
+  class LazyPerson : public Person {
+  public:
+  void eat() {
+  cout<<"Lazy person eats junk food and snacks all day."<< endl;
+  }
+  void exercise() {
+  cout<<"Lazy person avoids exercise and prefers lying 
+  on the couch."<< endl;
+  }
+  };
+  void main() {
+  clrscr();
+  Person* p;
+  Athlete a;
+  LazyPerson l;
+  cout << "Athlete's routine:" << endl;
+  p = &a;
+  p->eat();
+  p->exercise();
+  cout << "\nLazy Person's routine:" << endl;
+  p = &l;
+  p->eat();
+  p->exercise();
+  delay(5000);
+  }
+            </code></pre>
+            <h2>Output:</h2>
+            <p>Athlete's routine:
+              <br>
+              Athlete eats a balanced diet with proteins and vitamins.
+              <br>
+              Athlete exercises daily with intense workouts and cardio.
+              <br>
+              <br>
+              Lazy Person's routine:
+              <br>
+              Lazy person eats junk food and snacks all day.
+              <br>
+              Lazy person avoids exercise and prefers lying on the couch.
+              </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head8" />
+        <label for="collapsible-head8"
+          >9. Write a C++ program to create an abstract class Instrument with abstract methods play() and tune(). Create derived classes for Glockenspiel and Violin that extend the Instrument class and implement the respective methods to play and tune each instrument.</label
+        >
+        <div class="collapsible-text">
+          <h2>Virtual Function 9:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include conio.h
+  #inlcude dos.h
+  class Instrument {
+  public:
+  virtual void play() = 0;  
+  virtual void tune() = 0;  
+  };
+  class Glockenspiel : public Instrument {
+  public:
+  void play() {
+  cout<<"Playing the glockenspiel with mallets to create 
+  bright tones." << endl;
+  }
+  void tune() {
+  cout<<"Tuning the glockenspiel by adjusting the metal 
+  bars."<< endl;
+  }
+  };
+  class Violin : public Instrument {
+  public:
+  void play() {
+  cout<<"Playing the violin with a bow to create smooth 
+  melodies."<< endl;
+  }
+  void tune() {
+  cout<<"Tuning the violin by adjusting the pegs and fine 
+  tuners."<< endl;
+  }
+  };
+  void main() {
+  clrscr();  
+  Instrument* instrument;
+  Glockenspiel g;
+  Violin v;
+  cout << "Glockenspiel:" << endl;
+  instrument = &g;
+  instrument->play();
+  instrument->tune();
+  cout << "\nViolin:" << endl;
+  instrument = &v;
+  instrument->play();
+  instrument->tune();
+  delay(5000);
+  }
+            </code></pre>
+            <h2>Output:</h2>
+            <p>Glockenspiel:
+              <br>
+              Playing the glockenspiel with mallets to create bright tones.
+              <br>
+              Tuning the glockenspiel by adjusting the metal bars.
+              <br>
+              <br>
+              Violin:
+              <br>
+              Playing the violin with a bow to create smooth melodies.
+              <br>
+              Tuning the violin by adjusting the pegs and fine tuners.</p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head9" />
+        <label for="collapsible-head9"
+          >10. Write a C++ program to create an abstract class Shape2D with abstract methods draw() and resize(). Create derived classes Rectangle and Circle that extend the Shape2D class and implement the respective methods to draw and resize each shape.</label
+        >
+        <div class="collapsible-text">
+          <h2>Virtual Function 10:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include conio.h
+  #inlcude dos.h
+  class Shape2D {
+  public:
+  virtual void draw() = 0;    
+  virtual void resize() = 0;  
+  };
+  class Rectangle : public Shape2D {
+  public:
+  void draw() {
+  cout<<"Drawing a rectangle with length and width."<< endl;
+  }
+  void resize() {
+  cout<<"Resizing the rectangle by adjusting its length and 
+  width."<< endl;
+  }
+  };
+  class Circle : public Shape2D {
+  public:
+  void draw() {
+  cout << "Drawing a circle with a specific radius." << endl;
+  }
+  void resize() {
+  cout << "Resizing the circle by changing its radius." << endl;
+  }
+  };
+  void main() {
+  clrscr();  
+  Shape2D* shape;
+  Rectangle r;
+  Circle c;
+  cout << "Rectangle:" << endl;
+  shape = &r;
+  shape->draw();
+  shape->resize();
+  cout << "\nCircle:" << endl;
+  shape = &c;
+  shape->draw();
+  shape->resize();
+  delay(5000);
+  }
+            </code></pre>
+            <h2>Output:</h2>
+            <p>Rectangle:
+              <br>
+              Drawing a rectangle with length and width.
+              <br>
+              Resizing the rectangle by adjusting its length and width.
+              <br>
+              <br>
+              Circle:
+              <br>
+              Drawing a circle with a specific radius.
+              <br>
+              Resizing the circle by changing its radius.
+              </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head10" />
+        <label for="collapsible-head10"
+          >11. Write a C++ program to create an abstract class GeometricShape with abstract methods area() and perimeter(). Create derived classes Triangle and Square that extend the GeometricShape class and implement the respective methods to calculate the area and perimeter of each shape</label
+        >
+        <div class="collapsible-text">
+          <h2>Virtual Function 12:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include conio.h
+  #include math.h
+  #include dos.h
+  class GeometricShape {
+  public:
+  virtual void area() = 0;      
+  virtual void perimeter() = 0; 
+  };
+  class Triangle : public GeometricShape {
+  private:
+  float a, b, c;
+  public:
+  void getInput() {
+  cout << "Enter sides of the triangle (a, b, c): ";
+  cin >> a >> b >> c;
+  }
+  void area() {
+  float s, ar;
+  s = (a + b + c) / 2;
+  ar = sqrt(s * (s - a) * (s - b) * (s - c));
+  cout << "Area of Triangle = " << ar << endl;
+  }
+  void perimeter() {
+  float peri = a + b + c;
+  cout << "Perimeter of Triangle = " << peri << endl;
+  }
+  };
+  class Square : public GeometricShape {
+  private:
+  float side;
+  public:
+  void getInput() {
+  cout << "Enter side of the square: ";
+  cin >> side;
+  }
+  void area() {
+  float ar = side * side;
+  cout << "Area of Square = " << ar << endl;
+  }
+  void perimeter() {
+  float peri = 4 * side;
+  cout << "Perimeter of Square = " << peri << endl;
+  }
+  };
+  void main() {
+  clrscr();  
+  GeometricShape* shape;
+  Triangle t;
+  Square s;
+  cout << "Triangle:" << endl;
+  t.getInput();
+  shape = &t;
+  shape->area();
+  shape->perimeter();
+  cout << "\nSquare:" << endl;
+  s.getInput();
+  shape = &s;
+  shape->area();
+  shape->perimeter();
+  delay(5000);
+  }
+            </code></pre>
+            <h2>Input:</h2>
+            <p>sides of the triangle (a, b, c): 3 4 5, side of the square: 4</p>
+            <h2>Output:</h2>
+            <p>Triangle:
+              <br>
+              Enter sides of the triangle (a, b, c): 3 4 5
+              <br>
+              Area of Triangle = 6
+              <br>
+              Perimeter of Triangle = 12
+              <br>
+              <br>
+              Square:
+              <br>
+              Enter side of the square: 4
+              <br>
+              Area of Square = 16
+              <br>
+              Perimeter of Square = 16</p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head11" />
+        <label for="collapsible-head11"
+          >12. Write a C++ program to create an abstract class Bird with abstract methods fly() and makeSound(). Create derived classes Eagle and Hawk that extend the Bird class and implement the respective methods to describe how each bird flies and makes a sound.</label
+        >
+        <div class="collapsible-text">
+          <h2>Virtual Function 12:</h2>
+          <p>
+           <pre><code>
+  #include iostream.h
+  #include conio.h
+  #include dos.h
+  class Bird {
+  public:
+  virtual void fly() = 0;     
+  virtual void makeSound() = 0;  
+  };
+  class Eagle : public Bird {
+  public:
+  void fly() {
+  cout << "Eagle soars high with powerful wings." << endl;
+  }
+  void makeSound() {
+  cout << "Eagle makes a sharp screeching sound." << endl;
+  }
+  };
+  class Hawk : public Bird {
+  public:
+  void fly() {
+  cout<<"Hawk glides swiftly in the sky looking for prey."<< endl;
+  }
+  void makeSound() {
+  cout<<"Hawk makes a high-pitched kee-eeeee-ar sound."<< endl;
+  }
+  };
+  void main() {
+  clrscr();
+  Bird* bird;
+  Eagle e;
+  Hawk h;
+  cout << "Eagle:" << endl;
+  bird = &e;
+  bird->fly();
+  bird->makeSound();
+  cout << "\nHawk:" << endl;
+  bird = &h;
+  bird->fly();
+  bird->makeSound();
+  delay(5000);
+  }        
+           </code></pre>
+           <h2>Output:</h2>
+           <p>Eagle:
+            <br>
+            Eagle soars high with powerful wings.
+            <br>
+            Eagle makes a sharp screeching sound.
+            <br>
+            <br>
+            Hawk:
+            <br>
+            Hawk glides swiftly in the sky looking for prey.
+            <br>
+            Hawk makes a high-pitched kee-eeeee-ar sound.</p>
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
