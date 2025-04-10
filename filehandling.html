@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>File Handling</title>
+    <link rel="stylesheet" href="codes.css" />
+  </head>
+  <body>
+    <h1>File Handling</h1>
+    <div class="wrapper">
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head" />
+        <label for="collapsible-head"
+          >1. Write a C++ program to create a new text file and write some text into it.</label
+        >
+        <div class="collapsible-text">
+          <h2>File Handling 1:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include conio.h
+  #include fstream.h
+  #include dos.h
+  void main() {
+  clrscr();
+  ofstream file;
+  file.open("example.txt");
+  if (!file) {
+  cout << "Error creating file!";
+  } else {
+  file << "Hello, this is a test file." << endl;
+  file << "This file was created using Turbo C++!" << endl;
+  cout << "File created and text written successfully.";
+  }
+  file.close(); 
+  delay(5000);
+  }
+            </code></pre>
+            <h2>Output:</h2>
+            <p>
+              Hello, this is a test file.
+              <br>
+This file was created using Turbo C++!
+<br>
+              File created and text written successfully.</p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head1" />
+        <label for="collapsible-head1"
+          >2. Write a C++ program to open an existing text file and display its contents on the console.</label
+        >
+        <div class="collapsible-text">
+          <h2>File Handling 2:</h2>
+          <p>
+           <pre><code>
+  #include iostream.h
+  #include conio.h
+  #include fstream.h
+  #include dos.h
+  void main() {
+  clrscr();
+  ifstream file;
+  file.open("example.txt");
+  if (!file) {
+  cout << "Error opening file!";
+  } else {
+  char ch;
+  while (!file.eof()) {
+  file.get(ch); 
+  cout << ch;
+  }
+  file.close();
+  }
+  delay(5000);
+  }
+           </code></pre>
+           <h2>Input:</h2>
+           <p>M</p>
+           <h2>Output:</h2>
+           <p>M</p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head2" />
+        <label for="collapsible-head2"
+          >3. Write a C++ program to count the number of lines in a text file.</label
+        >
+        <div class="collapsible-text">
+          <h2>File Handling 3:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include conio.h
+  #include fstream.h
+  #include dos.h
+  void main() {
+  clrscr();    
+  ifstream file;
+  file.open("example.txt"); 
+  if (!file) {
+  cout << "Error opening file!";
+  } else {
+  int lineCount = 0;
+  char ch;
+  while (!file.eof()) {
+  file.get(ch);
+  if (ch == '\n') {
+  lineCount++;
+  }
+  }
+  file.close();
+  if (lineCount > 0 || ch != EOF) {
+  lineCount++;
+  }
+  cout << "Total number of lines: " << lineCount;
+  }
+  delay(5000);
+  }
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Hello
+              <br>
+              This is Turbo C++
+              <br>
+              Have a great day!</p>
+              <h2>Output:</h2>
+              <p>Total number of lines: 3</p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head3" />
+        <label for="collapsible-head3"
+          >4. Write a C++ program to count the number of words in a text file.</label
+        >
+        <div class="collapsible-text">
+          <h2>File Handling 4:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include conio.h
+  #include fstream.h
+  #include dos.h
+  void main() {
+  clrscr();
+  ifstream file;
+  file.open("example.txt");
+  if (!file) {
+  cout << "Error opening file!";
+  } else {
+  int wordCount = 0;
+  char ch, prev = ' ';
+  while (!file.eof()) {
+  file.get(ch);
+  if ((ch == ' ' || ch == '\n' || ch == '\t') && (prev != ' ' 
+  && prev != '\n' && prev != '\t')) {
+  wordCount++;
+  }
+  prev = ch;
+  }
+  if (prev != ' ' && prev != '\n' && prev != '\t') {
+  wordCount++;
+  }
+  file.close();
+  cout << "Total number of words: " << wordCount;
+  }
+  delay(5000);
+  }
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Hello Turbo C++ world!
+              <br>
+              This is a test.</p>
+              <h2>Output:</h2>
+              <p>Total number of words: 8</p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head4" />
+        <label for="collapsible-head4"
+          >5. Write a C++ program to copy the contents of one text file to another.</label
+        >
+        <div class="collapsible-text">
+          <h2>File Handling 5:</h2>
+          <p>
+           <pre><code>
+  #include iostream.h
+  #include conio.h
+  #include fstream.h
+  #include dos.h
+  void main() {
+  clrscr();
+  ifstream sourceFile;
+  ofstream targetFile;
+  sourceFile.open("source.txt");
+  targetFile.open("destination.txt");
+  if (!sourceFile || !targetFile) {
+  cout << "Error opening files!";
+  } else {
+  char ch;
+  while (!sourceFile.eof()) {
+  sourceFile.get(ch);
+  targetFile.put(ch);
+  }
+  cout << "File copied successfully!";
+  }
+  sourceFile.close();
+  targetFile.close();
+  delay(5000);
+  }
+           </code></pre>
+           <h2>Output:</h2>
+           <p>File copied successfully!</p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head5" />
+        <label for="collapsible-head5"
+          >6. Write a C++ program to find and replace a specific word in a text file.</label
+        >
+        <div class="collapsible-text">
+          <h2>File Handling 6:</h2>
+          <p>
+           <pre><code>
+  #include iostream.h
+  #include conio.h
+  #include fstream.h
+  #include string.h
+  #include dos.h
+  void main() {
+  clrscr();
+  ifstream inFile;
+  ofstream outFile;
+  char wordToFind[20] = "Turbo";
+  char wordToReplace[20] = "Modern";
+  inFile.open("input.txt");
+  outFile.open("output.txt");
+  if (!inFile || !outFile) {
+  cout << "Error opening files!";
+  } else {
+  char word[50];
+  while (!inFile.eof()) {
+  inFile >> word;
+  if (strcmp(word, wordToFind) == 0) {
+  outFile << wordToReplace << " ";
+  } else {
+  outFile << word << " ";
+  }
+  }
+  cout << "Word replacement completed. Check 'output.txt'.";
+  }
+  inFile.close();
+  outFile.close();
+  delay(5000);
+  }
+           </code></pre>
+           <h2>Output:</h2>
+           <p>Word replacement completed. Check 'output.txt'.</p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head6" />
+        <label for="collapsible-head6"
+          >7. Write a C++ program to append new data to an existing text file.</label
+        >
+        <div class="collapsible-text">
+          <h2>File Handling 7:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include conio.h
+  #include fstream.h
+  #include dos.h
+  void main() {
+  clrscr();
+  ofstream file;
+  file.open("example.txt", ios::app);
+  if (!file) {
+  cout << "Error opening file!";
+  } else {
+  file << "\nThis is new appended data.";
+  cout << "Data appended successfully to 'example.txt'.";
+  }
+  file.close();
+  delay(5000);
+  }
+            </code></pre>
+            <h2>Output:</h2>
+            <p>Data appended successfully to 'example.txt'.</p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head7" />
+        <label for="collapsible-head7"
+          >8. Write a C++ program to sort the lines of a text file in alphabetical order.</label
+        >
+        <div class="collapsible-text">
+          <h2>File Handling 8:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include conio.h
+  #include fstream.h
+  #include string.h
+  #include dos.h
+  void main() {
+  clrscr();
+  ifstream file;
+  file.open("input.txt");
+  if (!file) {
+  cout << "Error opening file!";
+  } else {
+  char lines[100][200];
+  int lineCount = 0;
+  while (file.getline(lines[lineCount], 200)) {
+  lineCount++;
+  }
+  file.close();
+  for (int i = 0; i < lineCount - 1; i++) {
+  for (int j = i + 1; j < lineCount; j++) {
+  if (strcmp(lines[i], lines[j]) > 0) {
+  char temp[200];
+  strcpy(temp, lines[i]);
+  strcpy(lines[i], lines[j]);
+  strcpy(lines[j], temp);
+  }
+  }
+  }
+  ofstream outFile;
+  outFile.open("sorted_output.txt");
+  if (!outFile) {
+  cout << "Error opening output file!";
+  } else {
+  for (int i = 0; i < lineCount; i++) {
+  outFile << lines[i] << endl;
+  }
+  cout << "Lines sorted and written to 'sorted_output.txt'.";
+  }
+  outFile.close();
+  }
+  delay(5000);
+  }
+            </code></pre>
+              <h2>Output:</h2>
+              <p>Lines sorted and written to 'sorted_output.txt'.</p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head8" />
+        <label for="collapsible-head8"
+          >9. Write a C++ program to merge multiple text files into a single file</label
+        >
+        <div class="collapsible-text">
+          <h2>File Handling 9:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include conio.h
+  #include fstream.h
+  #include dos.h
+  void main() {
+  clrscr();
+  ifstream file1, file2, file3;
+  ofstream mergedFile; 
+  file1.open("file1.txt");
+  file2.open("file2.txt");
+  file3.open("file3.txt");
+  mergedFile.open("merged_output.txt");
+  if (!file1 || !file2 || !file3 || !mergedFile) {
+  cout << "Error opening files!";
+  } else {
+  char ch;
+  while (!file1.eof()) {
+  file1.get(ch);
+  mergedFile.put(ch);
+  }
+  while (!file2.eof()) {
+  file2.get(ch);
+  mergedFile.put(ch);
+  }
+  while (!file3.eof()) {
+  file3.get(ch);
+  mergedFile.put(ch);
+  }
+  cout<<"Files merged successfully into 'merged_output.txt'.";
+  }
+  file1.close();
+  file2.close();
+  file3.close();
+  mergedFile.close();
+  delay(5000);
+  }
+            </code></pre>
+            <h2>Output:</h2>
+            <p>Files merged successfully into 'merged_output.txt'.</p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head9" />
+        <label for="collapsible-head9"
+          >10. Write a C++ program to split a large text file into smaller files of equal size.</label
+        >
+        <div class="collapsible-text">
+          <h2>File Handling 10:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include conio.h
+  #include fstream.h
+  #include dos.h
+  void main() {
+  clrscr();
+  ifstream inputFile;
+  ofstream outputFile;
+  char buffer[1024];  
+  int part = 1;  
+  int chunkSize = 1024;  
+  inputFile.open("largefile.txt", ios::in | ios::binary);  
+  if (!inputFile) {
+  cout << "Error opening the input file!";
+  } else {
+  inputFile.seekg(0, ios::end);
+  long fileSize = inputFile.tellg();
+  inputFile.seekg(0, ios::beg);
+  int numChunks = fileSize / chunkSize;
+  if (fileSize % chunkSize != 0) {
+  numChunks++;
+  }
+  cout<<"Total file size: "<< fileSize << " bytes." << endl;
+  cout<<"Splitting the file into "<< numChunks<<
+  " smaller parts..."<< endl;
+  while (inputFile.read(buffer, chunkSize)) {
+  char outputFileName[20];
+  sprintf(outputFileName, "part_%d.txt", part);
+  outputFile.open(outputFileName, ios::out | ios::binary);
+  if (!outputFile) {
+  cout << "Error opening output file!";
+  break;
+  }
+  outputFile.write(buffer, chunkSize);
+  outputFile.close(); 
+  part++;  
+  }
+  if (inputFile.gcount() > 0) {
+  char outputFileName[20];
+  sprintf(outputFileName, "part_%d.txt", part);
+  outputFile.open(outputFileName, ios::out | ios::binary);
+  if (!outputFile) {
+  cout << "Error opening output file!";
+  } else {
+  outputFile.write(buffer, inputFile.gcount()); 
+  outputFile.close();
+  cout << "Last part written to " << outputFileName << endl;
+  }
+  }
+  cout << "File splitting completed." << endl;
+  }
+  inputFile.close();
+  delay(5000);
+  }
+            </code></pre>
+            <h2>Output:</h2>
+            <p>Total file size: 2048 bytes.
+              <br>
+              Splitting the file into 2 smaller parts...
+              <br>
+              File splitting completed.</p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head10" />
+        <label for="collapsible-head10"
+          >11. Write a C++ program to search for a specific string in a text file and display its line number(s).</label
+        >
+        <div class="collapsible-text">
+          <h2>File Handling 11:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include conio.h
+  #include fstream.h
+  #include string.h
+  #include dos.h
+  void main() {
+  clrscr();
+  char searchString[100];
+  char line[200];         
+  int lineNumber = 1; 
+  cout << "Enter the string to search: ";
+  cin.getline(searchString, 100);
+  ifstream file;
+  file.open("example.txt");
+  if (!file) {
+  cout << "Error opening file!";
+  } else {
+  bool found = false;
+  while (file.getline(line, 200)) {  
+  if (strstr(line, searchString)) {  
+  cout<<"Found at line "<< lineNumber<< ": "<< line<< endl;
+  found = true;
+  }
+  lineNumber++;
+  }
+  if (!found) {
+  cout << "String not found in the file." << endl;
+  }
+  }
+  file.close();
+  delay(5000);
+  }
+            </code></pre>
+            <h2>Output:</h2>
+            <p>Enter the string to search: sample
+              <br>
+              Found at line 1: Hello, this is a sample text file.
+              <br>
+              Found at line 3: This line contains the word "sample".</p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head11" />
+        <label for="collapsible-head11"
+          >12. Write a C++ program to encrypt the contents of a text file using a simple encryption algorithm.</label
+        >
+        <div class="collapsible-text">
+          <h2>File Handling 12:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include conio.h
+  #include fstream.h
+  #include dos.h
+  void encryptFile(const char* inputFile, 
+  const char* outputFile, int shift) {
+  ifstream inFile;
+  ofstream outFile;
+  inFile.open(inputFile);  
+  if (!inFile) {
+  cout << "Error opening the input file!" << endl;
+  return;
+  }
+  outFile.open(outputFile); 
+  if (!outFile) {
+  cout << "Error opening the output file!" << endl;
+  return;
+  }
+  char ch;
+  while (inFile.get(ch)) {  
+  if (ch != '\n' && ch != '\r') {  
+  ch = ch + shift;  
+  }
+  outFile.put(ch);  
+  }
+  cout << "File encryption completed successfully!"<< endl;
+  inFile.close();
+  outFile.close();
+  }
+  void main() {
+  clrscr(); 
+  const char* inputFile = "input.txt";  
+  const char* outputFile = "encrypted.txt";  
+  int shift = 3;  
+  cout << "Encrypting the file '" << inputFile<< "'..."<< endl;
+  encryptFile(inputFile, outputFile, shift);
+  delay(5000);
+  }
+            </code></pre>
+            <h2>Output:</h2>
+            <p>Encrypting the file 'input.txt'...
+              <br>
+              File encryption completed successfully!
+              </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head12" />
+        <label for="collapsible-head12"
+          >13. Write a C++ program to decrypt the contents of a text file encrypted using the above algorithm.</label
+        >
+        <div class="collapsible-text">
+          <h2>File Handling 13:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include conio.h
+  #include fstream.h
+  #include dos.h
+  void decryptFile(const char* inputFile, 
+  const char* outputFile, int shift) {
+  ifstream inFile;
+  ofstream outFile;
+  inFile.open(inputFile); 
+  if (!inFile) {
+  cout << "Error opening the input file!" << endl;
+  return;
+  }
+  outFile.open(outputFile);  
+  if (!outFile) {
+  cout << "Error opening the output file!" << endl;
+  return;
+  }
+  char ch;
+  while (inFile.get(ch)) {  
+  if (ch != '\n' && ch != '\r') {  
+  ch = ch - shift; 
+  }
+  outFile.put(ch); 
+  }
+  cout<<"File decryption completed successfully!"<< endl;
+  inFile.close();
+  outFile.close();
+  }
+  void main() {
+  clrscr(); 
+  const char* inputFile = "encrypted.txt";  
+  const char* outputFile = "decrypted.txt";  
+  int shift = 3;
+  cout << "Decrypting the file '" << inputFile<< "'..."<< endl;
+  decryptFile(inputFile, outputFile, shift);
+  delay(5000);
+  }
+            </code></pre>
+            <h2>Output;</h2>
+            <p>Decrypting the file 'encrypted.txt'...
+              <br>
+              File decryption completed successfully!</p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head13" />
+        <label for="collapsible-head13"
+          >14. Write a C++ program to read a CSV file and display its contents in tabular form.</label
+        >
+        <div class="collapsible-text">
+          <h2>File Handling 14:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include conio.h
+  #include fstream.h
+  #include string.h
+  #include dos.h
+  void main() {
+  clrscr();
+  ifstream file;
+  char line[1024];
+  file.open("data.csv");
+  if (!file) {
+  cout << "Error opening file!" << endl;
+  return;
+  }
+  cout << "Reading the CSV file..." << endl;
+  cout << "----------------------------------"<< endl;
+  while (file.getline(line, 1024)) {  
+  char* token = strtok(line, ","); 
+  while (token != NULL) {
+  cout.width(20); 
+  cout << left << token; 
+  token = strtok(NULL, ",");  
+  }
+  cout << endl;
+  }
+  file.close(); 
+  cout << "---------------------------------"<< endl;
+  cout << "CSV file displayed successfully!" << endl;
+  delay(5000);
+  }                
+            </code></pre>
+            <h2>Output:</h2>
+            <pre>
+              Reading the CSV file...
+------------------------------------------------
+Name                Age                 Gender        Country             
+John                25                  Male          USA                 
+Alice               30                  Female        Canada              
+Bob                 22                  Male          UK                  
+Charlie             35                  Male          Australia           
+------------------------------------------------
+CSV file displayed successfully!
+
+            </pre>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head14" />
+        <label for="collapsible-head14"
+          >15. Write a C++ program to calculate the average of numbers stored in a file.</label
+        >
+        <div class="collapsible-text">
+          <h2>File Handling 15:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include conio.h
+  #include fstream.h
+  #include dos.h
+  void main() {
+  clrscr();
+  ifstream file;
+  int number;
+  int sum = 0;
+  int count = 0;
+  file.open("numbers.txt");
+  if (!file) {
+  cout << "Error opening file!" << endl;
+  return;
+  }
+  while (file >> number) {
+  sum += number;  
+  count++;      
+  }
+  if (count == 0) {
+  cout << "No numbers in the file." << endl;
+  } else {
+  float average = (float)sum / count; 
+  cout << "The average of the numbers is: " << average << endl;
+  }
+  file.close(); 
+  delay(5000);
+  }
+</code></pre>
+<h2>Input:</h2>
+<p>10,
+  20,
+  30,
+  40,
+  50
+  </p>
+  <h2>Output:</h2>
+  <p>The average of the numbers is: 30</p>
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
