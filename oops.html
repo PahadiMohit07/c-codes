@@ -1,0 +1,3195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OOPS</title>
+    <link rel="stylesheet" href="codes.css" />
+  </head>
+  <body>
+    <h1>OOPS</h1>
+    <div class="wrapper">
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head" />
+        <label for="collapsible-head"
+          >1. Write a C++ program to create a class called "Person" with a name and age attribute. Create two instances of the "Person" class, set their attributes using the constructor, and print their name and age.</label
+        >
+        <div class="collapsible-text">
+          <h2>OOPS 1:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include conio.h
+  #include string.h
+  #include dos.h
+  class Person {
+  private:
+  char name[50];
+  int age;
+  public:
+  Person(const char *n, int a) {
+  strcpy(name, n);
+  age = a;
+  }
+  void display() {
+  cout << "Name: " << name << "\n";
+  cout << "Age: " << age << "\n";
+  }
+  };
+  void main() {
+  clrscr();
+  Person person1("Alice", 25);
+  Person person2("Bob", 30);
+  cout << "Person 1 Details:\n";
+  person1.display();
+  cout << "\nPerson 2 Details:\n";
+  person2.display();
+  delay(5000)
+  }
+            </code></pre>
+            <h2>Output:</h2>
+            <p>Person 1 Details:
+              <br>
+              Name: Alice
+              <br>
+              Age: 25
+              <br>
+              <br>
+              Person 2 Details:
+              <br>
+              Name: Bob
+              <br>
+              Age: 30
+              </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head1" />
+        <label for="collapsible-head1"
+          >2. Write a C++ program to create a class called "Dog" with a name and breed attribute. Create two instances of the "Dog" class, set their attributes using the constructor and modify the attributes using the setter methods and print the updated values.</label
+        >
+        <div class="collapsible-text">
+          <h2>OOPS 2:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include conio.h
+  #include string.h
+  #include dos.h
+  class Dog {
+  private:
+  char name[50];
+  char breed[50];
+  public:
+  Dog(const char *n, const char *b) {
+  strcpy(name, n);
+  strcpy(breed, b);
+  }
+  void setName(const char *n) {
+  strcpy(name, n);
+  }
+  void setBreed(const char *b) {
+  strcpy(breed, b);
+  }
+  void display() {
+  cout << "Dog Name : " << name << "\n";
+  cout << "Dog Breed: " << breed << "\n";
+  }
+  };
+  void main() {
+  clrscr();
+  Dog dog1("Max", "Labrador");
+  Dog dog2("Bella", "German Shepherd");
+  cout << "Original Details:\n";
+  dog1.display();
+  cout << "\n";
+  dog2.display();
+  dog1.setName("Charlie");
+  dog1.setBreed("Beagle");
+  dog2.setName("Lucy");
+  dog2.setBreed("Poodle");
+  cout << "\nUpdated Details:\n";
+  dog1.display();
+  cout << "\n";
+  dog2.display();
+  delay(5000);
+  }
+            </code></pre>
+            <h2>Output:</h2>
+            <p>Original Details:
+              <br>
+              Dog Name : Max
+              <br>
+              Dog Breed: Labrador
+              <br>
+              <br>
+              Dog Name : Bella
+              <br>
+              Dog Breed: German Shepherd
+              <br>
+              <br>
+              Updated Details:
+              <br>
+              Dog Name : Charlie
+              <br>
+              Dog Breed: Beagle
+              <br>
+              <br>
+              Dog Name : Lucy
+              <br>
+              Dog Breed: Poodle
+              </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head2" />
+        <label for="collapsible-head2"
+          >3. Write a C++ program to create a class called "Rectangle" with width and height attributes. Calculate the area and perimeter of the rectangle.</label
+        >
+        <div class="collapsible-text">
+          <h2>OOPS 3:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include conio.h
+  #include dos.h
+  class Rectangle {
+  private:
+  float width;
+  float height;
+  public:
+  Rectangle(float w, float h) {
+  width = w;
+  height = h;
+  }
+  float getArea() {
+  return width * height;
+  }
+  float getPerimeter() {
+  return 2 * (width + height);
+  }
+  void display() {
+  cout << "Width     : " << width << "\n";
+  cout << "Height    : " << height << "\n";
+  cout << "Area      : " << getArea() << "\n";
+  cout << "Perimeter : " << getPerimeter() << "\n";
+  }
+  };
+  void main() {
+  clrscr();
+  Rectangle rect(10.5, 5.0);
+  cout << "Rectangle Details:\n";
+  rect.display();
+  delay(5000);
+  }
+            </code></pre>
+            <h2>Input:</h2>
+            <p>rect(10.5, 5.0)</p>
+            <h2>Output:</h2>
+            <p>Rectangle Details:
+              <br>
+              Width     : 10.5
+              <br>
+              Height    : 5
+              <br>
+              Area      : 52.5
+              <br>
+              Perimeter : 31</p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head3" />
+        <label for="collapsible-head3"
+          >4. Write a C++ program to create a class called "Circle" with a radius attribute. You can access and modify this attribute. Calculate the area and circumference of the circle.</label
+        >
+        <div class="collapsible-text">
+          <h2>OOPS 4:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include conio.h
+  #include dos.h
+  class Circle {
+  private:
+  float radius;
+  public:
+  Circle(float r) {
+  radius = r;
+  }
+  void setRadius(float r) {
+  radius = r;
+  }
+  float getRadius() {
+  return radius;
+  }
+  float getArea() {
+  return 3.1416 * radius * radius;
+  }
+  float getCircumference() {
+  return 2 * 3.1416 * radius;
+  }
+  void display() {
+  cout << "Radius        : " << radius << "\n";
+  cout << "Area          : " << getArea() << "\n";
+  cout << "Circumference : " << getCircumference() << "\n";
+  }
+  };
+  void main() {
+  clrscr();
+  Circle c(5.0);
+  cout << "Original Circle:\n";
+  c.display();
+  c.setRadius(7.5);
+  cout << "\nUpdated Circle:\n";
+  c.display();
+  delay(5000);
+  }
+            </code></pre>
+            <h2>Output:</h2>
+            <p>Original Circle:
+              <br>
+              Radius        : 5
+              <br>
+              Area          : 78.54
+              <br>
+              Circumference : 31.416
+              <br>
+              <br>
+              Updated Circle:
+              <br>
+              Radius        : 7.5
+              <br>
+              Area          : 176.715
+              <br>
+              Circumference : 47.124</p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head4" />
+        <label for="collapsible-head4"
+          >5. Write a C++ program to create a class called "Book" with attributes for title, author, and ISBN, and methods to add and remove books from a collection.</label
+        >
+        <div class="collapsible-text">
+          <h2>OOPS 5:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include conio.h
+  #include string.h
+  #include dos.h
+  #define MAX_BOOKS 100
+  class Book {
+  private:
+  char title[50];
+  char author[50];
+  char isbn[20];
+  public:
+  Book() {
+  strcpy(title, "");
+  strcpy(author, "");
+  strcpy(isbn, "");
+  }
+  void setDetails(const char *t, 
+  const char *a, const char *i) {
+  strcpy(title, t);
+  strcpy(author, a);
+  strcpy(isbn, i);
+  }
+  void display() {
+  cout << "Title : " << title << "\n";
+  cout << "Author: " << author << "\n";
+  cout << "ISBN  : " << isbn << "\n";
+  cout << "-----------------------\n";
+  }
+  const char* getISBN() {
+  return isbn;
+  }
+  };
+  class Library {
+  private:
+  Book books[MAX_BOOKS];
+  int count;
+  public:
+  Library() {
+  count = 0;
+  }
+  void addBook(const char *title, 
+  const char *author, const char *isbn) {
+  if (count < MAX_BOOKS) {
+  books[count].setDetails(title, author, isbn);
+  count++;
+  cout << "Book added successfully.\n";
+  } else {
+  cout << "Library is full.\n";
+  }
+  }
+  void removeBook(const char *isbn) {
+  int found = -1;
+  for (int i = 0; i < count; i++) {
+  if (strcmp(books[i].getISBN(), isbn) == 0) {
+  found = i;
+  break;
+  }
+  }
+  if (found != -1) {
+  for (int j = found; j < count - 1; j++) {
+  books[j] = books[j + 1];  // Shift books
+  }
+  count--;
+  cout << "Book with ISBN " << isbn << " removed.\n";
+  } else {
+  cout << "Book not found.\n";
+  }
+  }
+  void displayBooks() {
+  if (count == 0) {
+  cout << "No books in the library.\n";
+  } else {
+  cout << "\nBooks in Library:\n";
+  cout << "-----------------------\n";
+  for (int i = 0; i < count; i++) {
+  books[i].display();
+  }
+  }
+  }
+  };
+  void main() {
+  clrscr();
+  Library lib;
+  lib.addBook("The Alchemist", "Paulo Coelho", "12345");
+  lib.addBook("1984", "George Orwell", "54321");
+  lib.addBook("The Hobbit", "J.R.R. Tolkien", "11111");
+  lib.displayBooks();
+  lib.removeBook("54321");
+  cout << "\nAfter removal:\n";
+  lib.displayBooks();
+  delay(5000);
+  }
+            </code></pre>
+            <h2>Output:</h2>
+            <p>Book added successfully.
+              Book added successfully.
+              Book added successfully.
+              
+              Books in Library:
+              -----------------------
+              Title : The Alchemist
+              <br>
+              Author: Paulo Coelho
+              <br>
+              ISBN  : 12345
+              <br>
+              -----------------------
+              <br>
+              Title : 1984
+              <br>
+              Author: George Orwell
+              <br>
+              ISBN  : 54321
+              <br>
+              -----------------------
+              <br>
+              Title : The Hobbit
+              <br>
+              Author: J.R.R. Tolkien
+              <br>
+              ISBN  : 11111
+              <br>
+              -----------------------
+              <br>
+              Book with ISBN 54321 removed.
+              <br>
+              <br>
+              After removal:
+              <br>
+              <br>
+              Books in Library:
+              <br>
+              -----------------------
+              <br>
+              Title : The Alchemist
+              <br>
+              Author: Paulo Coelho
+              <br>
+              ISBN  : 12345
+              <br>
+              -----------------------
+              <br>
+              Title : The Hobbit
+              <br>
+              Author: J.R.R. Tolkien
+              <br>
+              ISBN  : 11111
+              <br>
+              -----------------------</p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head5" />
+        <label for="collapsible-head5"
+          >6. Write a C++ program to create a class called "Employee" with a name, job title, and salary attributes, and methods to calculate and update salary.</label
+        >
+        <div class="collapsible-text">
+          <h2>OOPS 6:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include conio.h
+  #include string.h
+  #include dos.h
+  class Employee {
+  private:
+  char name[50];
+  char jobTitle[50];
+  float salary;
+  public:
+  Employee(const char* n, const char* job, float s) {
+  strcpy(name, n);
+  strcpy(jobTitle, job);
+  salary = s;
+  }
+  void updateSalary(float newSalary) {
+  salary = newSalary;
+  }
+  float calculateSalary() {
+  return salary;
+  }
+  void display() {
+  cout << "Name     : " << name << "\n";
+  cout << "Job Title: " << jobTitle << "\n";
+  cout << "Salary   : " << calculateSalary() << "\n";
+  cout << "--------------------------\n";
+  }
+  };
+  void main() {
+  clrscr();
+  Employee emp1("John Doe", "Software Engineer", 50000.0);
+  Employee emp2("Jane Smith", "Manager", 70000.0);
+  cout << "Original Employee Details:\n";
+  emp1.display();
+  emp2.display();
+  emp1.updateSalary(55000.0);
+  emp2.updateSalary(75000.0);
+  cout << "\nAfter Salary Update:\n";
+  emp1.display();
+  emp2.display();
+  delay(5000);
+  }
+            </code></pre>
+            <h2>Output:</h2>
+            <p>Original Employee Details:
+              <br>
+              Name     : John Doe
+              <br>
+              Job Title: Software Engineer
+              <br>
+              Salary   : 50000
+              <br>
+              --------------------------
+              <br>
+              Name     : Jane Smith
+              <br>
+              Job Title: Manager
+              <br>
+              Salary   : 70000
+              <br>
+              --------------------------
+              <br>
+              After Salary Update:
+              <br>
+              Name     : John Doe
+              <br>
+              Job Title: Software Engineer
+              <br>
+              Salary   : 55000
+              <br>
+              --------------------------
+              <br>
+              Name     : Jane Smith
+              <br>
+              Job Title: Manager
+              <br>
+              Salary   : 75000
+              <br>
+              --------------------------</p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head6" />
+        <label for="collapsible-head6"
+          >7. Write a C++ program to create a class called "Bank" with a collection of accounts and methods to add and remove accounts, and to deposit and withdraw money. Also define a class called "Account" to maintain account details of a particular customer.</label
+        >
+        <div class="collapsible-text">
+          <h2>OOPS 7:</h2>
+          <p>
+            <pre><code>
+  #include iostream.h
+  #include conio.h
+  #include string.h
+  #include dos.h
+  const int MAX_ACCOUNTS = 100;
+  class Account {
+  private:
+    int accountNumber;
+    char name[50];
+    float balance;
+  public:
+    Account() {
+        accountNumber = 0;
+        strcpy(name, "");
+        balance = 0.0;
+    }
+  void createAccount(int accNo,
+  const char accName[],float initialBalance) {
+        accountNumber = accNo;
+        strcpy(name, accName);
+        balance = initialBalance;
+    }
+    int getAccountNumber() {
+        return accountNumber;
+    }
+    void deposit(float amount) {
+        balance += amount;
+    }
+    int withdraw(float amount) {
+        if (amount > balance) {
+            return 0; 
+        } else {
+            balance -= amount;
+            return 1;
+        }
+    }
+    void display() {
+        cout << "\nAccount Number: " << accountNumber;
+        cout << "\nName: " << name;
+        cout << "\nBalance: " << balance << "\n";
+    }
+};
+class Bank {
+private:
+    Account accounts[MAX_ACCOUNTS];
+    int accountCount;
+public:
+    Bank() {
+        accountCount = 0;
+    }
+    void addAccount(int accNo, const char name[],
+     float balance) {
+      if (accountCount < MAX_ACCOUNTS) {
+  accounts[accountCount].createAccount(accNo, name, balance);
+  accountCount++;
+       cout << "\nAccount created successfully!";
+        } else {
+      cout << "\nBank is full. Cannot add more accounts.";
+        }
+    }
+    void removeAccount(int accNo) {
+        int found = 0;
+        for (int i = 0; i < accountCount; i++) {
+            if (accounts[i].getAccountNumber() == accNo) {
+                for (int j = i; j < accountCount - 1; j++) {
+                    accounts[j] = accounts[j + 1];
+                }
+                accountCount--;
+                found = 1;
+                cout << "\nAccount removed successfully!";
+                break;
+            }
+        }
+        if (!found) {
+            cout << "\nAccount not found!";
+        }
+    }
+    void depositToAccount(int accNo, float amount) {
+        for (int i = 0; i < accountCount; i++) {
+            if (accounts[i].getAccountNumber() == accNo) {
+                accounts[i].deposit(amount);
+                cout << "\nAmount deposited successfully!";
+                return;
+            }
+        }
+        cout << "\nAccount not found!";
+    }
+    void withdrawFromAccount(int accNo, float amount) {
+        for (int i = 0; i < accountCount; i++) {
+        if (accounts[i].getAccountNumber() == accNo) {
+        if (accounts[i].withdraw(amount)) {
+         cout << "\nWithdrawal successful!";
+          } else {
+          cout << "\nInsufficient balance!";
+          }
+          return;
+            }
+        }
+        cout << "\nAccount not found!";
+    }
+    void displayAccount(int accNo) {
+        for (int i = 0; i < accountCount; i++) {
+        if (accounts[i].getAccountNumber() == accNo) {
+        accounts[i].display();
+            return;
+            }
+        }
+        cout << "\nAccount not found!";
+    }
+};
+  void main() {
+    clrscr();
+    Bank bank;
+    int choice, accNo;
+    char name[50];
+    float amount;
+    do {
+        cout << "\n--- Bank Management System ---";
+        cout << "\n1. Add Account";
+        cout << "\n2. Remove Account";
+        cout << "\n3. Deposit";
+        cout << "\n4. Withdraw";
+        cout << "\n5. Display Account";
+        cout << "\n6. Exit";
+        cout << "\nEnter your choice: ";
+        cin >> choice;
+        switch (choice) {
+        case 1:
+            cout << "\nEnter Account Number: ";
+            cin >> accNo;
+            cout << "Enter Name: ";
+            cin.ignore(); // for Turbo C++ compatibility
+            cin.getline(name, 50);
+            cout << "Enter Initial Balance: ";
+            cin >> amount;
+            bank.addAccount(accNo, name, amount);
+            break;
+        case 2:
+            cout << "\nEnter Account Number to Remove: ";
+            cin >> accNo;
+            bank.removeAccount(accNo);
+            break;
+        case 3:
+            cout << "\nEnter Account Number: ";
+            cin >> accNo;
+            cout << "Enter Amount to Deposit: ";
+            cin >> amount;
+            bank.depositToAccount(accNo, amount);
+            break;
+        case 4:
+            cout << "\nEnter Account Number: ";
+  cin >> accNo;
+  cout << "Enter Amount to Withdraw: ";
+  cin >> amount;
+  bank.withdrawFromAccount(accNo, amount);
+  break;
+  case 5:
+  cout << "\nEnter Account Number: ";
+  cin >> accNo;
+  bank.displayAccount(accNo);
+  break;
+  case 6:
+  cout << "\nExiting program...";
+  break;
+  default:
+  cout << "\nInvalid choice!";
+  }
+  cout << "\n\nPress any key to continue...";
+  clrscr();
+  } while (choice != 6);
+  delay(5000);
+  }
+            </code></pre>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head7" />
+        <label for="collapsible-head7"
+          >8. Write a C++ program to create a class called "TrafficLight" with attributes for color and duration, and methods to change the color and check for red or green.</label
+        >
+        <div class="collapsible-text">
+          <h2>OOPS 8:</h2>
+          <p>
+            <pre><code>
+ #include iostream.h
+  #include conio.h
+  #include string.h
+  #include dos.h
+  class TrafficLight {
+  private:
+    char color[10];
+    int duration;
+  public:
+    TrafficLight() {
+        strcpy(color, "Red");
+        duration = 60;
+    }
+    void setLight(const char* col, int dur) {
+        strcpy(color, col);
+        duration = dur;
+    }
+    void changeColor() {
+        if (strcmp(color, "Red") == 0) {
+            strcpy(color, "Green");
+            duration = 45;
+        } else if (strcmp(color, "Green") == 0) {
+            strcpy(color, "Yellow");
+            duration = 5;
+        } else if (strcmp(color, "Yellow") == 0) {
+            strcpy(color, "Red");
+            duration = 60;
+        }
+    }
+    int isRed() {
+        return strcmp(color, "Red") == 0;
+    }
+    int isGreen() {
+        return strcmp(color, "Green") == 0;
+    }
+    void display() {
+    cout << "\nTraffic Light Color: " << color;
+    cout << "\nDuration: " << duration << " seconds\n";
+    }
+};
+void main() {
+    clrscr();
+    TrafficLight light;
+    int choice;
+    do {
+        cout << "\n--- Traffic Light Simulation ---";
+        cout << "\n1. Display Light";
+        cout << "\n2. Change Color";
+        cout << "\n3. Check if Red";
+        cout << "\n4. Check if Green";
+        cout << "\n5. Exit";
+        cout << "\nEnter your choice: ";
+        cin >> choice;
+        switch (choice) {
+        case 1:
+            light.display();
+            break;
+        case 2:
+            light.changeColor();
+            cout << "\nColor changed!";
+            break;
+        case 3:
+            if (light.isRed())
+                cout << "\nThe light is RED.";
+            else
+                cout << "\nThe light is NOT RED.";
+            break;
+        case 4:
+            if (light.isGreen())
+                cout << "\nThe light is GREEN.";
+            else
+                cout << "\nThe light is NOT GREEN.";
+            break;
+        case 5:
+            cout << "\nExiting program...";
+            break;
+        default:
+            cout << "\nInvalid choice!";
+        }
+        cout << "\n\nPress any key to continue...";
+        clrscr();
+    } while (choice != 5);
+  delay(5000);
+  }
+            </code></pre>
+            <h2>Output:</h2>
+            <p>Traffic Light Color: Red
+              <br>
+              Duration: 60 seconds
+              <br>
+              Color changed!
+              <br>
+              Traffic Light Color: Green
+              Duration: 45 seconds
+              <br>
+              The light is GREEN.
+              
+              Color changed!
+              <br>
+              Traffic Light Color: Yellow
+              Duration: 5 seconds
+              <br>
+              The light is NOT RED.
+              <br>
+              Exiting program...
+              </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head8" />
+        <label for="collapsible-head8"
+          >9. Write a C++ program to create a class called "Employee" with a name, salary, and hire date attributes, and a method to calculate years of service.</label
+        >
+        <div class="collapsible-text">
+          <h2>OOPS 9:</h2>
+          <p>
+            <pre><code>
+ #include iostream.h
+#include conio.h
+#include string.h
+#include dos.h
+class Employee {
+private:
+    char name[50];
+    float salary;
+    int hireDay, hireMonth, hireYear;
+public:
+    void setEmployee(const char empName[], 
+    float empSalary, int day, int month, int year) {
+        strcpy(name, empName);
+        salary = empSalary;
+        hireDay = day;
+        hireMonth = month;
+        hireYear = year;
+    }
+    int calculateYearsOfService(int currentDay, 
+    int currentMonth, int currentYear) {
+    int years = currentYear - hireYear;
+    if (currentMonth < hireMonth || (currentMonth == 
+    hireMonth && currentDay < hireDay)) {
+            years--;
+        }
+
+        return years;
+    }
+    void display() {
+    cout << "\nEmployee Name: " << name;
+    cout << "\nSalary: " << salary;
+    cout << "\nHire Date: " << hireDay << "/" 
+    << hireMonth << "/" << hireYear;
+    }
+};
+void main() {
+    clrscr();
+    Employee emp;
+    char name[50];
+    float salary;
+    int hDay, hMonth, hYear;
+    int cDay, cMonth, cYear;
+    int years;
+    cout << "Enter Employee Name: ";
+    cin.getline(name, 50);
+    cout << "Enter Salary: ";
+    cin >> salary;
+    cout << "Enter Hire Date (DD MM YYYY): ";
+    cin >> hDay >> hMonth >> hYear;
+    emp.setEmployee(name, salary, hDay, hMonth, hYear);
+    cout << "\nEnter Current Date (DD MM YYYY): ";
+    cin >> cDay >> cMonth >> cYear;
+    years = emp.calculateYearsOfService(cDay, cMonth, cYear);
+    emp.display();
+    cout << "\nYears of Service: " << years;
+   delay(5000);
+}
+            </code></pre>
+            <h2>Output:</h2>
+            <p>Enter Employee Name: John Smith
+              <br>
+              Enter Salary: 45000
+              <br>
+              Enter Hire Date (DD MM YYYY): 10 4 2015
+              <br>
+              Enter Current Date (DD MM YYYY): 11 4 2025
+              </p>
+              <h2>Input:</h2>
+              <p>Employee Name: John Smith
+                <br>
+                Salary: 45000
+                <br>
+                Hire Date: 10/4/2015
+                <br>
+                Years of Service: 10
+                </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head9" />
+        <label for="collapsible-head9"
+          >10. Write a C++ program to create a class called "Student" with a name, grade, and courses attributes, and methods to add and remove courses.</label
+        >
+        <div class="collapsible-text">
+          <h2>OOPS 10:</h2>
+          <p>
+            <pre><code>
+#include iostream.h
+#include conio.h
+#include string.h
+#include dos.h
+const int MAX_COURSES = 10;
+class Student {
+private:
+    char name[50];
+    int grade;
+    char courses[MAX_COURSES][30];
+    int courseCount;
+public:
+    Student() {
+        strcpy(name, "");
+        grade = 0;
+        courseCount = 0;
+    }
+    void setStudent(const char* studentName, 
+    int studentGrade) {
+        strcpy(name, studentName);
+        grade = studentGrade;
+    }
+    void addCourse(const char* courseName) {
+        if (courseCount < MAX_COURSES) {
+        strcpy(courses[courseCount], courseName);
+        courseCount++;
+        cout << "\nCourse added successfully!";
+        } else {
+        cout << "\nCannot add more courses.
+        Maximum limit reached.";
+        }
+    }
+    void removeCourse(const char* courseName) {
+        int found = 0;
+        for (int i = 0; i < courseCount; i++) {
+            if (strcmp(courses[i], courseName) == 0) {
+                for (int j = i; j < courseCount - 1; j++) {
+                    strcpy(courses[j], courses[j + 1]);
+                }
+                courseCount--;
+                found = 1;
+                cout << "\nCourse removed successfully!";
+                break;
+            }
+        }
+        if (!found) {
+            cout << "\nCourse not found!";
+        }
+    }
+    void displayCourses() {
+        cout << "\nStudent Name: " << name;
+        cout << "\nGrade: " << grade;
+        cout << "\nEnrolled Courses:";
+        if (courseCount == 0) {
+            cout << " None";
+        } else {
+        for (int i = 0; i < courseCount; i++) {
+          cout << "\n- " << courses[i];
+            }
+        }
+    }
+};
+void main() {
+    clrscr();
+    Student s;
+    char name[50];
+    int grade;
+    int choice;
+    char course[30];
+    cout << "Enter student name: ";
+    cin.getline(name, 50);
+    cout << "Enter grade: ";
+    cin >> grade;
+    s.setStudent(name, grade);
+    do {
+        cout << "\n\n--- Student Course Manager ---";
+        cout << "\n1. Add Course";
+        cout << "\n2. Remove Course";
+        cout << "\n3. Display Courses";
+        cout << "\n4. Exit";
+        cout << "\nEnter your choice: ";
+        cin >> choice;
+        switch (choice) {
+        case 1:
+            cout << "Enter course name to add: ";
+            cin.ignore();
+            cin.getline(course, 30);
+            s.addCourse(course);
+            break;
+        case 2:
+            cout << "Enter course name to remove: ";
+            cin.ignore();
+            cin.getline(course, 30);
+            s.removeCourse(course);
+            break;
+        case 3:
+            s.displayCourses();
+            break;
+        case 4:
+            cout << "\nExiting...";
+            break;
+        default:
+            cout << "\nInvalid choice!";
+        }
+        cout << "\n\nPress any key to continue...";
+        getch();
+        clrscr();
+    } while (choice != 4);
+  delay(5000);
+}
+            </code></pre>
+            <h2>Output:</h2>
+            <p>Enter student name: Alice
+              <br>
+              Enter grade: 12
+              <br>
+              1. Add Course → "Math"
+              <br>
+              2. Add Course → "Physics"
+              <br>
+              3. Display Courses
+              <br>
+              Output:
+              <br>
+              Student Name: Alice
+              <br>
+              Grade: 12
+              <br>
+              Enrolled Courses:
+              <br>
+              - Math
+              <br>
+              - Physics
+              </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head10" />
+        <label for="collapsible-head10"
+          >11. Write a C++ program to create a class called "Library" with a collection of books and methods to add and remove books.</label
+        >
+        <div class="collapsible-text">
+          <h2>OOPS 11:</h2>
+          <p>
+           <pre><code>
+#include iostream.h
+#include conio.h
+#include string.h
+#include dos.h
+const int MAX_BOOKS = 100;
+class Book {
+public:
+    char title[50];
+    char author[50];
+    void setBook(const char* bookTitle, const char* bookAuthor) {
+        strcpy(title, bookTitle);
+        strcpy(author, bookAuthor);
+    }
+    void display() {
+        cout << "\nTitle : " << title;
+        cout << "\nAuthor: " << author;
+    }
+};
+class Library {
+private:
+    Book books[MAX_BOOKS];
+    int bookCount;
+public:
+    Library() {
+        bookCount = 0;
+    }
+    void addBook(const char* title, const char* author) {
+        if (bookCount < MAX_BOOKS) {
+            books[bookCount].setBook(title, author);
+            bookCount++;
+            cout << "\nBook added successfully!";
+        } else {
+            cout << "\nLibrary is full. Cannot add more books.";
+        }
+    }
+    void removeBook(const char* titleToRemove) {
+        int found = 0;
+        for (int i = 0; i < bookCount; i++) {
+            if (strcmp(books[i].title, titleToRemove) == 0) {
+                for (int j = i; j < bookCount - 1; j++) {
+                    books[j] = books[j + 1];
+                }
+                bookCount--;
+                found = 1;
+                cout << "\nBook removed successfully!";
+                break;
+            }
+        }
+        if (!found) {
+            cout << "\nBook not found!";
+        }
+    }
+    void displayBooks() {
+        if (bookCount == 0) {
+            cout << "\nNo books in the library.";
+        } else {
+            cout << "\n--- List of Books ---";
+            for (int i = 0; i < bookCount; i++) {
+                cout << "\n\nBook " << (i + 1) << ":";
+                books[i].display();
+            }
+        }
+    }
+};
+void main() {
+    clrscr();
+    Library lib;
+    int choice;
+    char title[50], author[50];
+    do {
+        cout << "\n\n--- Library Management ---";
+        cout << "\n1. Add Book";
+        cout << "\n2. Remove Book";
+        cout << "\n3. Display Books";
+        cout << "\n4. Exit";
+        cout << "\nEnter your choice: ";
+        cin >> choice;
+        switch (choice) {
+        case 1:
+            cout << "\nEnter Book Title: ";
+            cin.ignore();
+            cin.getline(title, 50);
+            cout << "Enter Author Name: ";
+            cin.getline(author, 50);
+            lib.addBook(title, author);
+            break;
+        case 2:
+            cout << "\nEnter Book Title to Remove: ";
+            cin.ignore();
+            cin.getline(title, 50);
+            lib.removeBook(title);
+            break;
+        case 3:
+            lib.displayBooks();
+            break;
+        case 4:
+            cout << "\nExiting...";
+            break;
+        default:
+            cout << "\nInvalid choice!";
+        }
+        cout << "\n\nPress any key to continue...";
+        getch();
+        clrscr();
+    } while (choice != 4);
+  delay(5000);
+}
+           </code></pre>
+           <h2>Input:</h2>
+           <p>1 → "The Alchemist" by "Paulo Coelho"
+            <br>
+            3 → Display books
+            </p>
+            <h2>Output:</h2>
+            <p>Book 1:
+              <br>
+              Title : The Alchemist
+              <br>
+              Author: Paulo Coelho
+              </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head11" />
+        <label for="collapsible-head11"
+          >12. Write a C++ program to create a class called "Airplane" with a flight number, destination, and departure time attributes, and methods to check flight status and delay.</label
+        >
+        <div class="collapsible-text">
+          <h2>OOPS 12:</h2>
+          <p>
+            <pre><code>
+#include iostream.h
+#include conio.h
+#include string.h
+#include dos.h
+class Airplane {
+private:
+    char flightNumber[10];
+    char destination[30];
+    int departureHour;
+    int departureMinute;
+    int isDelayed;
+public:
+    Airplane() {
+        strcpy(flightNumber, "");
+        strcpy(destination, "");
+        departureHour = 0;
+        departureMinute = 0;
+        isDelayed = 0;
+    }
+    void setFlight(const char* fNumber, 
+    const char* dest, int hour, int minute) {
+        strcpy(flightNumber, fNumber);
+        strcpy(destination, dest);
+        departureHour = hour;
+        departureMinute = minute;
+        isDelayed = 0;
+    }
+    void delayFlight(int newHour, int newMinute) {
+        departureHour = newHour;
+        departureMinute = newMinute;
+        isDelayed = 1;
+    }
+    void checkStatus() {
+        if (isDelayed) {
+            cout << "\nStatus: Delayed";
+        } else {
+            cout << "\nStatus: On Time";
+        }
+    }
+    void display() {
+        cout << "\nFlight Number : " << flightNumber;
+        cout << "\nDestination   : " << destination;
+        cout << "\nDeparture Time: ";
+        if (departureHour < 10) cout << "0";
+        cout << departureHour << ":";
+        if (departureMinute < 10) cout << "0";
+        cout << departureMinute;
+        checkStatus();
+    }
+};
+void main() {
+    clrscr();
+    Airplane flight;
+    int choice;
+    char flightNo[10], destination[30];
+    int hour, minute;
+    do {
+        cout << "\n\n--- Airplane Flight Manager ---";
+        cout << "\n1. Set Flight Details";
+        cout << "\n2. Delay Flight";
+        cout << "\n3. Check Flight Status";
+        cout << "\n4. Display Flight Information";
+        cout << "\n5. Exit";
+        cout << "\nEnter your choice: ";
+        cin >> choice;
+        switch (choice) {
+        case 1:
+            cout << "\nEnter Flight Number: ";
+            cin.ignore();
+            cin.getline(flightNo, 10);
+            cout << "Enter Destination: ";
+            cin.getline(destination, 30);
+            cout << "Enter Departure Time (HH MM): ";
+            cin >> hour >> minute;
+            flight.setFlight(flightNo, destination, 
+            hour, minute);
+            cout << "\nFlight details set!";
+            break;
+        case 2:
+            cout << "\nEnter New Departure Time (HH MM): ";
+            cin >> hour >> minute;
+            flight.delayFlight(hour, minute);
+            cout << "\nFlight marked as delayed.";
+            break;
+        case 3:
+            flight.checkStatus();
+            break;
+        case 4:
+            flight.display();
+            break;
+        case 5:
+            cout << "\nExiting...";
+            break;
+        default:
+            cout << "\nInvalid choice!";
+        }
+        cout << "\n\nPress any key to continue...";
+        getch();
+        clrscr();
+    } while (choice != 5);
+  delay(5000);
+}
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Set Flight: AI202, Mumbai, 14:30
+              <br>
+              Delay Flight: 16:00
+              <br>
+              Display Flight
+              </p>
+              <h2>Output:</h2>
+              <p>Flight Number : AI202
+                <br>
+                Destination   : Mumbai
+                <br>
+                Departure Time: 16:00
+                <br>
+                Status: Delayed
+                </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head12" />
+        <label for="collapsible-head12"
+          >13. Write a C++ program to create a class called "Inventory" with a collection of products and methods to add and remove products, and to check for low inventory.</label
+        >
+        <div class="collapsible-text">
+          <h2>OOPS 13:</h2>
+          <p>
+            <pre><code>
+#include iostream.h
+#include conio.h
+#include string.h
+#include dos.h
+const int MAX_PRODUCTS = 100;
+class Product {
+public:
+    char name[30];
+    int quantity;
+    int minThreshold;
+    void setProduct(const char* pName, 
+    int qty, int threshold) {
+        strcpy(name, pName);
+        quantity = qty;
+        minThreshold = threshold;
+    }
+    void display() {
+        cout << "\nProduct Name : " << name;
+        cout << "\nQuantity     : " << quantity;
+        cout << "\nMin Threshold: " << minThreshold;
+        if (quantity <= minThreshold)
+            cout << "\nStatus       : LOW STOCK";
+        else
+            cout << "\nStatus       : OK";
+    }
+    int isLowStock() {
+        return quantity <= minThreshold;
+    }
+    int isMatch(const char* pName) {
+        return strcmp(name, pName) == 0;
+    }
+};
+class Inventory {
+private:
+    Product products[MAX_PRODUCTS];
+    int productCount;
+public:
+    Inventory() {
+        productCount = 0;
+    }
+    void addProduct(const char* name, 
+    int quantity, int threshold) {
+    if (productCount < MAX_PRODUCTS) {
+    products[productCount].setProduct(name, quantity, threshold);
+            productCount++;
+            cout << "\nProduct added successfully!";
+        } else {
+          cout << "\nInventory full. Cannot add more products.";
+        }
+    }
+    void removeProduct(const char* name) {
+        int found = 0;
+        for (int i = 0; i < productCount; i++) {
+            if (products[i].isMatch(name)) {
+                for (int j = i; j < productCount - 1; j++) {
+                    products[j] = products[j + 1];
+                }
+                productCount--;
+                found = 1;
+                cout << "\nProduct removed successfully!";
+                break;
+            }
+        }
+        if (!found) {
+            cout << "\nProduct not found!";
+        }
+    }
+    void checkLowInventory() {
+        int found = 0;
+        cout << "\n--- Low Inventory Products ---";
+        for (int i = 0; i < productCount; i++) {
+            if (products[i].isLowStock()) {
+                cout << "\n";
+                products[i].display();
+                found = 1;
+            }
+        }
+        if (!found) {
+            cout << "\nAll products are well stocked.";
+        }
+    }
+    void displayAllProducts() {
+        if (productCount == 0) {
+            cout << "\nInventory is empty.";
+            return;
+        }
+        cout << "\n--- Inventory List ---";
+        for (int i = 0; i < productCount; i++) {
+            cout << "\n\nProduct " << (i + 1) << ":";
+            products[i].display();
+        }
+    }
+};
+void main() {
+    clrscr();
+    Inventory inv;
+    int choice, quantity, threshold;
+    char name[30];
+    do {
+        cout << "\n\n--- Inventory Management ---";
+        cout << "\n1. Add Product";
+        cout << "\n2. Remove Product";
+        cout << "\n3. Display All Products";
+        cout << "\n4. Check Low Inventory";
+        cout << "\n5. Exit";
+        cout << "\nEnter your choice: ";
+        cin >> choice;
+        switch (choice) {
+        case 1:
+            cout << "\nEnter Product Name: ";
+            cin.ignore();
+            cin.getline(name, 30);
+            cout << "Enter Quantity: ";
+            cin >> quantity;
+            cout << "Enter Minimum Threshold: ";
+            cin >> threshold;
+            inv.addProduct(name, quantity, threshold);
+            break;
+        case 2:
+            cout << "\nEnter Product Name to Remove: ";
+            cin.ignore();
+            cin.getline(name, 30);
+            inv.removeProduct(name);
+            break;
+        case 3:
+            inv.displayAllProducts();
+            break;
+        case 4:
+            inv.checkLowInventory();
+            break;
+        case 5:
+            cout << "\nExiting...";
+            break;
+        default:
+            cout << "\nInvalid choice!";
+        }
+        cout << "\n\nPress any key to continue...";
+        clrscr();
+    } while (choice != 5);
+  delay(5000);
+}
+            </code></pre>
+            <h2>Input:</h2>
+            <p>1 → Add "Pen", Qty: 10, Threshold: 5
+              <br>
+              1 → Add "Notebook", Qty: 2, Threshold: 5
+              <br>
+              4 → Check Low Inventory
+              </p>
+              <h2>Output:</h2>
+              <p>--- Low Inventory Products ---
+<br>
+                Product Name : Notebook
+                <br>
+                Quantity     : 2
+                <br>
+                Min Threshold: 5
+                <br>
+                Status       : LOW STOCK
+                </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head13" />
+        <label for="collapsible-head13"
+          >14. Write a C++ program to create a class called "School" with attributes for students, teachers, and classes, and methods to add and remove students and teachers, and to create classes.</label
+        >
+        <div class="collapsible-text">
+          <h2>OOPS 14:</h2>
+          <p>
+            <pre><code>
+#include iostream.h
+#include conio.h
+#include string.h
+#include dos.h
+const int MAX_ENTRIES = 100;
+class School {
+private:
+    char students[MAX_ENTRIES][30];
+    char teachers[MAX_ENTRIES][30];
+    char classes[MAX_ENTRIES][30];
+    int studentCount;
+    int teacherCount;
+    int classCount;
+public:
+    School() {
+        studentCount = 0;
+        teacherCount = 0;
+        classCount = 0;
+    }
+    void addStudent(const char* name) {
+        if (studentCount < MAX_ENTRIES) {
+            strcpy(students[studentCount], name);
+            studentCount++;
+            cout << "\nStudent added.";
+        } else {
+            cout << "\nStudent list full.";
+        }
+    }
+    void removeStudent(const char* name) {
+        int found = 0;
+        for (int i = 0; i < studentCount; i++) {
+            if (strcmp(students[i], name) == 0) {
+                for (int j = i; j < studentCount - 1; j++) {
+                    strcpy(students[j], students[j + 1]);
+                }
+                studentCount--;
+                found = 1;
+                cout << "\nStudent removed.";
+                break;
+            }
+        }
+        if (!found) cout << "\nStudent not found.";
+    }
+    void addTeacher(const char* name) {
+        if (teacherCount < MAX_ENTRIES) {
+            strcpy(teachers[teacherCount], name);
+            teacherCount++;
+            cout << "\nTeacher added.";
+        } else {
+            cout << "\nTeacher list full.";
+        }
+    }
+    void removeTeacher(const char* name) {
+        int found = 0;
+        for (int i = 0; i < teacherCount; i++) {
+            if (strcmp(teachers[i], name) == 0) {
+                for (int j = i; j < teacherCount - 1; j++) {
+                    strcpy(teachers[j], teachers[j + 1]);
+                }
+                teacherCount--;
+                found = 1;
+                cout << "\nTeacher removed.";
+                break;
+            }
+        }
+        if (!found) cout << "\nTeacher not found.";
+    }
+    void createClass(const char* className) {
+        if (classCount < MAX_ENTRIES) {
+            strcpy(classes[classCount], className);
+            classCount++;
+            cout << "\nClass created.";
+        } else {
+            cout << "\nClass list full.";
+        }
+    }
+    void displayAll() {
+        cout << "\n--- Students ---";
+        if (studentCount == 0) cout << "\nNone";
+        else {
+            for (int i = 0; i < studentCount; i++) {
+                cout << "\n" << (i + 1) << ". " << students[i];
+            }
+        }
+        cout << "\n\n--- Teachers ---";
+        if (teacherCount == 0) cout << "\nNone";
+        else {
+            for (int i = 0; i < teacherCount; i++) {
+                cout << "\n" << (i + 1) << ". " << teachers[i];
+            }
+        }
+        cout << "\n\n--- Classes ---";
+        if (classCount == 0) cout << "\nNone";
+        else {
+            for (int i = 0; i < classCount; i++) {
+                cout << "\n" << (i + 1) << ". " << classes[i];
+            }
+        }
+    }
+};
+void main() {
+    clrscr();
+    School mySchool;
+    int choice;
+    char name[30];
+    do {
+        cout << "\n\n--- School Management ---";
+        cout << "\n1. Add Student";
+        cout << "\n2. Remove Student";
+        cout << "\n3. Add Teacher";
+        cout << "\n4. Remove Teacher";
+        cout << "\n5. Create Class";
+        cout << "\n6. Display All";
+        cout << "\n7. Exit";
+        cout << "\nEnter choice: ";
+        cin >> choice;
+        switch (choice) {
+        case 1:
+            cout << "\nEnter student name: ";
+            cin.ignore();
+            cin.getline(name, 30);
+            mySchool.addStudent(name);
+            break;
+        case 2:
+            cout << "\nEnter student name to remove: ";
+            cin.ignore();
+            cin.getline(name, 30);
+            mySchool.removeStudent(name);
+            break;
+        case 3:
+            cout << "\nEnter teacher name: ";
+            cin.ignore();
+            cin.getline(name, 30);
+            mySchool.addTeacher(name);
+            break;
+        case 4:
+            cout << "\nEnter teacher name to remove: ";
+            cin.ignore();
+            cin.getline(name, 30);
+            mySchool.removeTeacher(name);
+            break;
+        case 5:
+            cout << "\nEnter class name: ";
+            cin.ignore();
+            cin.getline(name, 30);
+            mySchool.createClass(name);
+            break;
+        case 6:
+            mySchool.displayAll();
+            break;
+        case 7:
+            cout << "\nExiting...";
+            break;
+        default:
+            cout << "\nInvalid choice!";
+        }
+
+        cout << "\n\nPress any key to continue...";
+        clrscr();
+
+    } while (choice != 7);
+  delay(5000);
+}
+            </code></pre>
+            <h2>Input:</h2>
+            <p>1 → Add "Alice"
+              <br>
+              3 → Add "Mr. Smith"
+              <br>
+              5 → Create "Math Class"
+              <br>
+              6 → Display All
+              </p>
+              <h2>Output:</h2>
+              <p>--- Students ---
+                <br>
+                1. Alice
+                <br>
+                --- Teachers ---
+                <br>
+                1. Mr. Smith
+                <br>
+                --- Classes ---
+                <br>
+                1. Math Class
+                </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head14" />
+        <label for="collapsible-head14"
+          >15. Write a C++ program to create a class called "MusicLibrary" with a collection of songs and methods to add and remove songs, and to play a random song.</label
+        >
+        <div class="collapsible-text">
+          <h2>OOPS 15:</h2>
+          <p>
+            <pre><code>
+#include iostream.h
+#include conio.h
+#include string.h
+#include stdlib.h 
+#include time.h  
+#include dos.h
+const int MAX_SONGS = 100;
+class MusicLibrary {
+private:
+    char songs[MAX_SONGS][50];
+    int songCount;
+public:
+    MusicLibrary() {
+        songCount = 0;
+        srand(time(0));
+    }
+    void addSong(const char* title) {
+        if (songCount < MAX_SONGS) {
+            strcpy(songs[songCount], title);
+            songCount++;
+            cout << "\nSong added to the library.";
+        } else {
+            cout << "\nMusic library is full!";
+        }
+    }
+    void removeSong(const char* title) {
+        int found = 0;
+        for (int i = 0; i < songCount; i++) {
+            if (strcmp(songs[i], title) == 0) {
+                for (int j = i; j < songCount - 1; j++) {
+                    strcpy(songs[j], songs[j + 1]);
+                }
+                songCount--;
+                found = 1;
+                cout << "\nSong removed from the library.";
+                break;
+            }
+        }
+        if (!found) {
+            cout << "\nSong not found.";
+        }
+    }
+    void playRandomSong() {
+        if (songCount == 0) {
+            cout << "\nNo songs in the library.";
+        } else {
+            int index = rand() % songCount;
+            cout << "\nNow playing: " << songs[index];
+        }
+    }
+    void displaySongs() {
+        if (songCount == 0) {
+            cout << "\nMusic library is empty.";
+        } else {
+            cout << "\n--- Song List ---";
+            for (int i = 0; i < songCount; i++) {
+                cout << "\n" << (i + 1) << ". " << songs[i];
+            }
+        }
+    }
+};
+void main() {
+    clrscr();
+    MusicLibrary myLibrary;
+    int choice;
+    char title[50];
+    do {
+        cout << "\n\n--- Music Library Menu ---";
+        cout << "\n1. Add Song";
+        cout << "\n2. Remove Song";
+        cout << "\n3. Play Random Song";
+        cout << "\n4. Display All Songs";
+        cout << "\n5. Exit";
+        cout << "\nEnter your choice: ";
+        cin >> choice;
+        switch (choice) {
+        case 1:
+            cout << "\nEnter song title: ";
+            cin.ignore();
+            cin.getline(title, 50);
+            myLibrary.addSong(title);
+            break;
+        case 2:
+            cout << "\nEnter song title to remove: ";
+            cin.ignore();
+            cin.getline(title, 50);
+            myLibrary.removeSong(title);
+            break;
+        case 3:
+            myLibrary.playRandomSong();
+            break;
+        case 4:
+            myLibrary.displaySongs();
+            break;
+        case 5:
+            cout << "\nExiting Music Library...";
+            break;
+        default:
+            cout << "\nInvalid choice!";
+        }
+
+        cout << "\n\nPress any key to continue...";
+        clrscr();
+    } while (choice != 5);
+  delay(5000);
+}
+            </code></pre>
+            <h2>Input:</h2>
+            <p>1 → Add "Shape of You"
+              <br>
+              1 → Add "Blinding Lights"
+              <br>
+              3 → Play Random Song
+              <br>
+              4 → Display All Songs
+              </p>
+              <h2>Output:</h2>
+              <p>Now playing: Shape of You
+<br>
+                --- Song List ---
+                <br>
+                1. Shape of You
+                <br>
+                2. Blinding Lights
+                </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head15" />
+        <label for="collapsible-head15"
+          >16. Write a C++ program to create a class called "Shape" with abstract methods for calculating area and perimeter, and subclasses for "Rectangle", "Circle", and "Triangle".</label
+        >
+        <div class="collapsible-text">
+          <h2>OOPS 16:</h2>
+          <p>
+           <pre><code>
+#include iostream.h
+#include conio.h
+#include math.h
+#include dos.h
+class Shape {
+public:
+    virtual float calculateArea() = 0;     
+    virtual float calculatePerimeter() = 0; 
+    virtual void display() = 0;             
+    virtual ~Shape() {} 
+};
+class Rectangle : public Shape {
+private:
+    float length;
+    float width;
+public:
+    Rectangle(float l, float w) : length(l), width(w) {}
+    float calculateArea() {
+        return length * width;
+    }
+    float calculatePerimeter() {
+        return 2 * (length + width);
+    }
+    void display() {
+        cout << "\nRectangle:";
+        cout << "\nLength = " << length << ", Width = " << width;
+        cout << "\nArea = " << calculateArea();
+        cout << "\nPerimeter = " << calculatePerimeter();
+    }
+};
+class Circle : public Shape {
+private:
+    float radius;
+public:
+    Circle(float r) : radius(r) {}
+    float calculateArea() {
+        return M_PI * radius * radius;
+    }
+    float calculatePerimeter() {
+        return 2 * M_PI * radius;
+    }
+    void display() {
+        cout << "\nCircle:";
+        cout << "\nRadius = " << radius;
+        cout << "\nArea = " << calculateArea();
+        cout << "\nPerimeter = " << calculatePerimeter();
+    }
+};
+class Triangle : public Shape {
+private:
+    float base;
+    float height;
+    float side1;
+    float side2;
+    float side3;
+public:
+    Triangle(float b, float h, float s1, float s2, float s3)
+        : base(b), height(h), side1(s1), side2(s2), side3(s3) {}
+    float calculateArea() {
+        return 0.5 * base * height;
+    }
+    float calculatePerimeter() {
+        return side1 + side2 + side3;
+    }
+    void display() {
+        cout << "\nTriangle:";
+        cout << "\nBase = " << base << ", Height = " << height;
+        cout << "\nArea = " << calculateArea();
+        cout << "\nPerimeter = " << calculatePerimeter();
+    }
+};
+void main() {
+    clrscr();
+    Shape *shape;
+    Rectangle rect(10, 5);
+    Circle circ(7);
+    Triangle tri(6, 8, 5, 6, 7);
+    shape = &rect;
+    shape->display();
+    shape = &circ;
+    shape->display();
+    shape = &tri;
+    shape->display();
+    cout << "\n\nPress any key to exit...";
+  delay(5000);
+}
+           </code></pre>
+           <h2>Output:</h2>
+           <p>Rectangle:
+            <br>
+            Length = 10, Width = 5
+            <br>
+            Area = 50
+            <br>
+            Perimeter = 30
+            <br>
+            <br>
+            Circle:
+            <br>
+            Radius = 7
+            <br>
+            Area = 153.938
+            <br>
+            Perimeter = 43.9823
+            <br>
+            <br>
+            Triangle:
+            <br>
+            Base = 6, Height = 8
+            <br>
+            Area = 24
+            <br>
+            Perimeter = 18
+            </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head16" />
+        <label for="collapsible-head16"
+          >17. Write a C++ program to create a class called "Movie" with attributes for title, director, actors, and reviews, and methods for adding and retrieving reviews.</label
+        >
+        <div class="collapsible-text">
+          <h2>OOPS 17:</h2>
+          <p>
+            <pre><code>
+#include iostream.h
+#include conio.h
+#include string.h
+#include dos.h
+const int MAX_REVIEWS = 10;
+const int MAX_ACTORS = 5;
+const int MAX_STRING_LENGTH = 50;
+class Movie {
+private:
+    char title[MAX_STRING_LENGTH];
+    char director[MAX_STRING_LENGTH];
+    char actors[MAX_ACTORS][MAX_STRING_LENGTH];
+    char reviews[MAX_REVIEWS][MAX_STRING_LENGTH];
+    int reviewCount;
+    int actorCount;
+public:
+    Movie(const char* movieTitle, const char* movieDirector) {
+        strcpy(title, movieTitle);
+        strcpy(director, movieDirector);
+        reviewCount = 0;
+        actorCount = 0;
+    }
+    void addActor(const char* actorName) {
+        if (actorCount < MAX_ACTORS) {
+            strcpy(actors[actorCount], actorName);
+            actorCount++;
+            cout << "\nActor added.";
+    } else {
+    cout << "\nCannot add more actors. Maximum reached.";
+        }
+    }
+    void addReview(const char* review) {
+        if (reviewCount < MAX_REVIEWS) {
+            strcpy(reviews[reviewCount], review);
+            reviewCount++;
+            cout << "\nReview added.";
+        } else {
+        cout << "\nCannot add more reviews. Maximum reached.";
+        }
+    }
+    void displayReviews() {
+        if (reviewCount == 0) {
+            cout << "\nNo reviews available.";
+            return;
+        }
+        cout << "\n--- Reviews for \"" << title << "\" ---";
+        for (int i = 0; i < reviewCount; i++) {
+            cout << "\n" << (i + 1) << ". " << reviews[i];
+        }
+    }
+        cout << "\nMovie Title: " << title;
+        cout << "\nDirector: " << director;
+        
+        if (actorCount > 0) {
+            cout << "\nActors: ";
+            for (int i = 0; i < actorCount; i++) {
+                cout << actors[i] << ", ";
+            }
+        } else {
+            cout << "\nNo actors added.";
+        }
+        displayReviews();
+    }
+};
+void main() {
+    clrscr();
+    Movie myMovie("Inception", "Christopher Nolan");
+    myMovie.addActor("Leonardo DiCaprio");
+    myMovie.addActor("Joseph Gordon-Levitt");
+    myMovie.addActor("Ellen Page");
+    myMovie.addReview("Amazing plot with stunning visuals.");
+    myMovie.addReview("A masterpiece of modern cinema.");
+    myMovie.addReview("An intricate and mind-bending experience.");
+    myMovie.displayMovieDetails();
+    cout << "\n\nPress any key to exit...";
+  delay(5000);
+}
+            </code></pre>
+            <h2>Output:</h2>
+            <p>
+              Movie Title: Inception
+              <br>
+Director: Christopher Nolan
+<br>
+Actors: Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page, 
+<br>
+--- Reviews for "Inception" ---
+<br>
+1. Amazing plot with stunning visuals.
+<br>
+2. A masterpiece of modern cinema.
+<br>
+3. An intricate and mind-bending experience.
+            </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head17" />
+        <label for="collapsible-head17"
+          >18. Write a C++ program to create a class called "Restaurant" with attributes for menu items, prices, and ratings, and methods to add and remove items, and to calculate average rating.</label
+        >
+        <div class="collapsible-text">
+          <h2>OOPS 18:</h2>
+          <p>
+           <pre><code>
+#include iostream.h
+#include conio.h
+#include string.h
+#include dos.h
+const int MAX_ITEMS = 10;
+const int MAX_STRING_LENGTH = 50;
+class Restaurant {
+private:
+    char menuItems[MAX_ITEMS][MAX_STRING_LENGTH];
+    float prices[MAX_ITEMS];
+    float ratings[MAX_ITEMS];
+    int itemCount;
+public:
+    Restaurant() {
+        itemCount = 0;
+    }
+    void addMenuItem(const char* itemName, 
+    float price, float rating) {
+        if (itemCount < MAX_ITEMS) {
+            strcpy(menuItems[itemCount], itemName);
+            prices[itemCount] = price;
+            ratings[itemCount] = rating;
+            itemCount++;
+            cout << "\nItem added to the menu.";
+        } else {
+            cout << "\nMenu is full. Cannot add more items.";
+        }
+    }
+    void removeMenuItem(const char* itemName) {
+        int found = 0;
+        for (int i = 0; i < itemCount; i++) {
+            if (strcmp(menuItems[i], itemName) == 0) {
+                for (int j = i; j < itemCount - 1; j++) {
+                    strcpy(menuItems[j], menuItems[j + 1]);
+                    prices[j] = prices[j + 1];
+                    ratings[j] = ratings[j + 1];
+                }
+                itemCount--;
+                found = 1;
+                cout << "\nItem removed from the menu.";
+                break;
+            }
+        }
+        if (!found) {
+            cout << "\nItem not found on the menu.";
+        }
+    }
+    float calculateAverageRating() {
+        if (itemCount == 0) {
+            return 0;
+        }
+        float totalRating = 0;
+        for (int i = 0; i < itemCount; i++) {
+            totalRating += ratings[i];
+        }
+        return totalRating / itemCount;
+    }
+    void displayMenu() {
+        if (itemCount == 0) {
+            cout << "\nNo items on the menu.";
+        } else {
+            cout << "\n--- Restaurant Menu ---";
+            for (int i = 0; i < itemCount; i++) {
+            cout << "\n" << (i + 1) << ". " << menuItems[i] <<
+             " | Price: $" << prices[i] 
+             << " | Rating: " << ratings[i];
+            }
+        }
+    }
+};
+void main() {
+    clrscr();
+    Restaurant myRestaurant;
+    int choice;
+    char itemName[MAX_STRING_LENGTH];
+    float price, rating;
+    do {
+        cout << "\n\n--- Restaurant Menu ---";
+        cout << "\n1. Add Menu Item";
+        cout << "\n2. Remove Menu Item";
+        cout << "\n3. Display Menu";
+        cout << "\n4. Calculate Average Rating";
+        cout << "\n5. Exit";
+        cout << "\nEnter your choice: ";
+        cin >> choice;
+        switch (choice) {
+        case 1:
+            cout << "\nEnter menu item name: ";
+            cin.ignore();
+            cin.getline(itemName, MAX_STRING_LENGTH);
+            cout << "Enter price for " << itemName << ": $";
+            cin >> price;
+            cout << "Enter rating for " << itemName << ": ";
+            cin >> rating;
+            myRestaurant.addMenuItem(itemName, price, rating);
+            break;
+        case 2:
+            cout << "\nEnter menu item name to remove: ";
+            cin.ignore();
+            cin.getline(itemName, MAX_STRING_LENGTH);
+            myRestaurant.removeMenuItem(itemName);
+            break;
+        case 3:
+            myRestaurant.displayMenu();
+            break;
+        case 4:
+            cout << "\nAverage Rating: " 
+            << myRestaurant.calculateAverageRating();
+            break;
+        case 5:
+            cout << "\nExiting...";
+            break;
+        default:
+            cout << "\nInvalid choice!";
+        }
+
+        cout << "\n\nPress any key to continue...";
+        clrscr();
+    } while (choice != 5);
+  dealy(5000);
+}
+           </code></pre>
+           <h2>Output:</h2>
+           <p>--- Restaurant Menu ---
+            <br>
+            1. Add Menu Item
+            <br>
+            2. Remove Menu Item
+            <br>
+            3. Display Menu
+            <br>
+            4. Calculate Average Rating
+            <br>
+            5. Exit
+            <br>
+            <br>
+            Enter your choice: 1
+            <br>
+            Enter menu item name: Pasta
+            <br>
+            Enter price for Pasta: $12.99
+            <br>
+            Enter rating for Pasta: 4.5
+            <br>
+            Item added to the menu.
+            <br>
+            Press any key to continue...
+            </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head18" />
+        <label for="collapsible-head18"
+          >19. Write a C++ program to create a class with methods to search for flights and hotels, and to book and cancel reservations.</label
+        >
+        <div class="collapsible-text">
+          <h2>OOPS 19:</h2>
+          <p>
+           <pre><code>
+#include iostream.h
+#include conio.h
+#include string.h
+#include dos.h
+const int MAX_FLIGHTS = 5;
+const int MAX_HOTELS = 5;
+const int MAX_STRING_LENGTH = 50;
+class ReservationSystem {
+private:
+    struct Flight {
+        char flightNumber[MAX_STRING_LENGTH];
+        char destination[MAX_STRING_LENGTH];
+        float price;
+        bool isBooked;
+    };
+    struct Hotel {
+        char hotelName[MAX_STRING_LENGTH];
+        char location[MAX_STRING_LENGTH];
+        float pricePerNight;
+        bool isBooked;
+    };
+    Flight flights[MAX_FLIGHTS];
+    Hotel hotels[MAX_HOTELS];
+public:
+    ReservationSystem() {
+        for (int i = 0; i < MAX_FLIGHTS; i++) {
+            flights[i].isBooked = false;
+        }
+        for (int i = 0; i < MAX_HOTELS; i++) {
+            hotels[i].isBooked = false;
+        }
+    }
+    void addFlight(const char* flightNumber, 
+    const char* destination, float price) {
+        for (int i = 0; i < MAX_FLIGHTS; i++) {
+            if (strlen(flights[i].flightNumber) == 0) {
+                strcpy(flights[i].flightNumber, flightNumber);
+                strcpy(flights[i].destination, destination);
+                flights[i].price = price;
+                flights[i].isBooked = false;
+                cout << "\nFlight added successfully.";
+                return;
+            }
+        }
+    cout<<"\nCannot add more flights, maximum limit reached.";
+    }
+    void addHotel(const char* hotelName, 
+    const char* location, float pricePerNight) {
+        for (int i = 0; i < MAX_HOTELS; i++) {
+            if (strlen(hotels[i].hotelName) == 0) {
+                strcpy(hotels[i].hotelName, hotelName);
+                strcpy(hotels[i].location, location);
+                hotels[i].pricePerNight = pricePerNight;
+                hotels[i].isBooked = false;
+                cout << "\nHotel added successfully.";
+                return;
+            }
+        }
+    cout<<"\nCannot add more hotels, maximum limit reached.";
+    }
+    void searchFlights(const char* destination) {
+        bool found = false;
+        for (int i = 0; i < MAX_FLIGHTS; i++) {
+            if (strcmp(flights[i].destination, destination) 
+            == 0 && !flights[i].isBooked) {
+                cout << "\nFlight Found: " 
+                << flights[i].flightNumber
+                     << " to " << flights[i].destination
+                     << " | Price: $" << flights[i].price;
+                found = true;
+            }
+        }
+        if (!found) {
+            cout << "\nNo available flights to " << destination;
+        }
+    }
+    void searchHotels(const char* location) {
+        bool found = false;
+        for (int i = 0; i < MAX_HOTELS; i++) {
+            if (strcmp(hotels[i].location, location) 
+            == 0 && !hotels[i].isBooked) {
+                cout << "\nHotel Found: " 
+                << hotels[i].hotelName
+                     << " in " << hotels[i].location
+                     << " | Price per night: $" 
+                     << hotels[i].pricePerNight;
+                found = true;
+            }
+        }
+        if (!found) {
+            cout << "\nNo available hotels in " << location;
+        }
+    }
+    void bookReservation(const char* flightNumber, 
+    const char* hotelName) {
+        bool flightFound = false, hotelFound = false;
+        for (int i = 0; i < MAX_FLIGHTS; i++) {
+            if (strcmp(flights[i].flightNumber, flightNumber) 
+            == 0 && !flights[i].isBooked) {
+                flights[i].isBooked = true;
+                flightFound = true;
+                cout << "\nFlight " << flightNumber
+                 << " booked successfully.";
+                break;
+            }
+        }
+        for (int i = 0; i < MAX_HOTELS; i++) {
+            if (strcmp(hotels[i].hotelName, hotelName) 
+            == 0 && !hotels[i].isBooked) {
+                hotels[i].isBooked = true;
+                hotelFound = true;
+                cout << "\nHotel " << hotelName 
+                << " booked successfully.";
+                break;
+            }
+        }
+        if (!flightFound) {
+            cout << "\nFlight not available or already booked.";
+        }
+
+        if (!hotelFound) {
+            cout << "\nHotel not available or already booked.";
+        }
+    }
+    void cancelReservation(const char* flightNumber, 
+    const char* hotelName) {
+        bool flightFound = false, hotelFound = false;
+        for (int i = 0; i < MAX_FLIGHTS; i++) {
+            if (strcmp(flights[i].flightNumber, flightNumber) 
+            == 0 && flights[i].isBooked) {
+                flights[i].isBooked = false;
+                flightFound = true;
+                cout << "\nFlight " << flightNumber 
+                << " reservation canceled.";
+                break;
+            }
+        }
+        for (int i = 0; i < MAX_HOTELS; i++) {
+            if (strcmp(hotels[i].hotelName, hotelName) 
+            == 0 && hotels[i].isBooked) {
+                hotels[i].isBooked = false;
+                hotelFound = true;
+            cout << "\nHotel " << hotelName 
+            << " reservation canceled.";
+                break;
+            }
+        }
+        if (!flightFound) {
+            cout << "\nNo reservation found for flight " 
+            << flightNumber;
+        }
+        if (!hotelFound) {
+            cout << "\nNo reservation found for hotel " 
+            << hotelName;
+        }
+    }
+};
+void main() {
+    clrscr();
+    ReservationSystem system;
+    int choice;
+    char flightNumber[MAX_STRING_LENGTH], 
+    hotelName[MAX_STRING_LENGTH], 
+    destination[MAX_STRING_LENGTH], location[MAX_STRING_LENGTH];
+    do {
+        cout << "\n\n--- Reservation System ---";
+        cout << "\n1. Add Flight";
+        cout << "\n2. Add Hotel";
+        cout << "\n3. Search Flights";
+        cout << "\n4. Search Hotels";
+        cout << "\n5. Book Reservation";
+        cout << "\n6. Cancel Reservation";
+        cout << "\n7. Exit";
+        cout << "\nEnter your choice: ";
+        cin >> choice;
+        switch (choice) {
+        case 1:
+            cout << "\nEnter flight number: ";
+            cin.ignore();
+            cin.getline(flightNumber, MAX_STRING_LENGTH);
+            cout << "Enter destination: ";
+            cin.getline(destination, MAX_STRING_LENGTH);
+            cout << "Enter price: $";
+            float price;
+            cin >> price;
+            system.addFlight(flightNumber, destination, price);
+            break;
+        case 2:
+            cout << "\nEnter hotel name: ";
+            cin.ignore();
+            cin.getline(hotelName, MAX_STRING_LENGTH);
+            cout << "Enter location: ";
+            cin.getline(location, MAX_STRING_LENGTH);
+            cout << "Enter price per night: $";
+            cin >> price;
+            system.addHotel(hotelName, location, price);
+            break;
+        case 3:
+            cout << "\nEnter destination to search for flights: ";
+            cin.ignore();
+            cin.getline(destination, MAX_STRING_LENGTH);
+            system.searchFlights(destination);
+            break;
+        case 4:
+            cout << "\nEnter location to search for hotels: ";
+            cin.ignore();
+            cin.getline(location, MAX_STRING_LENGTH);
+            system.searchHotels(location);
+            break;
+        case 5:
+            cout << "\nEnter flight number to book: ";
+            cin.ignore();
+            cin.getline(flightNumber, MAX_STRING_LENGTH);
+            cout << "Enter hotel name to book: ";
+            cin.getline(hotelName, MAX_STRING_LENGTH);
+            system.bookReservation(flightNumber, hotelName);
+            break;
+        case 6:
+            cout << "\nEnter flight number to cancel: ";
+            cin.ignore();
+            cin.getline(flightNumber, MAX_STRING_LENGTH);
+            cout << "Enter hotel name to cancel: ";
+            cin.getline(hotelName, MAX_STRING_LENGTH);
+            system.cancelReservation(flightNumber, hotelName);
+            break;
+        case 7:
+            cout << "\nExiting Reservation System...";
+            break;
+        default:
+            cout << "\nInvalid choice!";
+        }
+        cout << "\n\nPress any key to continue...";
+        clrscr();
+    } while (choice != 7);
+  delay(5000);
+}
+           </code></pre>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head19" />
+        <label for="collapsible-head19"
+          >20. Create a class showing an example of default constructor.</label
+        >
+        <div class="collapsible-text">
+          <h2>OOPS 20:</h2>
+          <p>
+           <pre><code>
+#include iostream.h
+#include conio.h
+#include dos.h
+class Car {
+private:
+    int speed;
+    int fuel;
+public:
+    Car() {
+        speed = 0;
+        fuel = 100;
+        cout << "\nDefault Constructor Called!";
+    }
+    void displayStatus() {
+        cout << "\nCar Speed: " << speed << " km/h";
+        cout << "\nFuel Level: " << fuel << "%";
+    }
+};
+void main() {
+    clrscr();
+    Car myCar; 
+    myCar.displayStatus();
+    cout << "\n\nPress any key to exit...";
+    delay(5000);
+}
+           </code></pre>
+           <h2>Output:</h2>
+           <p>Default Constructor Called!
+            <br>
+            Car Speed: 0 km/h
+            <br>
+            Fuel Level: 100%
+            </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head20" />
+        <label for="collapsible-head20"
+          >21. Create a class showing an example of parameterized constructor.</label
+        >
+        <div class="collapsible-text">
+          <h2>OOPS 21:</h2>
+          <p>
+            <pre><code>
+#include iostream.h
+#include conio.h
+#include dos.h
+class Student {
+private:
+    int rollNo;
+    char name[50];
+public:
+    Student(int r, const char n[]) {
+        rollNo = r;
+        strcpy(name, n);
+        cout << "\nParameterized Constructor Called!";
+    }
+    void display() {
+        cout << "\nRoll No: " << rollNo;
+        cout << "\nName: " << name;
+    }
+};
+void main() {
+    clrscr();
+    Student s1(101, "John Doe");
+    s1.display();
+    cout << "\n\nPress any key to exit...";
+    delay(5000);
+}
+            </code></pre>
+            <h2>Output:</h2>
+            <p>Parameterized Constructor Called!
+              <br>
+              Roll No: 101
+              <br>
+              Name: John Doe
+              </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head21" />
+        <label for="collapsible-head21"
+          >22. Create a class showing an example of copy constructor.</label
+        >
+        <div class="collapsible-text">
+          <h2>OOPS 22:</h2>
+          <p>
+            <pre><code>
+#include iostream.h
+#include conio.h
+#include dos.h
+class Student {
+    int roll;
+    float marks;
+public:
+    Student() {
+        roll = 0;
+        marks = 0.0;
+    }
+    Student(int r, float m) {
+        roll = r;
+        marks = m;
+    }
+    Student(const Student &s) {
+        roll = s.roll;
+        marks = s.marks;
+    }
+    void display() {
+        cout << "Roll Number: " << roll << "\n";
+        cout << "Marks: " << marks << "\n";
+    }
+};
+void main() {
+    clrscr();
+    Student s1(101, 89.5);     
+    Student s2 = s1;    
+    cout << "Details of Student 1:\n";
+    s1.display();
+    cout << "\nDetails of Student 2 (Copied from Student 1):\n";
+    s2.display();
+  delay(5000);
+}
+            </code></pre>
+            <h2>Output:</h2>
+            <p>Details of Student 1:
+                <br>
+                Roll Number: 101
+                <br>
+                Marks: 89.5
+                <br>
+                <br>
+                Details of Student 2 (Copied from Student 1):
+                <br>
+                Roll Number: 101
+                <br>
+                Marks: 89.5
+                </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head22" />
+        <label for="collapsible-head22"
+          >23. Create a class entering the rollno, name and class of the student from user but rollno should be automatically generated as we enter the information of 10 students</label
+        >
+        <div class="collapsible-text">
+          <h2>OOPS 23:</h2>
+          <p>
+            <pre><code>
+#include iostream.h
+#include conio.h
+#include stdio.h   
+#include dos.h
+class Student {
+    static int count;   
+    int rollno;
+    char name[50];
+    char standard[20]; 
+public:
+    void input() {
+        rollno = ++count;
+        cout << "Enter name of student: ";
+        gets(name);
+        cout << "Enter class of student: ";
+        gets(standard);
+    }
+    void display() {
+        cout << "Roll No: " << rollno << "\n";
+        cout << "Name: " << name << "\n";
+        cout << "Class: " << standard << "\n";
+        cout << "------------------------\n";
+    }
+};
+int Student::count = 0;
+void main() {
+    clrscr();
+    Student s[10];
+    cout << "Enter details for 10 students:\n";
+    for (int i = 0; i < 10; i++) {
+        cout << "\nStudent " << (i + 1) << ":\n";
+        s[i].input();
+    }
+    clrscr();
+    cout << "Student Records:\n";
+    cout << "------------------------\n";
+    for (int i = 0; i < 10; i++) {
+        s[i].display();
+    }
+  delay(5000);
+}
+            </code></pre>
+            <h2>Output:</h2>
+            <p>Student Records:
+                <br>
+                ------------------------
+                <br>
+                Roll No: 1
+                <br>
+                Name: John Doe
+                <br>
+                Class: 10A
+                <br>
+                ------------------------
+                <br>
+                Roll No: 2
+                <br>
+                Name: Alice Smith
+                <br>
+                Class: 10B
+                <br>
+                ------------------------
+                <br>
+                Roll No: 3
+                <br>
+                Name: Raj Kumar
+                <br>
+                Class: 9C
+                <br>
+                ------------------------
+                <br>
+                ... (up to Roll No: 10 based on user input)</p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head23" />
+        <label for="collapsible-head23"
+          >24. Create a class showing the area of circle and rectangle by method overloading.</label
+        >
+        <div class="collapsible-text">
+          <h2>OOPS 24:</h2>
+          <p>
+            <pre><code>
+#include iostream.h
+#include conio.h
+#include dos.h
+class Shape {
+public:
+    float area(float length, float breadth) {
+        return length * breadth;
+    }
+    float area(float radius) {
+        return 3.1416 * radius * radius;
+    }
+};
+void main() {
+    clrscr();
+    Shape s;
+    float length, breadth, radius;
+    cout << "Enter length and breadth of rectangle: ";
+    cin >> length >> breadth;
+    cout << "Enter radius of circle: ";
+    cin >> radius;
+    cout << "\nArea of Rectangle = " << s.area(length, breadth);
+    cout << "\nArea of Circle = " << s.area(radius);
+  delay(5000);
+}
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Enter length and breadth of rectangle: 5 4
+                <br>
+                Enter radius of circle: 3
+                </p>
+                <h2>Output:</h2>
+                <p>Area of Rectangle = 20
+                    <br>
+                    Area of Circle = 28.2744
+                    </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head24" />
+        <label for="collapsible-head24"
+          >25. Write a C++ program to create a class called Person with private instance variables name, age. and country. Provide public getter and setter methods to access and modify these variables.</label
+        >
+        <div class="collapsible-text">
+          <h2>OOPS 25:</h2>
+          <p>
+            <pre><code>
+#include iostream.h
+#include conio.h
+#include string.h
+#include stdio.h
+#include dos.h
+class Person {
+private:
+    char name[50];
+    int age;
+    char country[50];
+public:
+    void setName(char n[]) {
+        strcpy(name, n);
+    }
+    void setAge(int a) {
+        age = a;
+    
+    void setCountry(char c[]) {
+        strcpy(country, c);
+    }
+    void getName() {
+        cout << "Name: " << name << "\n";
+    }
+    void getAge() {
+        cout << "Age: " << age << "\n";
+    }
+    void getCountry() {
+        cout << "Country: " << country << "\n";
+    }
+};
+void main() {
+    clrscr();
+    Person p;
+    char n[50], c[50];
+    int a;
+    cout << "Enter name: ";
+    gets(n);
+    cout << "Enter age: ";
+    cin >> a;
+    cin.ignore();
+    cout << "Enter country: ";
+    gets(c);
+    p.setName(n);
+    p.setAge(a);
+    p.setCountry(c);
+    cout << "\n--- Person Details ---\n";
+    p.getName();
+    p.getAge();
+    p.getCountry();
+  delay(5000);
+}
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Enter name: John Doe
+                <br>
+                Enter age: 25
+                <br>
+                Enter country: India</p>
+                <h2>Output:</h2>
+                <p>--- Person Details ---
+                    <br>
+                    Name: John Doe
+                    <br>
+                    Age: 25
+                    <br>
+                    Country: India</p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head25" />
+        <label for="collapsible-head25"
+          >26. Write a C++ program to create a class called BankAccount with private instance variables accountNumber and balance. Provide public getter and setter methods to access and modify these variables.</label
+        >
+        <div class="collapsible-text">
+          <h2>OOPS 26:</h2>
+          <p>
+            <pre><code>
+#include iostream.h
+#include conio.h
+#include dos.h
+class BankAccount {
+private:
+    int accountNumber;
+    float balance;
+public:
+    void setAccountNumber(int accNo) {
+        accountNumber = accNo;
+    }
+    void setBalance(float bal) {
+        balance = bal;
+    }
+    void getAccountNumber() {
+        cout << "Account Number: " << accountNumber << "\n";
+    }
+    void getBalance() {
+        cout << "Balance: $" << balance << "\n";
+    }
+};
+void main() {
+    clrscr();
+    BankAccount account;
+    int accNo;
+    float bal;
+    cout << "Enter Account Number: ";
+    cin >> accNo;
+    cout << "Enter Initial Balance: ";
+    cin >> bal;
+    account.setAccountNumber(accNo);
+    account.setBalance(bal);
+    cout << "\n--- Bank Account Details ---\n";
+    account.getAccountNumber();
+    account.getBalance();
+  delay(5000);
+}
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Enter Account Number: 12345
+                <br>
+                Enter Initial Balance: 1500.75
+                </p>
+                <h2>Output:</h2>
+                <p>--- Bank Account Details ---
+                    <br>
+                    Account Number: 12345
+                    <br>
+                    Balance: $1500.75
+                    </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head26" />
+        <label for="collapsible-head26"
+          >27. Write a C++ program to create a class called Rectangle with private instance variables length and width. Provide public getter and setter methods to access and modify these variables.</label
+        >
+        <div class="collapsible-text">
+          <h2>OOPS 27:</h2>
+          <p>
+            <pre><code>
+#include iostream.h
+#include conio.h
+#include dos.h
+class Rectangle {
+private:
+    float length;
+    float width;
+public:
+    void setLength(float l) {
+        length = l;
+    }
+    void setWidth(float w) {
+        width = w;
+    }
+    void getLength() {
+        cout << "Length: " << length << "\n";
+    }
+    void getWidth() {
+        cout << "Width: " << width << "\n";
+    }
+    float getArea() {
+        return length * width;
+    }
+};
+void main() {
+    clrscr();
+    Rectangle r;
+    float l, w;
+    cout << "Enter length of rectangle: ";
+    cin >> l;
+    cout << "Enter width of rectangle: ";
+    cin >> w;
+    r.setLength(l);
+    r.setWidth(w);
+    cout << "\n--- Rectangle Details ---\n";
+    r.getLength();
+    r.getWidth();
+    cout << "Area: " << r.getArea();
+  delay(5000);
+}
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Enter length of rectangle: 5
+                <br>
+                Enter width of rectangle: 4
+                </p>
+                <h2>Output:</h2>
+                <p>--- Rectangle Details ---
+                    <br>
+                    Length: 5
+                    <br>
+                    Width: 4
+                    <br>
+                    Area: 20
+                    </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head27" />
+        <label for="collapsible-head27"
+          >28. Write a C++ program to create a class called Employee with private instance variables employee_id, employee_name, and employee_salary. Provide public getter and setter methods to access and modify the id and name variables, but provide a getter method for the salary variable that returns a formatted string.</label
+        >
+        <div class="collapsible-text">
+          <h2>OOPS 28:</h2>
+          <p>
+            <pre><code>
+#include iostream.h
+#include conio.h
+#include stdio.h
+#include string.h
+#include iomanip.h
+#include dos.h
+class Employee {
+private:
+    int employee_id;
+    char employee_name[50];
+    float employee_salary;
+public:
+    void setEmployeeID(int id) {
+        employee_id = id;
+    }
+    void setEmployeeName(char name[]) {
+        strcpy(employee_name, name);
+    }
+    void setEmployeeSalary(float salary) {
+        employee_salary = salary;
+    }
+    void getEmployeeID() {
+        cout << "Employee ID: " << employee_id << "\n";
+    }
+    void getEmployeeName() {
+        cout << "Employee Name: " << employee_name << "\n";
+    }
+    void getEmployeeSalary() {
+        cout << "Employee Salary: $" << employee_salary << "\n";
+    }
+};
+void main() {
+    clrscr();
+    Employee emp;
+    int id;
+    char name[50];
+    float salary;
+    cout << "Enter Employee ID: ";
+    cin >> id;
+    cin.ignore();
+    cout << "Enter Employee Name: ";
+    gets(name);
+    cout << "Enter Employee Salary: ";
+    cin >> salary;
+    emp.setEmployeeID(id);
+    emp.setEmployeeName(name);
+    emp.setEmployeeSalary(salary);
+    cout << "\n--- Employee Details ---\n";
+    emp.getEmployeeID();
+    emp.getEmployeeName();
+    emp.getEmployeeSalary();
+  delay(5000);
+}
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Enter Employee ID: 1001
+                <br>
+                Enter Employee Name: Rahul Verma
+                <br>
+                Enter Employee Salary: 45000.75
+                </p>
+                <h2>Output:</h2>
+                <p>--- Employee Details ---
+                    <br>
+                    Employee ID: 1001
+                    <br>
+                    Employee Name: Rahul Verma
+                    <br>
+                    Employee Salary: $45000.8
+                    </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head28" />
+        <label for="collapsible-head28"
+          >29. Write a C++ program to create a class called Circle with a private instance variable radius. Provide public getter and setter methods to access and modify the radius variable. However, provide two methods called calculateArea() and calculatePerimeter() that return the calculated area and perimeter based on the current radius value.</label
+        >
+        <div class="collapsible-text">
+          <h2>OOPS 29:</h2>
+          <p>
+            <pre><code>
+#include iostream.h
+#include conio.h
+#include dos.h
+class Circle {
+private:
+    float radius;
+public:
+    void setRadius(float r) {
+        radius = r;
+    }
+    void getRadius() {
+        cout << "Radius: " << radius << "\n";
+    }
+    float calculateArea() {
+        return 3.1416 * radius * radius;
+    }    float calculatePerimeter() {
+        return 2 * 3.1416 * radius;
+    }
+};
+void main() {
+    clrscr();
+    Circle c;
+    float r;
+    cout << "Enter radius of the circle: ";
+    cin >> r;
+    c.setRadius(r);
+    cout << "\n--- Circle Details ---\n";
+    c.getRadius();
+    cout << "Area: " << c.calculateArea() << "\n";
+    cout << "Perimeter: " << c.calculatePerimeter() << "\n";
+  delay(5000);
+}
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Enter radius of the circle: 5
+            </p>
+            <h2>Output:</h2>
+            <p>--- Circle Details ---
+                <br>
+                Radius: 5
+                <br>
+                Area: 78.54
+                <br>
+                Perimeter: 31.416
+                </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head29" />
+        <label for="collapsible-head29"
+          >30. Write a C++ program to create a class called Car with private instance variables company_name, model_name, year, and mileage. Provide public getter and setter methods to access and modify the company_name, model_name, and year variables. However, only provide a getter method for the mileage variable.</label
+        >
+        <div class="collapsible-text">
+          <h2>OOPS 30:</h2>
+          <p>
+            <pre><code>
+#include iostream.h
+#include conio.h
+#include string.h
+#include dos.h
+class Car {
+private:
+    char company_name[50];
+    char model_name[50];
+    int year;
+    float mileage;
+public:
+    void setCompanyName(char company[]) {
+        strcpy(company_name, company);
+    }
+    void setModelName(char model[]) {
+        strcpy(model_name, model);
+    }
+    void setYear(int y) {
+        year = y;
+    }
+    void setMileage(float m) {
+        mileage = m;
+    }
+    void getCompanyName() {
+        cout << "Company Name: " << company_name << "\n";
+    }
+    void getModelName() {
+        cout << "Model Name: " << model_name << "\n";
+    }
+    void getYear() {
+        cout << "Year: " << year << "\n";
+    }
+    void getMileage() {
+        cout << "Mileage: " << mileage << " miles/gallon\n";
+    }
+};
+void main() {
+    clrscr();
+    Car c;
+    char company[50], model[50];
+    int year;
+    float mileage;
+    cout << "Enter Company Name: ";
+    gets(company);
+    cout << "Enter Model Name: ";
+    gets(model);
+    cout << "Enter Year of Manufacture: ";
+    cin >> year;
+    cout << "Enter Mileage (in miles/gallon): ";
+    cin >> mileage;
+    c.setCompanyName(company);
+    c.setModelName(model);
+    c.setYear(year);
+    c.setMileage(mileage);
+    cout << "\n--- Car Details ---\n";
+    c.getCompanyName();
+    c.getModelName();
+    c.getYear();
+    c.getMileage();
+  delay(5000);
+}
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Enter Company Name: Toyota
+                <br>
+                Enter Model Name: Corolla
+                <br>
+                Enter Year of Manufacture: 2020
+                <br>
+                Enter Mileage (in miles/gallon): 30.5
+                </p>
+                <h2>Output:</h2>
+                <p>--- Car Details ---
+                    <br>
+                    Company Name: Toyota
+                    <br>
+                    Model Name: Corolla
+                    <br>
+                    Year: 2020
+                    <br>
+                    Mileage: 30.5 miles/gallon
+                    </p>
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
