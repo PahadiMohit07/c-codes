@@ -1,0 +1,2484 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Single Dimension Arrays</title>
+    <link rel="stylesheet" href="codes.css" />
+  </head>
+  <body>
+    <h1>Single Dimension Array</h1>
+    <div class="wrapper">
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head" />
+        <label for="collapsible-head"
+          >1.  Program to copy all elements of one array into another array</label
+        >
+        <div class="collapsible-text">
+          <h2>Single Dimension Array 1:</h2>
+          <p>
+            <pre><code>
+#include iostream.h
+#include conio.h
+#include dos.h
+void main()
+{
+    clrscr();
+    int a[100], b[100], n, i;
+    cout << "Enter number of elements in the array: ";
+    cin >> n;
+    cout << "Enter elements of the array:\n";
+    for(i = 0; i < n; i++)
+    {
+        cout << "a[" << i << "] = ";
+        cin >> a[i];
+    }
+    for(i = 0; i < n; i++)
+    {
+        b[i] = a[i];
+    }
+    cout << "\nElements of the new array (b):\n";
+    for(i = 0; i < n; i++)
+    {
+        cout << "b[" << i << "] = " << b[i] << "\n";
+    }
+  delay(5000);
+}
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Enter number of elements in the array: 4
+              <br>
+              Enter elements of the array:
+              <br>
+              a[0] = 10
+              <br>
+              a[1] = 20
+              <br>
+              a[2] = 30
+              <br>
+              a[3] = 40
+              </p>
+              <h2>Output:</h2>
+              <p>Elements of the new array (b):
+                <br>
+                b[0] = 10
+                <br>
+                b[1] = 20
+                <br>
+                b[2] = 30
+                <br>
+                b[3] = 40
+                </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head1" />
+        <label for="collapsible-head1"
+          >2. Program to find the frequency of each element in the array</label
+        >
+        <div class="collapsible-text">
+          <h2>Single Dimension Array 2:</h2>
+          <p>
+            <pre><code>
+#include iostream.h
+#include conio.h
+#include dos.h
+void main()
+{
+    clrscr();
+    int arr[100], freq[100];
+    int n, i, j, count;
+    cout << "Enter number of elements in the array: ";
+    cin >> n;
+    cout << "Enter elements:\n";
+    for(i = 0; i < n; i++)
+    {
+        cout << "arr[" << i << "] = ";
+        cin >> arr[i];
+        freq[i] = -1;
+    }
+    for(i = 0; i < n; i++)
+    {
+        count = 1;
+        for(j = i + 1; j < n; j++)
+        {
+            if(arr[i] == arr[j])
+            {
+                count++;
+                freq[j] = 0; 
+            }
+        }
+        if(freq[i] != 0)
+        {
+            freq[i] = count;
+        }
+    }
+    cout << "\nFrequency of each element:\n";
+    for(i = 0; i < n; i++)
+    {
+        if(freq[i] != 0)
+        { 
+       cout << arr[i] << " occurs " << freq[i] << " time(s)\n";
+        }
+    }
+  delay(5000);
+}
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Enter number of elements in the array: 6
+              <br>
+              arr[0] = 1
+              <br>
+              arr[1] = 2
+              <br>
+              arr[2] = 2
+              <br>
+              arr[3] = 3
+              <br>
+              arr[4] = 1
+              <br>
+              arr[5] = 4
+              </p>
+              <h2>Output:</h2>
+              <p>Frequency of each element:
+                <br>
+                1 occurs 2 time(s)
+                <br>
+                2 occurs 2 time(s)
+                <br>
+                3 occurs 1 time(s)
+                <br>
+                4 occurs 1 time(s)
+                </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head2" />
+        <label for="collapsible-head2"
+          >3. Program to left rotate the elements of an array</label
+        >
+        <div class="collapsible-text">
+          <h2>Single Dimension Array 3:</h2>
+          <p>
+            <pre><code>
+#include iostream.h
+#include conio.h
+#include dos.h
+void main()
+{
+    clrscr();
+    int arr[100], n, i, temp;
+    cout << "Enter number of elements in the array: ";
+    cin >> n;
+    cout << "Enter elements:\n";
+    for(i = 0; i < n; i++)
+    {
+        cout << "arr[" << i << "] = ";
+        cin >> arr[i];
+    }
+    temp = arr[0];
+    for(i = 0; i < n - 1; i++)
+    {
+        arr[i] = arr[i + 1];
+    }
+    arr[n - 1] = temp;
+    cout << "\nArray after left rotation:\n";
+    for(i = 0; i < n; i++)
+    {
+        cout << arr[i] << " ";
+    }
+  delay(5000);
+}
+            </code></pre>
+            <h2>Input:</h2>
+            <p>arr = {10, 20, 30, 40, 50}
+            </p>
+            <h2>Output:</h2>
+            <p>20 30 40 50 10
+            </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head3" />
+        <label for="collapsible-head3"
+          >4. Program to print the duplicate elements of an array</label
+        >
+        <div class="collapsible-text">
+          <h2>Single Dimension Array 4:</h2>
+          <p>
+            <pre><code>
+#include iostream.h
+#include conio.h
+#include dos.h
+void main()
+{
+    clrscr();
+    int arr[100], n, i, j;
+    cout << "Enter number of elements in the array: ";
+    cin >> n;
+    cout << "Enter elements:\n";
+    for(i = 0; i < n; i++)
+    {
+        cout << "arr[" << i << "] = ";
+        cin >> arr[i];
+    }
+    cout << "\nDuplicate elements in the array are:\n";
+    for(i = 0; i < n; i++)
+    {
+        for(j = i + 1; j < n; j++)
+        {
+            if(arr[i] == arr[j])
+            {
+                int isDuplicate = 0;
+                for(int k = 0; k < i; k++)
+                {
+                    if(arr[k] == arr[i])
+                    {
+                        isDuplicate = 1;
+                        break;
+                    }
+                }
+                if(isDuplicate == 0)
+                {
+                    cout << arr[i] << "\n";
+                }
+                break;
+            }
+        }
+    }
+  delay(5000);
+}
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Enter number of elements in the array: 7
+              <br>
+              arr[0] = 2
+              <br>
+              arr[1] = 5
+              <br>
+              arr[2] = 3
+              <br>
+              arr[3] = 2
+              <br>
+              arr[4] = 5
+              <br>
+              arr[5] = 6
+              <br>
+              arr[6] = 7
+              </p>
+              <h2>Output:</h2>
+              <p>Duplicate elements in the array are:
+                <br>
+                2
+                <br>
+                5
+                </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head4" />
+        <label for="collapsible-head4"
+          >5. Program to print the elements of an array</label
+        >
+        <div class="collapsible-text">
+          <h2>Single Dimension Array 5:</h2>
+          <p>
+            <pre><code>
+#include iostream.h
+#include conio.h
+#include dos.h
+void main()
+{
+    clrscr();
+    int arr[100], n, i;
+    cout << "Enter number of elements in the array: ";
+    cin >> n;
+    cout << "Enter elements:\n";
+    for(i = 0; i < n; i++)
+    {
+        cout << "arr[" << i << "] = ";
+        cin >> arr[i];
+    }
+    cout << "\nElements of the array are:\n";
+    for(i = 0; i < n; i++)
+    {
+        cout << arr[i] << " ";
+    }
+  delay(5000);
+}
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Enter number of elements in the array: 5
+              <br>
+              arr[0] = 10
+              <br>
+              arr[1] = 20
+              <br>
+              arr[2] = 30
+              <br>
+              arr[3] = 40
+              <br>
+              arr[4] = 50
+              </p>
+              <h2>Output:</h2>
+              <p>Elements of the array are:
+                <br>
+                10 20 30 40 50
+                </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head5" />
+        <label for="collapsible-head5"
+          >6. Program to print the elements of an array in reverse order</label
+        >
+        <div class="collapsible-text">
+          <h2>Single Dimension Array 6:</h2>
+          <p>
+            <pre><code>
+#include iostream.h
+#include conio.h
+#include dos.h
+void main()
+{
+    clrscr();
+    int arr[100], n, i;
+    cout << "Enter number of elements in the array: ";
+    cin >> n;
+    cout << "Enter elements:\n";
+    for(i = 0; i < n; i++)
+    {
+        cout << "arr[" << i << "] = ";
+        cin >> arr[i];
+    }
+    cout << "\nArray elements in reverse order are:\n";
+    for(i = n - 1; i >= 0; i--)
+    {
+        cout << arr[i] << " ";
+    }
+  delay(5000);
+}
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Enter number of elements in the array: 5
+              <br>
+              arr[0] = 10
+              <br>
+              arr[1] = 20
+              <br>
+              arr[2] = 30
+              <br>
+              arr[3] = 40
+              <br>
+              arr[4] = 50
+              </p>
+              <h2>Output:</h2>
+              <p>Array elements in reverse order are:
+                <br>
+                50 40 30 20 10
+                </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head6" />
+        <label for="collapsible-head6"
+          >7. Program to print the elements of an array present on even position</label
+        >
+        <div class="collapsible-text">
+          <h2>Single Dimension Array 7:</h2>
+          <p>
+            <pre><code>
+#include iostream.h
+#include conio.h
+#include dos.h
+void main()
+{
+    clrscr();
+    int arr[100], n, i;
+    cout << "Enter number of elements in the array: ";
+    cin >> n;
+    cout << "Enter elements:\n";
+    for(i = 0; i < n; i++)
+    {
+        cout << "arr[" << i << "] = ";
+        cin >> arr[i];
+    }
+    cout << "\nElements at even positions are:\n";
+    for(i = 1; i < n; i += 2)
+    {
+        cout << arr[i] << " ";
+    }
+  delay(5000);
+}
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Enter number of elements in the array: 6
+              <br>
+              arr[0] = 11
+              <br>
+              arr[1] = 22
+              <br>
+              arr[2] = 33
+              <br>
+              arr[3] = 44
+              <br>
+              arr[4] = 55
+              <br>
+              arr[5] = 66
+              </p>
+              <h2>Output:</h2>
+              <p>Elements at even positions are:
+                <br>
+                22 44 66
+                </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head7" />
+        <label for="collapsible-head7"
+          >8. Program to print the elements of an array present on odd position</label
+        >
+        <div class="collapsible-text">
+          <h2>Single Dimension Array 8:</h2>
+          <p>
+            <pre><code>
+#include iostream.h
+#include conio.h
+#include dos.h
+void main()
+{
+    clrscr();
+    int arr[100], n, i;
+    cout << "Enter number of elements in the array: ";
+    cin >> n;
+    cout << "Enter elements:\n";
+    for(i = 0; i < n; i++)
+    {
+        cout << "arr[" << i << "] = ";
+        cin >> arr[i];
+    }
+    cout << "\nElements at odd positions are:\n";
+    for(i = 0; i < n; i += 2) 
+    {
+        cout << arr[i] << " ";
+    }
+  delay(5000);
+}
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Enter number of elements in the array: 6
+              <br>
+              arr[0] = 5
+              <br>
+              arr[1] = 10
+              <br>
+              arr[2] = 15
+              <br>
+              arr[3] = 20
+              <br>
+              arr[4] = 25
+              <br>
+              arr[5] = 30
+              </p>
+              <h2>Output:</h2>
+              <p>Elements at odd positions are:
+                <br>
+                5 15 25
+                </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head8" />
+        <label for="collapsible-head8"
+          >9. Program to print the largest element in an array</label
+        >
+        <div class="collapsible-text">
+          <h2>Single Dimension Array 9:</h2>
+          <p>
+            <pre><code>
+#include iostream.h
+#include conio.h
+#include dos.h
+void main()
+{
+    clrscr();
+    int arr[100], n, i, max;
+    cout << "Enter number of elements in the array: ";
+    cin >> n;
+    cout << "Enter elements:\n";
+    for(i = 0; i < n; i++)
+    {
+        cout << "arr[" << i << "] = ";
+        cin >> arr[i];
+    }
+    max = arr[0];
+    for(i = 1; i < n; i++)
+    {
+        if(arr[i] > max)
+        {
+            max = arr[i]; 
+        }
+    }
+    cout << "\nThe largest element in the array is: " << max;
+  delay(5000);
+}
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Enter number of elements in the array: 5
+              <br>
+              arr[0] = 23
+              <br>
+              arr[1] = 56
+              <br>
+              arr[2] = 12
+              <br>
+              arr[3] = 89
+              <br>
+              arr[4] = 45
+              </p>
+              <h2>Output:</h2>
+              <p>The largest element in the array is: 89
+              </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head9" />
+        <label for="collapsible-head9"
+          >10. Program to print the smallest element in an array</label
+        >
+        <div class="collapsible-text">
+          <h2>Single Dimension Array 10:</h2>
+          <p>
+            <pre><code>
+#include iostream.h
+#include conio.h
+#include dos.h
+void main()
+{
+    clrscr();
+    int arr[100], n, i, min;
+    cout << "Enter number of elements in the array: ";
+    cin >> n;
+    cout << "Enter elements:\n";
+    for(i = 0; i < n; i++)
+    {
+        cout << "arr[" << i << "] = ";
+        cin >> arr[i];
+    }
+    min = arr[0];
+    for(i = 1; i < n; i++)
+    {
+        if(arr[i] < min)
+        {
+            min = arr[i];
+        }
+    }
+    cout << "\nThe smallest element in the array is: " << min;
+  delay(5000);
+}
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Enter number of elements in the array: 6
+              <br>
+              arr[0] = 34
+              <br>
+              arr[1] = 7
+              <br>
+              arr[2] = 22
+              <br>
+              arr[3] = 10
+              <br>
+              arr[4] = 5
+              <br>
+              arr[5] = 18
+              </p>
+              <h2>Output:</h2>
+              <p>The smallest element in the array is: 5
+              </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head10" />
+        <label for="collapsible-head10"
+          >11. Program to print the number of elements present in an array</label
+        >
+        <div class="collapsible-text">
+          <h2>Single Dimension Array 11:</h2>
+          <p>
+          <pre><code>
+#include iostream.h
+#include conio.h
+#include dos.h
+void main()
+{
+    clrscr();
+    int arr[100], n, i;
+    cout << "Enter number of elements in the array: ";
+    cin >> n;
+    cout << "Enter elements:\n";
+    for(i = 0; i < n; i++)
+    {
+        cout << "arr[" << i << "] = ";
+        cin >> arr[i];
+    }
+    cout << "\nThe number of elements in the array is: " << n;
+  delay(5000);
+}
+          </code></pre>
+          <h2>Input:</h2>
+          <p>Enter number of elements in the array: 5
+            <br>
+            arr[0] = 12
+            <br>
+            arr[1] = 34
+            <br>
+            arr[2] = 56
+            <br>
+            arr[3] = 78
+            <br>
+            arr[4] = 90
+            </p>
+            <h2>Output:</h2>
+            <p>The number of elements in the array is: 5
+            </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head11" />
+        <label for="collapsible-head11"
+          >12. Program to print the sum of all the items of the array</label
+        >
+        <div class="collapsible-text">
+          <h2>Single Dimension Array 12:</h2>
+          <p>
+            <pre><code>
+#include iostream.h
+#include conio.h
+#include dos.h
+void main()
+{
+    clrscr();
+    int arr[100], n, i, sum = 0;
+    cout << "Enter number of elements in the array: ";
+    cin >> n;
+    cout << "Enter elements:\n";
+    for(i = 0; i < n; i++)
+    {
+        cout << "arr[" << i << "] = ";
+        cin >> arr[i];
+        sum += arr[i];
+    }
+    cout << "\nThe sum of all elements in the array is: " << sum;
+  delay(5000);
+}
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Enter number of elements in the array: 5
+              <br>
+              arr[0] = 10
+              <br>
+              arr[1] = 20
+              <br>
+              arr[2] = 30
+              <br>
+              arr[3] = 40
+              <br>
+              arr[4] = 50
+              </p>
+              <h2>Output:</h2>
+              <p>The sum of all elements in the array is: 150
+              </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head12" />
+        <label for="collapsible-head12"
+          >13. Program to right rotate the elements of an array</label
+        >
+        <div class="collapsible-text">
+          <h2>Single Dimension Array 13:</h2>
+          <p>
+            <pre><code>
+#include iostream.h
+#include conio.h
+#include dos.h
+void main()
+{
+    clrscr();
+    int arr[100], n, i, temp;
+    cout << "Enter number of elements in the array: ";
+    cin >> n;
+    cout << "Enter elements:\n";
+    for(i = 0; i < n; i++)
+    {
+        cout << "arr[" << i << "] = ";
+        cin >> arr[i];
+    }
+    temp = arr[n - 1];
+    for(i = n - 2; i >= 0; i--)
+    {
+        arr[i + 1] = arr[i];
+    }
+    arr[0] = temp;
+    cout << "\nArray after right rotation:\n";
+    for(i = 0; i < n; i++)
+    {
+        cout << arr[i] << " ";
+    }
+  delay(5000);
+}
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Enter number of elements in the array: 5
+              <br>
+              arr[0] = 10
+              <br>
+              arr[1] = 20
+              <br>
+              arr[2] = 30
+              <br>
+              arr[3] = 40
+              <br>
+              arr[4] = 50
+              </p>
+              <h2>Output:</h2>
+              <p>Array after right rotation:
+                <br>
+                50 10 20 30 40
+                </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head13" />
+        <label for="collapsible-head13"
+          >14. Program to sort the elements of an array in ascending order</label
+        >
+        <div class="collapsible-text">
+          <h2>Single Dimension Array 14:</h2>
+          <p>
+           <pre><code>
+#include iostream.h
+#include conio.h
+#include dos.h
+void main()
+{
+    clrscr();
+    int arr[100], n, i, j, temp;
+    cout << "Enter number of elements in the array: ";
+    cin >> n;
+    cout << "Enter elements:\n";
+    for(i = 0; i < n; i++)
+    {
+        cout << "arr[" << i << "] = ";
+        cin >> arr[i];
+    }
+    for(i = 0; i < n - 1; i++)  
+    {
+        for(j = 0; j < n - i - 1; j++)
+        {
+            if(arr[j] > arr[j + 1])
+            {
+                temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+    cout << "\nArray after sorting in ascending order:\n";
+    for(i = 0; i < n; i++)
+    {
+        cout << arr[i] << " ";
+    }
+  delay(5000);
+}
+           </code></pre>
+           <h2>Input:</h2>
+           <p>Enter number of elements in the array: 5
+            <br>
+            arr[0] = 23
+            <br>
+            arr[1] = 10
+            <br>
+            arr[2] = 56
+            <br>
+            arr[3] = 5
+            <br>
+            arr[4] = 19
+            </p>
+            <h2>Output:</h2>
+            <p>Array after sorting in ascending order:
+              <br>
+              5 10 19 23 56
+              </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head14" />
+        <label for="collapsible-head14"
+          >15. Program to sort the elements of an array in descending order</label
+        >
+        <div class="collapsible-text">
+          <h2>Single Dimension Array 15:</h2>
+          <p>
+            <pre><code>
+#include iostream.h
+#include conio.h
+#include dos.h
+void main()
+{
+    clrscr();
+    int arr[100], n, i, j, temp;
+    cout << "Enter number of elements in the array: ";
+    cin >> n;
+    cout << "Enter elements:\n";
+    for(i = 0; i < n; i++)
+    {
+        cout << "arr[" << i << "] = ";
+        cin >> arr[i];
+    }
+    for(i = 0; i < n - 1; i++)
+    {
+        for(j = 0; j < n - i - 1; j++)
+        {
+            if(arr[j] < arr[j + 1])
+            {
+                temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+    cout << "\nArray after sorting in descending order:\n";
+    for(i = 0; i < n; i++)
+    {
+        cout << arr[i] << " ";
+    }
+  delay(5000);
+}
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Enter number of elements in the array: 5
+              <br>
+              arr[0] = 12
+              <br>
+              arr[1] = 45
+              <br>
+              arr[2] = 3
+              <br>
+              arr[3] = 22
+              <br>
+              arr[4] = 15
+              </p>
+              <h2>Output:</h2>
+              <p>Array after sorting in descending order:
+                <br>
+                45 22 15 12 3
+                </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head15" />
+        <label for="collapsible-head15"
+          >16. Program to Find 3rd Largest Number in an array</label
+        >
+        <div class="collapsible-text">
+          <h2>Single Dimension Array 16:</h2>
+          <p>
+            <pre><code>
+#include iostream.h
+#include conio.h
+#include dos.h
+void main()
+{
+    clrscr();
+    int arr[100], n, i, j, temp;
+    cout << "Enter number of elements in the array: ";
+    cin >> n;
+    if(n < 3)
+    {
+        cout << "Array must have at least 3 elements!";
+        getch();
+        return;
+    }
+    cout << "Enter elements:\n";
+    for(i = 0; i < n; i++)
+    {
+        cout << "arr[" << i << "] = ";
+        cin >> arr[i];
+    }
+    for(i = 0; i < n - 1; i++)
+    {
+        for(j = 0; j < n - i - 1; j++)
+        {
+            if(arr[j] < arr[j + 1])
+            {
+                temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+    cout << "\nThe 3rd largest element is: " << arr[2];
+  delay(5000);
+}
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Enter number of elements in the array: 6
+              <br>
+              arr[0] = 12
+              <br>
+              arr[1] = 45
+              <br>
+              arr[2] = 22
+              <br>
+              arr[3] = 78
+              <br>
+              arr[4] = 9
+              <br>
+              arr[5] = 33
+              </p>
+              <h2>Output:</h2>
+              <p>The 3rd largest element is: 33
+              </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head16" />
+        <label for="collapsible-head16"
+          >17. Program to Find 2nd Largest Number in an array</label
+        >
+        <div class="collapsible-text">
+          <h2>Single Dimension Array 17:</h2>
+          <p>
+            <pre><code>
+#include iostream.h
+#include conio.h
+#include dos.h
+void main()
+{
+    clrscr();
+    int arr[100], n, i, j, temp;
+    cout << "Enter number of elements in the array: ";
+    cin >> n;
+    if(n < 2)
+    {
+        cout << "Array must have at least 2 elements!";
+        getch();
+        return;
+    }
+    cout << "Enter elements:\n";
+    for(i = 0; i < n; i++)
+    {
+        cout << "arr[" << i << "] = ";
+        cin >> arr[i];
+    }
+    for(i = 0; i < n - 1; i++)
+    {
+        for(j = 0; j < n - i - 1; j++)
+        {
+            if(arr[j] < arr[j + 1])
+            {
+                temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+    cout << "\nThe 2nd largest element is: " << arr[1];
+  delay(5000);
+}
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Enter number of elements: 5
+              <br>
+              arr[] = {40, 10, 90, 50, 90}
+              </p>
+              <h2>Output:</h2>
+              <p>The 2nd largest element is: 50
+              </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head17" />
+        <label for="collapsible-head17"
+          >18. Program to Find Largest Number in an array</label
+        >
+        <div class="collapsible-text">
+          <h2>Single Dimension Array 18:</h2>
+          <p>
+            <pre><code>
+#include iostream.h
+#include conio.h
+#include dos.h
+void main()
+{
+    clrscr();
+    int arr[100], n, i, max;
+    cout << "Enter number of elements in the array: ";
+    cin >> n;
+    cout << "Enter elements:\n";
+    for(i = 0; i < n; i++)
+    {
+        cout << "arr[" << i << "] = ";
+        cin >> arr[i];
+    }
+    max = arr[0];
+    for(i = 1; i < n; i++)
+    {
+        if(arr[i] > max)
+        {
+            max = arr[i]; 
+        }
+    }
+    cout << "\nThe largest element in the array is: " << max;
+  delay(5000);
+}
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Enter number of elements in the array: 5
+              <br>
+              arr[0] = 25
+              <br>
+              arr[1] = 89
+              <br>
+              arr[2] = 63
+              <br>
+              arr[3] = 17
+              <br>
+              arr[4] = 48
+              </p>
+              <h2>Output:</h2>
+              <p>The largest element in the array is: 89
+              </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head18" />
+        <label for="collapsible-head18"
+          >19. C++ Program Find 2nd Smallest Number in an array</label
+        >
+        <div class="collapsible-text">
+          <h2>Single Dimension Array 19:</h2>
+          <p>
+            <pre><code>
+#include iostream.h
+#include conio.h
+#include dos.h
+void main()
+{
+    clrscr();
+    int arr[100], n, i;
+    int first, second;
+    cout << "Enter number of elements in the array: ";
+    cin >> n;
+    if(n < 2)
+    {
+        cout << "Array must have at least 2 elements!";
+        getch();
+        return;
+    }
+    cout << "Enter elements:\n";
+    for(i = 0; i < n; i++)
+    {
+        cout << "arr[" << i << "] = ";
+        cin >> arr[i];
+    }
+    first = second = 32767;
+    for(i = 0; i < n; i++)
+    {
+        if(arr[i] < first)
+        {
+            second = first;
+            first = arr[i];
+        }
+        else if(arr[i] < second && arr[i] != first)
+        {
+            second = arr[i];
+        }
+    }
+    if(second == 32767)
+        cout << "\nNo distinct second smallest element found!";
+    else
+        cout << "\nThe 2nd smallest element is: " << second;
+  delay(5000);
+}
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Enter number of elements: 6
+              <br>
+              arr[] = {40, 10, 90, 10, 25, 60}
+              </p>
+              <h2>Output:</h2>
+              <p>The 2nd smallest element is: 25
+              </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head19" />
+        <label for="collapsible-head19"
+          >20. Program to Find Smallest Number in an array</label
+        >
+        <div class="collapsible-text">
+          <h2>Single Dimension Array 20:</h2>
+          <p>
+            <pre><code>
+#include iostream.h
+#include conio.h
+#include dos.h
+void main()
+{
+    clrscr();
+    int arr[100], n, i, min;
+    cout << "Enter number of elements in the array: ";
+    cin >> n;
+    cout << "Enter elements:\n";
+    for(i = 0; i < n; i++)
+    {
+        cout << "arr[" << i << "] = ";
+        cin >> arr[i];
+    }
+    min = arr[0];
+    for(i = 1; i < n; i++)
+    {
+        if(arr[i] < min)
+        {
+            min = arr[i];
+        }
+    }
+    cout << "\nThe smallest element in the array is: " << min;
+  delay(5000);
+}
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Enter number of elements in the array: 5
+              <br>
+              arr[0] = 45
+              <br>
+              arr[1] = 12
+              <br>
+              arr[2] = 67
+              <br>
+              arr[3] = 9
+              <br>
+              arr[4] = 34
+              </p>
+              <h2>Output:</h2>
+              <p>The smallest element in the array is: 9
+              </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head20" />
+        <label for="collapsible-head20"
+          >21. Program to Remove Duplicate Element in an array</label
+        >
+        <div class="collapsible-text">
+          <h2>Single Dimension Array 21:</h2>
+          <p>
+            <pre><code>
+#include iostream.h
+#include conio.h
+#include dos.h
+void main()
+{
+    clrscr();
+    int arr[100], temp[100], n, i, j, k = 0;
+    int isDuplicate;
+    cout << "Enter number of elements in the array: ";
+    cin >> n;
+    cout << "Enter elements:\n";
+    for(i = 0; i < n; i++)
+    {
+        cout << "arr[" << i << "] = ";
+        cin >> arr[i];
+    }
+    for(i = 0; i < n; i++)
+    {
+        isDuplicate = 0;
+
+        for(j = 0; j < k; j++)
+        {
+            if(arr[i] == temp[j])
+            {
+                isDuplicate = 1;
+                break;
+            }
+        }
+        if(isDuplicate == 0)
+        {
+            temp[k] = arr[i];
+            k++;
+        }
+    }
+    cout << "\nArray after removing duplicates:\n";
+    for(i = 0; i < k; i++)
+    {
+        cout << temp[i] << " ";
+    }
+  delay(5000);
+}
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Enter number of elements: 7
+              <br>
+              arr[] = {10, 20, 10, 30, 40, 30, 50}
+              </p>
+              <h2>Output:</h2>
+              <p>Array after removing duplicates:
+                10 20 30 40 50
+                </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head21" />
+        <label for="collapsible-head21"
+          >22. Program to Print Odd and Even Numbers from an array</label
+        >
+        <div class="collapsible-text">
+          <h2>Single Dimension Array 22:</h2>
+          <p>
+           <pre><code>
+#include iostream.h
+#include conio.h
+#include dos.h
+void main()
+{
+    clrscr();
+    int arr[100], n, i;
+    cout << "Enter number of elements in the array: ";
+    cin >> n;
+    cout << "Enter elements:\n";
+    for(i = 0; i < n; i++)
+    {
+        cout << "arr[" << i << "] = ";
+        cin >> arr[i];
+    }
+    cout << "\nEven numbers in the array are:\n";
+    for(i = 0; i < n; i++)
+    {
+        if(arr[i] % 2 == 0)
+        {
+            cout << arr[i] << " ";
+        }
+    }
+    cout << "\n\nOdd numbers in the array are:\n";
+    for(i = 0; i < n; i++)
+    {
+        if(arr[i] % 2 != 0)
+        {
+            cout << arr[i] << " ";
+        }
+    }
+  delay(5000);
+}
+           </code></pre>
+           <h2>Input:</h2>
+           <p>Enter number of elements: 6
+            <br>
+            arr[] = {10, 21, 32, 43, 54, 65}
+            </p>
+            <h2>Output:</h2>
+            <p>Even numbers in the array are:
+              <br>
+              10 32 54
+              <br>
+              Odd numbers in the array are:
+              <br>
+              21 43 65
+              </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head22" />
+        <label for="collapsible-head22"
+          >23. Write a C++ program to swap the first and last elements of an array and create a new array</label
+        >
+        <div class="collapsible-text">
+          <h2>Single Dimension Array 23:</h2>
+          <p>
+            <pre><code>
+#include iostream.h
+#include conio.h
+#include dos.h
+void main()
+{
+    clrscr();
+    int arr[100], newArr[100], n, i;
+    cout << "Enter number of elements in the array: ";
+    cin >> n;
+    cout << "Enter array elements:\n";
+    for(i = 0; i < n; i++)
+    {
+        cout << "arr[" << i << "] = ";
+        cin >> arr[i];
+    }
+    for(i = 0; i < n; i++)
+    {
+        newArr[i] = arr[i];
+    }
+    int temp = newArr[0];
+    newArr[0] = newArr[n - 1];
+    newArr[n - 1] = temp;
+    cout << "\nNew array after swapping first and last elements:\n";
+    for(i = 0; i < n; i++)
+    {
+        cout << newArr[i] << " ";
+    }
+  delay(5000);
+}
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Enter number of elements: 5
+              <br>
+              arr[] = {10, 20, 30, 40, 50}
+              </p>
+              <h2>Output:</h2>
+              <p>New array after swapping first and last elements:
+                <br>
+                50 20 30 40 10
+                </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head23" />
+        <label for="collapsible-head23"
+          >24. Write a C++ program to count the number of even and odd elements in a given array</label
+        >
+        <div class="collapsible-text">
+          <h2>Single Dimension Array 24:</h2>
+          <p>
+            <pre><code>
+#include iostream.h
+#include conio.h
+#include dos.h
+void main()
+{
+    clrscr();
+    int arr[100], n, i;
+    int evenCount = 0, oddCount = 0;
+    cout << "Enter number of elements in the array: ";
+    cin >> n;
+    cout << "Enter array elements:\n";
+    for(i = 0; i < n; i++)
+    {
+        cout << "arr[" << i << "] = ";
+        cin >> arr[i];
+    }
+    for(i = 0; i < n; i++)
+    {
+        if(arr[i] % 2 == 0)
+            evenCount++;
+        else
+            oddCount++;
+    }
+    cout << "\nTotal even elements: " << evenCount;
+    cout << "\nTotal odd elements : " << oddCount;
+  delay(5000);
+}
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Enter number of elements: 6
+              <br>
+              arr[] = {12, 7, 9, 4, 10, 3}
+              </p>
+              <h2>Output:</h2>
+              <p>Total even elements: 3
+                <br>
+                Total odd elements : 3
+                </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head24" />
+        <label for="collapsible-head24"
+          >25. Write a C++ program to sum values of an array</label
+        >
+        <div class="collapsible-text">
+          <h2>Single Dimension Array 25:</h2>
+          <p>
+            <pre><code>
+#include iostream.h
+#include conio.h
+#include dos.h
+void main()
+{
+    clrscr();
+    int arr[100], n, i, sum = 0;
+    cout << "Enter number of elements in the array: ";
+    cin >> n;
+    cout << "Enter array elements:\n";
+    for(i = 0; i < n; i++)
+    {
+        cout << "arr[" << i << "] = ";
+        cin >> arr[i];
+    }
+    for(i = 0; i < n; i++)
+    {
+        sum += arr[i];
+    }
+    cout << "\nSum of all elements in the array: " << sum;
+  delay(5000);
+    }
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Enter number of elements: 5
+              <br>
+              arr[] = {10, 20, 30, 40, 50}
+              </p>
+              <h2>Output:</h2>
+              <p>Sum of all elements in the array: 150</p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head25" />
+        <label for="collapsible-head25"
+          >26. Write a C++ program to find the index of an array element</label
+        >
+        <div class="collapsible-text">
+          <h2>Single Dimension Array 26:</h2>
+          <p>
+            <pre><code>
+#include iostream.h
+#include conio.h
+#include dos.h
+void main()
+{
+    clrscr();
+    int arr[100], n, i, searchElement, index = -1;
+    cout << "Enter number of elements in the array: ";
+    cin >> n;
+    cout << "Enter array elements:\n";
+    for(i = 0; i < n; i++)
+    {
+        cout << "arr[" << i << "] = ";
+        cin >> arr[i];
+    }
+    cout << "Enter the element to search for: ";
+    cin >> searchElement;
+    for(i = 0; i < n; i++)
+    {
+        if(arr[i] == searchElement)
+        {
+            index = i;  
+            break;     
+        }
+    }
+    if(index == -1)
+        cout << "\nElement not found in the array.";
+    else
+    cout<<"\nElement "<< searchElement<<" is found at index 
+    "<< index<<".";
+  delay(5000);
+}
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Enter number of elements in the array: 6
+              <br>
+              arr[] = {5, 10, 15, 20, 25, 30}
+              <br>
+              Enter the element to search for: 20
+              </p>
+              <h2>Output:</h2>
+              <p>Element 20 is found at index 3.
+              </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head26" />
+        <label for="collapsible-head26"
+          >27. Write a C++ program to calculate the average value of array elements</label
+        >
+        <div class="collapsible-text">
+          <h2>Single Dimension Array 27:</h2>
+          <p>
+            <pre><code>
+#include iostream.h
+#include conio.h
+#include dos.h
+void main()
+{
+    clrscr();
+    int arr[100], n, i;
+    float sum = 0.0, average;
+    cout << "Enter number of elements in the array: ";
+    cin >> n;
+    cout << "Enter array elements:\n";
+    for(i = 0; i < n; i++)
+    {
+        cout << "arr[" << i << "] = ";
+        cin >> arr[i];
+    }
+    for(i = 0; i < n; i++)
+    {
+        sum += arr[i];
+    }
+    average = sum / n;
+    cout << "\nThe average value of the array elements is: 
+    " << average;
+  delay(5000);
+}
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Enter number of elements: 5
+              <br>
+              arr[] = {10, 20, 30, 40, 50}
+              </p>
+              <h2>Output:</h2>
+              <p>The average value of the array elements is: 30
+              </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head27" />
+        <label for="collapsible-head27"
+          >28. Write a C++ program to test if an array contains a specific value</label
+        >
+        <div class="collapsible-text">
+          <h2>Single Dimension Array 28:</h2>
+          <p>
+            <pre><code>
+              #include iostream.h
+#include conio.h
+#include dos.h
+void main()
+{
+    clrscr();
+    int arr[100], n, i, searchValue;
+    bool found = false;
+    cout << "Enter number of elements in the array: ";
+    cin >> n;
+    cout << "Enter array elements:\n";
+    for(i = 0; i < n; i++)
+    {
+        cout << "arr[" << i << "] = ";
+        cin >> arr[i];
+    }
+    cout << "Enter the value to search for: ";
+    cin >> searchValue;
+    for(i = 0; i < n; i++)
+    {
+        if(arr[i] == searchValue)
+        {
+            found = true; 
+            break;        
+        }
+    }
+    if(found)
+    cout<<"\nThe value "<< searchValue<<
+    " is found in the array.";
+    else
+    cout<<"\nThe value "<< searchValue<<
+    " is NOT found in the array.";
+  delay(5000);
+}
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Enter number of elements: 5
+              <br>
+              arr[] = {10, 20, 30, 40, 50}
+              <br>
+              Enter the value to search for: 30
+              </p>
+              <h2>Output:</h2>
+              <p>The value 30 is found in the array.
+              </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head28" />
+        <label for="collapsible-head28"
+          >29. Write a C++ program to find the maximum and minimum value of an array</label
+        >
+        <div class="collapsible-text">
+          <h2>Single Dimension Array 29:</h2>
+          <p>
+            <pre><code>
+#include iostream.h
+#include conio.h
+#include dos.s
+void main()
+{
+    clrscr();
+    int arr[100], n, i;
+    int max, min;
+    cout << "Enter number of elements in the array: ";
+    cin >> n;
+    cout << "Enter array elements:\n";
+    for(i = 0; i < n; i++)
+    {
+        cout << "arr[" << i << "] = ";
+        cin >> arr[i];
+    }
+    max = arr[0];
+    min = arr[0];
+    for(i = 1; i < n; i++)
+    {
+        if(arr[i] > max)
+            max = arr[i]; 
+
+        if(arr[i] < min)
+            min = arr[i]; 
+    }
+    cout << "\nThe maximum value in the array is: " << max;
+    cout << "\nThe minimum value in the array is: " << min;
+  delay(5000);
+}
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Enter number of elements: 6
+              <br>
+              arr[] = {25, 78, 56, 12, 99, 40}
+              </p>
+              <h2>Output:</h2>
+              <p>The maximum value in the array is: 99
+                <br>
+                The minimum value in the array is: 12
+                </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head29" />
+        <label for="collapsible-head29"
+          >30. Write a C++ program to insert an element (specific position) into an array</label
+        >
+        <div class="collapsible-text">
+          <h2>Single Dimension Array 30:</h2>
+          <p>
+            <pre><code>
+#include iostream.h
+#include conio.h
+#include dos.h
+void main()
+{
+    clrscr();
+    int arr[100], n, i, pos, element;
+    cout << "Enter the number of elements in the array: ";
+    cin >> n;
+    cout << "Enter array elements:\n";
+    for(i = 0; i < n; i++)
+    {
+        cout << "arr[" << i << "] = ";
+        cin >> arr[i];
+    }
+    cout << "Enter the position to insert the element 
+    (0 to " << n << "): ";
+    cin >> pos;
+    if(pos < 0 || pos > n)
+    {
+        cout << "Invalid position!";
+        getch(); 
+        return;
+    }
+    cout << "Enter the element to insert: ";
+    cin >> element;
+    for(i = n; i > pos; i--)
+    {
+        arr[i] = arr[i - 1];
+    }
+    arr[pos] = element;
+    n++;
+    cout << "\nArray after insertion:\n";
+    for(i = 0; i < n; i++)
+    {
+      cout << "arr[" << i << "] = " << arr[i] << endl;
+    }
+  delay(5000);
+}
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Enter the number of elements in the array: 5
+              <br>
+              arr[] = {10, 20, 30, 40, 50}
+              <br>
+              Enter the position to insert the element (0 to 5): 2
+              <br>
+              Enter the element to insert: 25
+              </p>
+              <h2>Output:</h2>
+              <p>Array after insertion:
+                <br>
+                arr[0] = 10
+                <br>
+                arr[1] = 20
+                <br>
+                arr[2] = 25
+                <br>
+                arr[3] = 30
+                <br>
+                arr[4] = 40
+                <br>
+                arr[5] = 50
+                </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head30" />
+        <label for="collapsible-head30"
+          >31. Write a C++ program to reverse an array of integer values</label
+        >
+        <div class="collapsible-text">
+          <h2>Single Dimension Array 31:</h2>
+          <p>
+            <pre><code>
+#include iostream.h
+#include conio.h
+#include dos.h
+void main()
+{
+    clrscr();
+    int arr[100], n, i, temp;
+    cout << "Enter number of elements in the array: ";
+    cin >> n;
+    cout << "Enter array elements:\n";
+    for(i = 0; i < n; i++)
+    {
+        cout << "arr[" << i << "] = ";
+        cin >> arr[i];
+    }
+    for(i = 0; i < n / 2; i++)
+    {
+        temp = arr[i];
+        arr[i] = arr[n - i - 1];
+        arr[n - i - 1] = temp;
+    }
+    cout << "\nReversed array is:\n";
+    for(i = 0; i < n; i++)
+    {
+        cout << "arr[" << i << "] = " << arr[i] << endl;
+    }
+  delay(5000);
+}
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Enter number of elements in the array: 5
+              <br>
+              arr[] = {1, 2, 3, 4, 5}
+              </p>
+              <h2>Output:</h2>
+              <p>Reversed array is:
+                <br>
+                arr[0] = 5
+                <br>
+                arr[1] = 4
+                <br>
+                arr[2] = 3
+                <br>
+                arr[3] = 2
+                <br>
+                arr[4] = 1
+                </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head31" />
+        <label for="collapsible-head31"
+          >32. Write a C++ program to find the common elements between two arrays</label
+        >
+        <div class="collapsible-text">
+          <h2>Single Dimension Array 32:</h2>
+          <p>
+            <pre><code>
+#include iostream.h
+#include conio.h
+#include dos.h
+void main()
+{
+    clrscr();
+    int arr1[100], arr2[100], common[100];
+    int n1, n2, i, j, k = 0;
+    cout << "Enter the number of elements in the first array: ";
+    cin >> n1;
+    cout << "Enter elements of the first array:\n";
+    for(i = 0; i < n1; i++)
+    {
+        cout << "arr1[" << i << "] = ";
+        cin >> arr1[i];
+    }
+    cout << "Enter the number of elements in the second array: ";
+    cin >> n2;
+    cout << "Enter elements of the second array:\n";
+    for(i = 0; i < n2; i++)
+    {
+        cout << "arr2[" << i << "] = ";
+        cin >> arr2[i];
+    }
+    for(i = 0; i < n1; i++)
+    {
+        for(j = 0; j < n2; j++)
+        {
+            if(arr1[i] == arr2[j]) 
+            {
+                common[k] = arr1[i];
+                k++;
+                break;  
+            }
+        }
+    }
+    if(k == 0)
+    {
+    cout << "\nNo common elements found between the two arrays.";
+    }
+    else
+    {
+        cout << "\nThe common elements are:\n";
+        for(i = 0; i < k; i++)
+        {
+            cout << common[i] << " ";
+        }
+    }
+  delay(5000);
+}
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Enter the number of elements in the first array: 5
+              <br>
+              arr1[] = {1, 2, 3, 4, 5}
+              <br>
+              Enter the number of elements in the second array: 6
+              <br>
+              arr2[] = {3, 4, 5, 6, 7, 8}
+              </p>
+              <h2>Output:</h2>
+              <p>The common elements are:
+                3 4 5
+                </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head32" />
+        <label for="collapsible-head32"
+          >33. Write a C++ program to find the duplicate values of an array of integer values</label
+        >
+        <div class="collapsible-text">
+          <h2>Single Dimension Array 33:</h2>
+          <p>
+            <pre><code>
+#include iostream.h
+#include conio.h
+#include dos.h
+void main()
+{
+    clrscr();
+    int arr[100], n, i, j;
+    cout << "Enter the number of elements in the array: ";
+    cin >> n;
+    cout << "Enter array elements:\n";
+    for(i = 0; i < n; i++)
+    {
+        cout << "arr[" << i << "] = ";
+        cin >> arr[i];
+    }
+    cout << "\nDuplicate elements in the array are: ";
+    bool foundDuplicate = false;
+    for(i = 0; i < n; i++)
+    {
+        for(j = i + 1; j < n; j++)
+        {
+            if(arr[i] == arr[j])
+            {
+                cout << arr[i] << " "; 
+                foundDuplicate = true;
+                break;  
+            }
+        }
+    }
+    if (!foundDuplicate)
+    {
+        cout << "No duplicates found.";
+    }
+  delay(5000);
+}
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Enter the number of elements in the array: 6
+              <br>
+              arr[] = {10, 20, 30, 10, 40, 20}
+              </p>
+              <h2>Output:</h2>
+              <p>Duplicate elements in the array are: 10 20
+              </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head33" />
+        <label for="collapsible-head33"
+          >34. Write a C++ program to find second largest number from the array</label
+        >
+        <div class="collapsible-text">
+          <h2>Single Dimension Array 34:</h2>
+          <p>
+            <pre><code>
+#include iostream.h
+#include conio.h
+#include dos.h
+void main()
+{
+    clrscr();
+    int arr[100], n, i;
+    int largest, secondLargest;
+    cout << "Enter the number of elements in the array: ";
+    cin >> n;
+    if(n < 2)
+    {
+        cout << "Array must have at least two elements.";
+        getch();
+        return;
+    }
+    cout << "Enter array elements:\n";
+    for(i = 0; i < n; i++)
+    {
+        cout << "arr[" << i << "] = ";
+        cin >> arr[i];
+    }
+    if(arr[0] > arr[1])
+    {
+        largest = arr[0];
+        secondLargest = arr[1];
+    }
+    else
+    {
+        largest = arr[1];
+        secondLargest = arr[0];
+    }
+    for(i = 2; i < n; i++)
+    {
+        if(arr[i] > largest)
+        {
+            secondLargest = largest;
+            largest = arr[i];
+        }
+        else if(arr[i] > secondLargest && arr[i] != largest)
+        {
+            secondLargest = arr[i];
+        }
+    }
+    if(largest == secondLargest)
+    cout << "\nAll elements are equal. No second largest value.";
+    else
+    cout << "\nSecond largest number in the array is: " << secondLargest;
+  delay(5000);
+}
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Enter the number of elements in the array: 6
+              <br>
+              arr[] = {12, 45, 23, 67, 45, 67}
+              </p>
+              <h2>Output:</h2>
+              <p>Second largest number in the array is: 45
+              </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head34" />
+        <label for="collapsible-head34"
+          >35. Write a C++ program to find second lowest number from the array</label
+        >
+        <div class="collapsible-text">
+          <h2>Single Dimension Array 35:</h2>
+          <p>
+           <pre><code>
+#include iostream.h
+#include conio.h
+#include dos.h
+void main()
+{
+    clrscr();
+    int arr[100], n, i;
+    int smallest, secondSmallest;
+    cout << "Enter the number of elements in the array: ";
+    cin >> n;
+    if(n < 2)
+    {
+        cout << "Array must contain at least two elements.";
+        getch();
+        return;
+    }
+    cout << "Enter array elements:\n";
+    for(i = 0; i < n; i++)
+    {
+        cout << "arr[" << i << "] = ";
+        cin >> arr[i];
+    }
+    if(arr[0] < arr[1])
+    {
+        smallest = arr[0];
+        secondSmallest = arr[1];
+    }
+    else
+    {
+        smallest = arr[1];
+        secondSmallest = arr[0];
+    }    for(i = 2; i < n; i++)
+    {
+        if(arr[i] < smallest)
+        {
+            secondSmallest = smallest;
+            smallest = arr[i];
+        }
+        else if(arr[i] < secondSmallest && arr[i] != smallest)
+        {
+            secondSmallest = arr[i];
+        }
+    }
+    if(smallest == secondSmallest)
+    cout << "\nAll elements are equal. No second smallest value.";
+    else
+    cout<<"\nSecond smallest number in the array is: "
+    << secondSmallest;
+delay(5000);
+}
+           </code></pre>
+           <h2>Input:</h2>
+           <p>Enter the number of elements in the array: 6
+            <br>
+            arr[] = {20, 10, 30, 50, 10, 40}
+            </p>
+            <h2>Output:</h2>
+            <p>Second smallest number in the array is: 20
+            </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head35" />
+        <label for="collapsible-head35"
+          >36. Write a C++ program to find the number of even and odd integers in a given array of integers</label
+        >
+        <div class="collapsible-text">
+          <h2>Single Dimension Array 36:</h2>
+          <p>
+            <pre><code>
+#include iostream.h
+#include conio.h
+#include dos.h
+void main()
+{
+    clrscr();
+    int arr[100], n, i;
+    int evenCount = 0, oddCount = 0;
+    cout << "Enter the number of elements in the array: ";
+    cin >> n;
+    cout << "Enter array elements:\n";
+    for(i = 0; i < n; i++)
+    {
+        cout << "arr[" << i << "] = ";
+        cin >> arr[i];
+    }
+    for(i = 0; i < n; i++)
+    {
+        if(arr[i] % 2 == 0)
+            evenCount++;
+        else
+            oddCount++;
+    }
+    cout << "\nTotal even numbers: " << evenCount;
+    cout << "\nTotal odd numbers : " << oddCount;
+  delay(5000);
+}
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Enter the number of elements in the array: 6
+              <br>
+              arr[] = {10, 25, 30, 47, 60, 75}
+              </p>
+              <h2>Output:</h2>
+              <p>Total even numbers: 3
+                <br>
+                Total odd numbers : 3
+                </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head36" />
+        <label for="collapsible-head36"
+          >37. Write a C++ program to get the difference between the largest and smallest values in an array of integers</label
+        >
+        <div class="collapsible-text">
+          <h2>Single Dimension Array 37:</h2>
+          <p>
+           <pre><code>
+#include iostream.h
+#include conio.h
+#include dos.h
+void main()
+{
+    clrscr();
+    int arr[100], n, i;
+    int max, min, difference;
+    cout << "Enter the number of elements in the array: ";
+    cin >> n;
+    cout << "Enter array elements:\n";
+    for(i = 0; i < n; i++)
+    {
+        cout << "arr[" << i << "] = ";
+        cin >> arr[i];
+    }
+    max = arr[0];
+    min = arr[0];
+    for(i = 1; i < n; i++)
+    {
+        if(arr[i] > max)
+            max = arr[i];
+        if(arr[i] < min)
+            min = arr[i];
+    }
+    difference = max - min;
+    cout << "\nMaximum value in array: " << max;
+    cout << "\nMinimum value in array: " << min;
+    cout << "\nDifference between max and min: " << difference;
+  delay(5000);
+}
+           </code></pre>
+           <h2>Input:</h2>
+           <p>Enter the number of elements in the array: 5
+            <br>
+            arr[] = {25, 10, 35, 5, 40}
+            </p>
+            <h2>Output:</h2>
+            <p>Maximum value in array: 40
+              <br>
+              Minimum value in array: 5
+              <br>
+              Difference between max and min: 35
+              </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head37" />
+        <label for="collapsible-head37"
+          >38. Write a C++ program to segregate all 0s on left side and all 1s on right side of a given array of 0s and 1s
+
+          </label
+        >
+        <div class="collapsible-text">
+          <h2>Single Dimension Array 38:</h2>
+          <p>
+            <pre><code>
+#include iostream.h
+#include conio.h
+#include dos.h
+void main()
+{
+    clrscr();
+    int arr[100], n, i, zeroCount = 0;
+    cout<<"Enter the number of elements (only 0s and 1s): ";
+    cin >> n;
+    cout << "Enter array elements (only 0 or 1):\n";
+    for(i = 0; i < n; i++)
+    {
+        cout << "arr[" << i << "] = ";
+        cin >> arr[i];
+    }
+    for(i = 0; i < n; i++)
+    {
+        if(arr[i] == 0)
+            zeroCount++;
+    }
+    for(i = 0; i < zeroCount; i++)
+        arr[i] = 0;
+    for(i = zeroCount; i < n; i++)
+        arr[i] = 1;
+    cout << "\nArray after segregation of 0s and 1s:\n";
+    for(i = 0; i < n; i++)
+        cout << "arr[" << i << "] = " << arr[i] << endl;
+  delay(5000);
+}
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Enter the number of elements: 8
+              <br>
+              arr[] = {0, 1, 1, 0, 1, 0, 0, 1}
+              </p>
+              <h2>Output:</h2>
+              <p>Array after segregation of 0s and 1s:
+                <br>
+                arr[0] = 0
+                <br>
+                arr[1] = 0
+                <br>
+                arr[2] = 0
+                <br>
+                arr[3] = 0
+                <br>
+                arr[4] = 1
+                <br>
+                arr[5] = 1
+                <br>
+                arr[6] = 1
+                <br>
+                arr[7] = 1
+                </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head38" />
+        <label for="collapsible-head38"
+          >39. Write a C++ program to cyclically rotate a given array clockwise by one</label
+        >
+        <div class="collapsible-text">
+          <h2>Single Dimension Array 39:</h2>
+          <p>
+           <pre><code>
+#include iostream.h
+#include conio.h
+#include dos.h
+void main()
+{
+    clrscr();
+    int arr[100], n, i, last;
+    cout << "Enter the number of elements in the array: ";
+    cin >> n;
+    cout << "Enter array elements:\n";
+    for(i = 0; i < n; i++)
+    {
+        cout << "arr[" << i << "] = ";
+        cin >> arr[i];
+    }
+    last = arr[n - 1];
+    for(i = n - 1; i > 0; i--)
+    {
+        arr[i] = arr[i - 1];
+    }
+    arr[0] = last;
+    cout << "\nArray after clockwise rotation by one:\n";
+    for(i = 0; i < n; i++)
+    {
+        cout << "arr[" << i << "] = " << arr[i] << endl;
+    }
+  delay(5000);
+}
+           </code></pre>
+           <h2>Input:</h2>
+           <p>Enter number of elements: 5
+            <br>
+            arr[] = {10, 20, 30, 40, 50}
+            </p>
+            <h2>Output:</h2>
+            <p>Array after clockwise rotation by one:
+              <br>
+              arr[0] = 50
+              <br>
+              arr[1] = 10
+              <br>
+              arr[2] = 20
+              <br>
+              arr[3] = 30
+              <br>
+              arr[4] = 40
+              </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head39" />
+        <label for="collapsible-head39"
+          >40. Write a C++ program to print all unique element in an array</label
+        >
+        <div class="collapsible-text">
+          <h2>Single Dimension Array 40:</h2>
+          <p>
+            <pre><code>
+#include iostream.h
+#include conio.h
+#include dos.h
+void main()
+{
+    clrscr();
+    int arr[100], n, i, j, count;
+    cout << "Enter the number of elements in the array: ";
+    cin >> n;
+    cout << "Enter array elements:\n";
+    for(i = 0; i < n; i++)
+    {
+        cout << "arr[" << i << "] = ";
+        cin >> arr[i];
+    }
+    cout << "\nUnique elements in the array are:\n";
+
+    for(i = 0; i < n; i++)
+    {
+        count = 0;
+        for(j = 0; j < n; j++)
+        {
+            if(arr[i] == arr[j] && i != j)
+            {
+                count++;
+                break; 
+            }
+        }
+        if(count == 0)
+        {
+            cout << arr[i] << " ";
+        }
+    }
+  delay(5000);
+}
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Enter the number of elements in the array: 7  
+              <br>
+              arr[] = {1, 2, 3, 2, 4, 5, 1}
+              </p>
+              <h2>Output:</h2>
+              <p>Unique elements in the array are:
+                <br>
+                3 4 5
+                </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head40" />
+        <label for="collapsible-head40"
+          >41. Write a C++ Program to Sort the Array in an Ascending Order</label
+        >
+        <div class="collapsible-text">
+          <h2>Single Dimension Array 41:</h2>
+          <p>
+            <pre><code>
+#include iostream.h
+#include conio.h
+#include dos.h
+void main()
+{
+    clrscr();
+    int arr[100], n, i, j, temp;
+    cout << "Enter the number of elements in the array: ";
+    cin >> n;
+    cout << "Enter array elements:\n";
+    for(i = 0; i < n; i++)
+    {
+        cout << "arr[" << i << "] = ";
+        cin >> arr[i];
+    }
+    for(i = 0; i < n - 1; i++)
+    {
+        for(j = 0; j < n - i - 1; j++)
+        {
+            if(arr[j] > arr[j + 1])
+            {
+                temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+    cout << "\nArray elements in ascending order:\n";
+    for(i = 0; i < n; i++)
+    {
+        cout << arr[i] << " ";
+    }
+  delay(5000);
+}
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Enter number of elements: 5  
+              <br>
+              arr[] = {34, 12, 5, 66, 22}
+              </p>
+              <h2>Output:</h2>
+              <p>Array elements in ascending order:  
+                <br>
+                5 12 22 34 66
+                </p>
+          </p>
+        </div>
+      </div>
+      <div class="collapsible">
+        <input type="checkbox" id="collapsible-head41" />
+        <label for="collapsible-head41"
+          >42. Write a C++ Program to Sort the Array in an Descending Order</label
+        >
+        <div class="collapsible-text">
+          <h2>Single Dimension Array 42:</h2>
+          <p>
+            <pre><code>
+#include iostream.h
+#include conio.h
+#include dos.h
+void main()
+{
+    clrscr();
+    int arr[100], n, i, j, temp;
+    cout << "Enter the number of elements in the array: ";
+    cin >> n;
+    cout << "Enter array elements:\n";
+    for(i = 0; i < n; i++)
+    {
+        cout << "arr[" << i << "] = ";
+        cin >> arr[i];
+    }
+    for(i = 0; i < n - 1; i++)
+    {
+        for(j = 0; j < n - i - 1; j++)
+        {
+            if(arr[j] < arr[j + 1]) 
+            {
+                temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+    cout << "\nArray elements in descending order:\n";
+    for(i = 0; i < n; i++)
+    {
+        cout << arr[i] << " ";
+    }
+  delay(5000);
+}
+            </code></pre>
+            <h2>Input:</h2>
+            <p>Enter number of elements: 5  
+              <br>
+              arr[] = {12, 45, 3, 22, 18}
+              </p>
+              <h2>Output:</h2>
+              <p>Array elements in descending order:  
+                <br>
+                45 22 18 12 3
+                </p>
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
